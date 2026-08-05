@@ -1,0 +1,8493 @@
+{
+ "meta": {
+  "title": "Yorùbá Yé Mi — A Beginning Yorùbá Textbook",
+  "author": "Fẹ̀hìntọ́lá Mosádomi, Ph.D — COERLL, The University of Texas at Austin (2012)",
+  "license": "Creative Commons (CC 2012)",
+  "isbn": "978-1937963-02-6",
+  "extractionNotes": [
+   "The PDF uses a legacy 'YorubaSans' font with no Unicode mapping; all Yorùbá diacritics (ọ, ẹ, ṣ, tone marks) were recovered via an empirically derived character map (see decode.py). Spot-checked across all 12 chapters, but isolated mis-decoded characters may remain.",
+   "Vocabulary was extracted positionally from the two-column 'Àwọn ọ̀rọ̀' tables of each chapter (1,008 entries). English glosses that wrapped across lines were rejoined automatically.",
+   "Grammar explanations are concise summaries written from each lesson's content; example sentences are harvested verbatim from the book's two-column example tables. Lessons that are mostly dialogue/exercise pages yielded few or no machine-extractable example pairs (notably ch. 7–9, 12 later lessons).",
+   "Dialogues (Ìsọ̀rọ̀ngbèsì) and in-book exercises (Iṣẹ́ Ṣíṣe) were not separately structured; the app generates its own drills from vocab + grammar items instead.",
+   "The book's Introduction (alphabet, tones, pronunciation) is included as reference material, not as a gated chapter.",
+   "The textbook has no bundled audio; COERLL hosts audio for this book online, but the app is offline-first so listening drills are omitted."
+  ]
+ },
+ "intro": {
+  "title": "Introduction: The Sounds of Yorùbá",
+  "notes": [
+   "Yorùbá has 7 oral vowels: a, e, ẹ (as in 'bet'), i, o, ọ (as in 'bought'), u — plus nasal vowels: an, ẹn, in, ọn, un.",
+   "Three tones distinguish word meanings: High (á, marked ´), Mid (a, unmarked), Low (à, marked `). Example: bí 'to give birth', bi 'to ask', bì 'to vomit'.",
+   "Consonants include gb (a single sound, pronounced together), ṣ (like English 'sh'), p (pronounced [kp]), and j (like English 'j'). There is no c, q, v, x or z.",
+   "The syllabic nasals ń/ǹ can form syllables on their own and carry tone, e.g. ń in Ó ń lọ 'He is going'."
+  ]
+ },
+ "chapters": [
+  {
+   "id": 1,
+   "yorubaTitle": "Orí Kìíní",
+   "title": "Greetings",
+   "objectives": [
+    "How to greet people",
+    "About Yorùbá verbs",
+    "The use of negation ‘kò’",
+    "About Yorùbá pronouns",
+    "The use of interrogatives ‘Kí ni ‘and ‘Ṣé’"
+   ],
+   "items": [
+    {
+     "id": "c1-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbàdo",
+     "en": "corn"
+    },
+    {
+     "id": "c1-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aṣọ",
+     "en": "clothing"
+    },
+    {
+     "id": "c1-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "bàbá",
+     "en": "father"
+    },
+    {
+     "id": "c1-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "bọ́ọ̀lù",
+     "en": "ball"
+    },
+    {
+     "id": "c1-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "eré",
+     "en": "play"
+    },
+    {
+     "id": "c1-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹmu",
+     "en": "palm wine"
+    },
+    {
+     "id": "c1-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹyin",
+     "en": "egg"
+    },
+    {
+     "id": "c1-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ìbàdàn",
+     "en": "a city in south western Nigeria"
+    },
+    {
+     "id": "c1-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ilé",
+     "en": "house"
+    },
+    {
+     "id": "c1-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìrẹsì",
+     "en": "rice"
+    },
+    {
+     "id": "c1-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kóòkì",
+     "en": "Coke"
+    },
+    {
+     "id": "c1-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mọ́ínmọ́ín",
+     "en": "a meal made from black-eyed peas"
+    },
+    {
+     "id": "c1-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ọ̀gbẹ́ni",
+     "en": "Mr."
+    },
+    {
+     "id": "c1-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "olùkọ́",
+     "en": "teacher"
+    },
+    {
+     "id": "c1-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọmọ",
+     "en": "child"
+    },
+    {
+     "id": "c1-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "orúkọ",
+     "en": "name"
+    },
+    {
+     "id": "c1-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "owó",
+     "en": "money"
+    },
+    {
+     "id": "c1-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọbẹ̀",
+     "en": "stew"
+    },
+    {
+     "id": "c1-v19",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aagoo yín",
+     "en": "your clock/wristwatch"
+    },
+    {
+     "id": "c1-v20",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "a dúpẹ́",
+     "en": "thank you"
+    },
+    {
+     "id": "c1-v21",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọọ̀ rẹ",
+     "en": "your clothes"
+    },
+    {
+     "id": "c1-v22",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bàbáa Fúnmi",
+     "en": "Fúnmi’s father"
+    },
+    {
+     "id": "c1-v23",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "iléè rẹ̀",
+     "en": "his/her house"
+    },
+    {
+     "id": "c1-v24",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìwéè mi",
+     "en": "my book"
+    },
+    {
+     "id": "c1-v25",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "o ṣé",
+     "en": "thank you"
+    },
+    {
+     "id": "c1-v26",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ó tì",
+     "en": "no"
+    },
+    {
+     "id": "c1-v27",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "owóo wọn",
+     "en": "their money"
+    },
+    {
+     "id": "c1-v28",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjọ́ ìbí",
+     "en": "birthday"
+    },
+    {
+     "id": "c1-v29",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọkọ̀ọ wa",
+     "en": "our vehicle"
+    },
+    {
+     "id": "c1-v30",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbá",
+     "en": "to kick"
+    },
+    {
+     "id": "c1-v31",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fẹ́",
+     "en": "to want"
+    },
+    {
+     "id": "c1-v32",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbé",
+     "en": "to live"
+    },
+    {
+     "id": "c1-v33",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jẹun",
+     "en": "to eat"
+    },
+    {
+     "id": "c1-v34",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "kàwé",
+     "en": "to read a book"
+    },
+    {
+     "id": "c1-v35",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "mu",
+     "en": "to drink"
+    },
+    {
+     "id": "c1-v36",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ní",
+     "en": "to have"
+    },
+    {
+     "id": "c1-v37",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "báwo ni?",
+     "en": "how are you? / how are things?"
+    },
+    {
+     "id": "c1-v38",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "ṣúgbọ́n",
+     "en": "but"
+    },
+    {
+     "id": "c1-v39",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "tàbí",
+     "en": "or"
+    },
+    {
+     "id": "c1-v40",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "kí ni?",
+     "en": "what?"
+    },
+    {
+     "id": "c1-v41",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "kí ni nńkan?",
+     "en": "how are things?"
+    },
+    {
+     "id": "c1-v42",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé àlàáfíà ni?",
+     "en": "how are you/ how are things?"
+    },
+    {
+     "id": "c1-v43",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé dáadáa ni?",
+     "en": "how are you? How are things?"
+    },
+    {
+     "id": "c1-v44",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé nńkan ń lọ?",
+     "en": "are things are going well?"
+    },
+    {
+     "id": "c1-v45",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé wà á jókòó?",
+     "en": "would you like to sit down?"
+    },
+    {
+     "id": "c1-v46",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "àlàáfíà ni",
+     "en": "fine/I am fine/ things are fine/peace"
+    },
+    {
+     "id": "c1-v47",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "dáadáa ni",
+     "en": "I am fine"
+    },
+    {
+     "id": "c1-v48",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "káàbọ̀ o",
+     "en": "you are welcome"
+    },
+    {
+     "id": "c1-v49",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "kó o kí wọn",
+     "en": "greet them (members of your family)"
+    },
+    {
+     "id": "c1-v50",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "mo kàn sáré wá kí ẹ ni",
+     "en": "I quickly came to say ‘hi’ to you"
+    },
+    {
+     "id": "c1-v51",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó rẹ̀ mí díẹ̀",
+     "en": "I am a little tired"
+    },
+    {
+     "id": "c1-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Ìkíni (Greetings)",
+     "explanation": "Greetings are formed with kú + a time of day or occasion, and contract: kú + àárọ̀ → káàárọ̀ 'good morning'. Add Ẹ before a greeting to show respect or address more than one person (Ẹ káàárọ̀). The times of day are àárọ̀ (morning), ọ̀sán (afternoon), ìrọ̀lẹ́ (early evening) and alẹ́ (night).",
+     "examples": [
+      {
+       "yo": "kú + àárọ̀ → káàárọ̀",
+       "en": "good morning"
+      },
+      {
+       "yo": "kú + ọ̀sán → káàsán",
+       "en": "good afternoon"
+      },
+      {
+       "yo": "kú + ìrọ̀lẹ́ → kúùrọ̀lẹ́",
+       "en": "good early evening"
+      },
+      {
+       "yo": "kú + alẹ́ → káalẹ́",
+       "en": "good evening"
+      },
+      {
+       "yo": "kú + òtútù → kú òtútù",
+       "en": "a greeting said when the weather is cold"
+      },
+      {
+       "yo": "kú + ọyẹ́ → kú ọyẹ́",
+       "en": "a greeting for the Harmattan Season"
+      },
+      {
+       "yo": "kú + òjò → kú òjò",
+       "en": "a greeting for the rainy season"
+      },
+      {
+       "yo": "kú +ọ̀gìnnìntìn → kú ọ̀gìnnìntìn",
+       "en": "a greeting for damp weather"
+      },
+      {
+       "yo": "kú + iṣẹ́ → kúuṣẹ́",
+       "en": "a greeting said to someone working"
+      },
+      {
+       "yo": "kú + ìjókòó → kúùjókòó",
+       "en": "a greeting said to someone seated"
+      }
+     ]
+    },
+    {
+     "id": "c1-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Verbs",
+     "explanation": "Yorùbá verbs are not inflected: the same form serves every person and tense (lọ = go/went). Negation uses kò before the verb: Kò lọ 'He/she did not go'. The progressive uses ń before the verb: Ó ń sùn 'He/she is sleeping'.",
+     "examples": [
+      {
+       "yo": "jẹ",
+       "en": "to eat"
+      },
+      {
+       "yo": "kà",
+       "en": "to read"
+      },
+      {
+       "yo": "ṣe",
+       "en": "to do"
+      },
+      {
+       "yo": "fẹ́",
+       "en": "to want"
+      },
+      {
+       "yo": "ní",
+       "en": "to have"
+      },
+      {
+       "yo": "wá",
+       "en": "to come"
+      },
+      {
+       "yo": "lọ",
+       "en": "to go"
+      },
+      {
+       "yo": "sùn",
+       "en": "to sleep"
+      },
+      {
+       "yo": "jó",
+       "en": "to dance"
+      },
+      {
+       "yo": "fò",
+       "en": "to jump"
+      }
+     ]
+    },
+    {
+     "id": "c1-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Subject Pronouns",
+     "explanation": "Short subject pronouns: mo (I), o (you sg.), ó (he/she/it), a (we), ẹ (you pl./respect), wọ́n (they/respect). Emphatic pronouns: èmi, ìwọ, òun, àwa, ẹ̀yin, àwọn.",
+     "examples": [
+      {
+       "yo": "3rd pers. Ó She/He/It 3rd pers. Wọ́n",
+       "en": "They"
+      },
+      {
+       "yo": "2nd pers. Ìwọ You 2nd pers. Ẹ̀yin",
+       "en": "You"
+      },
+      {
+       "yo": "3rd pers. Òun She/He/It 3rd pers. Àwọn",
+       "en": "They"
+      },
+      {
+       "yo": "Èmi ń lọ / Mò ń lọ",
+       "en": "I am going"
+      },
+      {
+       "yo": "Ẹ̀yin ń sùn / Ẹ̀ ń sùn",
+       "en": "You (pl) are sleeping"
+      },
+      {
+       "yo": "ẹ káàbọ̀",
+       "en": "a greeting to welcome someone older than you"
+      },
+      {
+       "yo": "A: Awọn àbúrò rẹ ńkọ́?",
+       "en": "How are your younger siblings?"
+      },
+      {
+       "yo": "B: Wọ́n wà.",
+       "en": "They are fine."
+      },
+      {
+       "yo": "A: Bàbáà rẹ ńkọ́?",
+       "en": "How is your father?"
+      },
+      {
+       "yo": "Èmi ń lọ I am going Èmí lọ",
+       "en": "I went"
+      }
+     ]
+    },
+    {
+     "id": "c1-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Interrogatives 'Kí ni?' and 'Ṣé?'",
+     "explanation": "Kí ni…? asks 'what is…?' (Kí ni orúkọ rẹ? 'What is your name?'). Ṣé turns a statement into a yes/no question: Ṣé dáadáa ni? 'Are you fine?' Answer with bẹ́ẹ̀ ni (yes) or bẹ́ẹ̀ kọ́ / ó tì (no).",
+     "examples": [
+      {
+       "yo": "Q: Kí ni o fẹ́?",
+       "en": "What do you (sg.) want?"
+      },
+      {
+       "yo": "R: Mo fẹ́ owó.",
+       "en": "I want money."
+      },
+      {
+       "yo": "Q: Kí ni orúkọọ̀ rẹ?",
+       "en": "What is your (sg.) name?"
+      },
+      {
+       "yo": "Q: Ṣé wọ́n fẹ́ owó?",
+       "en": "Do they want money?"
+      },
+      {
+       "yo": "R: Bẹ́ẹ̀ ni, wọ́n fẹ́ owó.",
+       "en": "Yes, they want money."
+      },
+      {
+       "yo": "Q: Ṣé o fẹ́ jẹun?",
+       "en": "Do you want to eat?"
+      },
+      {
+       "yo": "R: Bẹ́ẹ́ ni, mo fẹ́ jẹun.",
+       "en": "Yes, I want to eat."
+      },
+      {
+       "yo": "Wálé fẹ́ jẹ ìrẹsì, ó sì fẹ́",
+       "en": "omi."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "yorubaTitle": "Orí Kejì",
+   "title": "My Classroom",
+   "objectives": [
+    "About possessive pronouns",
+    "How to use the plural marker",
+    "About classroom objects",
+    "How to count from 0-40"
+   ],
+   "items": [
+    {
+     "id": "c2-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àga",
+     "en": "chair"
+    },
+    {
+     "id": "c2-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àjà",
+     "en": "ceiling"
+    },
+    {
+     "id": "c2-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àpẹẹrẹ",
+     "en": "example"
+    },
+    {
+     "id": "c2-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àròpọ̀",
+     "en": "the sum of"
+    },
+    {
+     "id": "c2-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àwòrán",
+     "en": "picture"
+    },
+    {
+     "id": "c2-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹfun-ìkọ̀wé, ṣọ́ọ̀kì",
+     "en": "chalk"
+    },
+    {
+     "id": "c2-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fáìlì",
+     "en": "file"
+    },
+    {
+     "id": "c2-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fèrèsé",
+     "en": "window"
+    },
+    {
+     "id": "c2-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fídíò",
+     "en": "video"
+    },
+    {
+     "id": "c2-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gbólóhùn",
+     "en": "sentence"
+    },
+    {
+     "id": "c2-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdánwò",
+     "en": "exam"
+    },
+    {
+     "id": "c2-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ilé",
+     "en": "house"
+    },
+    {
+     "id": "c2-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ilẹ̀kùn",
+     "en": "door"
+    },
+    {
+     "id": "c2-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iná",
+     "en": "light"
+    },
+    {
+     "id": "c2-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìrésà, ìpàwérẹ́",
+     "en": "eraser"
+    },
+    {
+     "id": "c2-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìṣirò",
+     "en": "mathematics"
+    },
+    {
+     "id": "c2-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìwé-ìkọ̀wé",
+     "en": "notebook"
+    },
+    {
+     "id": "c2-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìwée gírámà",
+     "en": "grammar book"
+    },
+    {
+     "id": "c2-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìwé-ìtumọ̀",
+     "en": "dictionary"
+    },
+    {
+     "id": "c2-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kííbọọ̀dù, àtẹ-ìtẹ̀wé",
+     "en": "keyboard"
+    },
+    {
+     "id": "c2-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kọ̀ńpútà, ẹ̀rọ ayára-bí-àṣá",
+     "en": "computer"
+    },
+    {
+     "id": "c2-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "lọ́pọ̀lọpọ̀",
+     "en": "very much"
+    },
+    {
+     "id": "c2-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "máòsì",
+     "en": "mouse"
+    },
+    {
+     "id": "c2-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mọ́nítọ̀",
+     "en": "monitor"
+    },
+    {
+     "id": "c2-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "nńkan",
+     "en": "something"
+    },
+    {
+     "id": "c2-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "nọ́ńbà",
+     "en": "number"
+    },
+    {
+     "id": "c2-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ògiri",
+     "en": "wall"
+    },
+    {
+     "id": "c2-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀jọ̀gbọ́n",
+     "en": "a professor"
+    },
+    {
+     "id": "c2-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀la",
+     "en": "tomorrow"
+    },
+    {
+     "id": "c2-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọlọ́pàá",
+     "en": "police"
+    },
+    {
+     "id": "c2-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "olùwà",
+     "en": "subject"
+    },
+    {
+     "id": "c2-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pàjáwìrì",
+     "en": "emergency"
+    },
+    {
+     "id": "c2-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "panápaná",
+     "en": "fire fighter"
+    },
+    {
+     "id": "c2-v34",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pátákó-ìkọ̀wé",
+     "en": "chalkboard"
+    },
+    {
+     "id": "c2-v35",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pẹ́ẹ̀nì",
+     "en": "pen"
+    },
+    {
+     "id": "c2-v36",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pẹ́ńsùlù",
+     "en": "pencil"
+    },
+    {
+     "id": "c2-v37",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "rárá",
+     "en": "no"
+    },
+    {
+     "id": "c2-v38",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "rúlà, ìfàlà",
+     "en": "ruler"
+    },
+    {
+     "id": "c2-v39",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "síídiì, àwo-mọ́ńbé",
+     "en": "CD"
+    },
+    {
+     "id": "c2-v40",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tábìlì",
+     "en": "table"
+    },
+    {
+     "id": "c2-v41",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tábìlì ọmọ ilé-ẹ̀kọ́, tábìlì ìkọ̀wé",
+     "en": "desk"
+    },
+    {
+     "id": "c2-v42",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tẹlifóònù",
+     "en": "telephone"
+    },
+    {
+     "id": "c2-v43",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tẹlifíṣàn, ẹ̀rọ móhùn-máwòrán",
+     "en": "television"
+    },
+    {
+     "id": "c2-v44",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "yàrá-ìkẹ́kọ̀ọ́, kíláàsì",
+     "en": "classroom"
+    },
+    {
+     "id": "c2-v45",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "yunifásítì",
+     "en": "University"
+    },
+    {
+     "id": "c2-v46",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "akẹ́kọ̀ọ́ obìnrin",
+     "en": "a female student"
+    },
+    {
+     "id": "c2-v47",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "akẹ́kọ̀ọ́ ọkùnrin",
+     "en": "a male student"
+    },
+    {
+     "id": "c2-v48",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "apẹ̀rẹ̀ ìdalẹ̀nùsí",
+     "en": "waste basket"
+    },
+    {
+     "id": "c2-v49",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bébà àjákọ",
+     "en": "piece of paper"
+    },
+    {
+     "id": "c2-v50",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "fèrèsé aláràbarà",
+     "en": "window with designed"
+    },
+    {
+     "id": "c2-v51",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "gbogboo yín",
+     "en": "all of you"
+    },
+    {
+     "id": "c2-v52",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìlẹ̀kùn aláràbarà",
+     "en": "door with design"
+    },
+    {
+     "id": "c2-v53",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "iná ìlẹ́tíríìkì",
+     "en": "electric light"
+    },
+    {
+     "id": "c2-v54",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "máàpù àgbáyé",
+     "en": "world map"
+    },
+    {
+     "id": "c2-v55",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "túwò, yẹ̀wò",
+     "en": "to examine, to check"
+    },
+    {
+     "id": "c2-v56",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "yangàn",
+     "en": "boast of"
+    },
+    {
+     "id": "c2-v57",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba ìṣirò",
+     "en": "get maths right"
+    },
+    {
+     "id": "c2-v58",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "mú ìwé ìṣiròo yín jáde",
+     "en": "bring out your math books"
+    },
+    {
+     "id": "c2-v59",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ṣe ìṣirò kìíní",
+     "en": "solve the first math problem"
+    },
+    {
+     "id": "c2-v60",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "tó tèlé ìyẹn",
+     "en": "that follows (that one)"
+    },
+    {
+     "id": "c2-v61",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé .....gba ìṣiròo rẹ̀?",
+     "en": "did ….get the math problem right?"
+    },
+    {
+     "id": "c2-v62",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé …… gbà á?",
+     "en": "did ….. get it right?"
+    },
+    {
+     "id": "c2-v63",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ẹ dákẹ́ ariwo",
+     "en": "(You all) be quiet"
+    },
+    {
+     "id": "c2-v64",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ẹ ṣí ìwé yín sí ojú-ìwé",
+     "en": "open your books to"
+    },
+    {
+     "id": "c2-v65",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "o gba ... rẹ ṣámúṣámú",
+     "en": "you got your ... exactly right"
+    },
+    {
+     "id": "c2-v66",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ojú-ìwé karùnúnlélọ́gbọ̀n",
+     "en": "page 35"
+    },
+    {
+     "id": "c2-v67",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "o káre!",
+     "en": "good job"
+    },
+    {
+     "id": "c2-v68",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó ku ẹẹ̀sànán",
+     "en": "nine is left"
+    },
+    {
+     "id": "c2-v69",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó yẹ kí á tun ìṣiròo wa wò",
+     "en": "we need to review our math"
+    },
+    {
+     "id": "c2-v70",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ọ̀la ni ojọ́ ìdánwò",
+     "en": "tomorrow is exam day"
+    },
+    {
+     "id": "c2-v71",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "yọ ..............nínú",
+     "en": "take………..away from"
+    },
+    {
+     "id": "c2-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Possessive Pronouns",
+     "explanation": "Possessives follow the noun, whose final vowel lengthens: ìwéè mi 'my book', iléè rẹ̀ 'his/her house'. Forms: mi (my), rẹ/ẹ (your sg.), rẹ̀/ẹ̀ (his/her/its), wa (our), yín (your pl.), wọn (their). Wọn and yín also mark respect for elders and superiors.",
+     "examples": [
+      {
+       "yo": "ìwéè mi",
+       "en": "my book"
+      },
+      {
+       "yo": "ilée wọn",
+       "en": "their house"
+      },
+      {
+       "yo": "ojúu wa",
+       "en": "our eyes"
+      },
+      {
+       "yo": "ìyàwóò rẹ̀",
+       "en": "his wife"
+      },
+      {
+       "yo": "ìwàa yín",
+       "en": "your (sg./pl.) behavior"
+      },
+      {
+       "yo": "màmáà rẹ",
+       "en": "your (sg.) mother"
+      },
+      {
+       "yo": "1st pers. èmi I",
+       "en": "1st pers. Àwa we"
+      }
+     ]
+    },
+    {
+     "id": "c2-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "The plural marker 'àwọn'",
+     "explanation": "Nouns do not change form for number. Plurality is shown by placing àwọn before the noun: àwọn ìwé 'books', àwọn akẹ́kọ̀ọ́ 'students'.",
+     "examples": [
+      {
+       "yo": "Mo ri àwọn obìnrin náà lánàá",
+       "en": "I saw the women yesterday"
+      },
+      {
+       "yo": "Àwọn ilé nàá ń jó.",
+       "en": "The houses are burning"
+      },
+      {
+       "yo": "Àwọn ọkùnrin máa ń dé fìlà",
+       "en": "Men do wear hats"
+      },
+      {
+       "yo": "1b. Mo ri obìnrin náà lánàá",
+       "en": "I saw the woman yesterday"
+      },
+      {
+       "yo": "2b. Ilé nàá ń jó.",
+       "en": "The house is burning."
+      },
+      {
+       "yo": "Obìnrin kì í dé fìlà",
+       "en": "Women do not wear hats"
+      },
+      {
+       "yo": "Ọmọdé kì í sùn",
+       "en": "Children don’t sleep"
+      },
+      {
+       "yo": "Àwọn ilé",
+       "en": "Houses"
+      },
+      {
+       "yo": "Àwọn òbí",
+       "en": "Parents"
+      },
+      {
+       "yo": "Àwọn ọmọdé",
+       "en": "Children"
+      }
+     ]
+    },
+    {
+     "id": "c2-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Nínú Kíláàsì (In the Classroom)",
+     "explanation": "Classroom objects and commands. The preposition ní 'in/at/on' contracts with nouns: ní + inú → nínú 'inside', ní + ilé → nílé 'at home'. Common commands: dìde 'stand up', jókòó 'sit down', tẹ́tí sílẹ̀ 'listen'.",
+     "examples": [
+      {
+       "yo": "Ní + abẹ́ → lábẹ́",
+       "en": "under"
+      },
+      {
+       "yo": "Ní + iwájú → níwájú",
+       "en": "in front of"
+      },
+      {
+       "yo": "Ní + ẹ̀yìn → lẹ́yìn",
+       "en": "behind"
+      },
+      {
+       "yo": "Ní + àárín → láàárín",
+       "en": "in between / in the middle of"
+      },
+      {
+       "yo": "Ní + inú → nínú",
+       "en": "inside"
+      },
+      {
+       "yo": "Ní + ẹ̀gbẹ́ → lẹ́gbẹ̀ẹ́",
+       "en": "beside"
+      },
+      {
+       "yo": "Ní + orí → lórí",
+       "en": "on top of"
+      },
+      {
+       "yo": "súnmọ́",
+       "en": "near"
+      },
+      {
+       "yo": "jínnà sí",
+       "en": "far from"
+      },
+      {
+       "yo": "Níbo ni…..?",
+       "en": "Where is….?"
+      }
+     ]
+    },
+    {
+     "id": "c2-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Nọ́ńbà (Numbers 0–40)",
+     "explanation": "Counting forms: oókan (1), eéjì (2), ẹẹ́ta (3), ẹẹ́rin (4), aárùnún (5), ẹẹ́fà (6), eéje (7), ẹẹ́jọ (8), ẹẹ́sànán (9), ẹẹ́wàá (10)… ogún (20), ọgbọ̀n (30), ogójì (40). Qualifying numerals take m-: ìwé mẹ́ta 'three books'.",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "yorubaTitle": "Orí Kẹta",
+   "title": "Mark the Date",
+   "objectives": [
+    "How to count from 40 to 100",
+    "How to expess the future",
+    "How to ask how much…, how many..., and what is the sum of?",
+    "How to identify the days of the week and months of the year"
+   ],
+   "items": [
+    {
+     "id": "c3-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "bàtà",
+     "en": "shoe"
+    },
+    {
+     "id": "c3-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èṣí",
+     "en": "last year"
+    },
+    {
+     "id": "c3-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdúnta",
+     "en": "three years ago"
+    },
+    {
+     "id": "c3-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìbéèrè",
+     "en": "question"
+    },
+    {
+     "id": "c3-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ìdáhùn",
+     "en": "answer"
+    },
+    {
+     "id": "c3-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ìpínlẹ̀",
+     "en": "state"
+    },
+    {
+     "id": "c3-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìtàn",
+     "en": "story"
+    },
+    {
+     "id": "c3-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "koríko",
+     "en": "grass"
+    },
+    {
+     "id": "c3-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òmìnira",
+     "en": "independence"
+    },
+    {
+     "id": "c3-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "orílẹ̀-èdè",
+     "en": "country"
+    },
+    {
+     "id": "c3-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oṣù",
+     "en": "month"
+    },
+    {
+     "id": "c3-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọdún",
+     "en": "year"
+    },
+    {
+     "id": "c3-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọjọ́",
+     "en": "day"
+    },
+    {
+     "id": "c3-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀la",
+     "en": "tomorrow"
+    },
+    {
+     "id": "c3-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọlọ́pàá",
+     "en": "police officer"
+    },
+    {
+     "id": "c3-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀túnla",
+     "en": "day after tomorrow"
+    },
+    {
+     "id": "c3-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "panápaná",
+     "en": "fire station"
+    },
+    {
+     "id": "c3-v18",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìwée gírámàa Yorùbá",
+     "en": "Yorùbá grammar book"
+    },
+    {
+     "id": "c3-v19",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọdún márùnún sẹ́yìn",
+     "en": "five years ago"
+    },
+    {
+     "id": "c3-v20",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjọ́ mẹ́rin òní",
+     "en": "three days from now"
+    },
+    {
+     "id": "c3-v21",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjọ́ márùnún òní",
+     "en": "four days from now"
+    },
+    {
+     "id": "c3-v22",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjọ́ mẹ́fà òní",
+     "en": "five days from now"
+    },
+    {
+     "id": "c3-v23",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjọ́ wo…?",
+     "en": "what/which day?"
+    },
+    {
+     "id": "c3-v24",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọdún tí ó kọjá",
+     "en": "last year"
+    },
+    {
+     "id": "c3-v25",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rà",
+     "en": "to buy"
+    },
+    {
+     "id": "c3-v26",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ni",
+     "en": "is"
+    },
+    {
+     "id": "c3-v27",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "yìí",
+     "en": "this"
+    },
+    {
+     "id": "c3-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Nọ́ńbà (Numbers 40–100)",
+     "explanation": "Yorùbá counts in twenties: ogójì (40), àádọ́ta (50 = 60−10), ọgọ́ta (60), àádọ́rin (70), ọgọ́rin (80), àádọ́rùnún (90), ọgọ́rùnún (100). Tens between are formed by subtraction from the next twenty.",
+     "examples": []
+    },
+    {
+     "id": "c3-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Future Tense 'máa'",
+     "explanation": "The future is marked with máa (or yóò) before the verb: Màá lọ / Èmi máa lọ 'I will go'; Wọ́n máa jẹun 'They will eat'.",
+     "examples": [
+      {
+       "yo": "Èmí máa lọ /Mo máa lọ",
+       "en": "I will go"
+      },
+      {
+       "yo": "Ìwọ́ máa lọ /O máa lọ",
+       "en": "You will go"
+      },
+      {
+       "yo": "Òún máa lọ /Ó máa lọ",
+       "en": "He/She/It will go"
+      },
+      {
+       "yo": "Àwá máa lọ /A máa lọ",
+       "en": "We will go"
+      },
+      {
+       "yo": "Ẹ̀yín máa lọ /Ẹ máa lọ",
+       "en": "You all (or honorific singular) will go"
+      },
+      {
+       "yo": "Àwọ́n máa lọ /Wọ́n máa lọ",
+       "en": "They will go"
+      },
+      {
+       "yo": "Mà á lọ",
+       "en": "I will go"
+      },
+      {
+       "yo": "Wà á lọ",
+       "en": "You will go"
+      },
+      {
+       "yo": "Á á lọ",
+       "en": "He/She/It will go"
+      },
+      {
+       "yo": "À á lọ",
+       "en": "We will go"
+      }
+     ]
+    },
+    {
+     "id": "c3-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Days of the Week",
+     "explanation": "The seven days: Ọjọ́ Àìkú (Sunday), Ọjọ́ Ajé (Monday), Ọjọ́ Ìṣẹ́gun (Tuesday), Ọjọ́rú (Wednesday), Ọjọ́bọ̀ (Thursday), Ọjọ́ Ẹtì (Friday), Ọjọ́ Àbámẹ́ta (Saturday). Ọjọ́ 'day' precedes most names.",
+     "examples": [
+      {
+       "yo": "Wednesday: Ọjọ́rú",
+       "en": "day of confusion"
+      },
+      {
+       "yo": "Thursday: Ọjọ́bọ̀",
+       "en": "day of sacrifice"
+      }
+     ]
+    },
+    {
+     "id": "c3-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Months of the Year (Kàlẹ́ńdà Yorùbá)",
+     "explanation": "Months use oṣù 'month' + ordinal: Oṣù Kìíní 'January (first month)', Oṣù Kejì 'February', … Oṣù Kejìlá 'December (twelfth month)'.",
+     "examples": [
+      {
+       "yo": "Oṣù nínú Ọdún",
+       "en": "Months of the Year"
+      },
+      {
+       "yo": "Oṣù kejì ọdún (Èrèlé)",
+       "en": "second month of the year February"
+      },
+      {
+       "yo": "Oṣù kẹrin ọdún (Igbe)",
+       "en": "fourth month of the year April"
+      },
+      {
+       "yo": "Oṣù keje ọdún (Agẹmọ)",
+       "en": "seventh month of the year July"
+      },
+      {
+       "yo": "Oṣù kẹjọ ọdún (Ògún)",
+       "en": "eighth month of the year August"
+      },
+      {
+       "yo": "Oṣù kọkànlá ọdún (Belú)",
+       "en": "eleventh month of the year November"
+      },
+      {
+       "yo": "Oṣù kejìlá ọdún (Ọpẹ́)",
+       "en": "twelfth month of the year December"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "yorubaTitle": "Orí Kẹrin",
+   "title": "What Time Do We Meet?",
+   "objectives": [
+    "How to express quantity using ‘mélòó’",
+    "How to ask time using ‘mélòó’",
+    "How to express your age using ‘mélòó’",
+    "Colors in Yorùbá Culture"
+   ],
+   "items": [
+    {
+     "id": "c4-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èédú",
+     "en": "charcoal"
+    },
+    {
+     "id": "c4-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ewé",
+     "en": "leaf (green color)"
+    },
+    {
+     "id": "c4-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gààrí",
+     "en": "cassava grains"
+    },
+    {
+     "id": "c4-v4",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ibi ọjọ́-ìbí",
+     "en": "birthday venue"
+    },
+    {
+     "id": "c4-v5",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìsìn àgbà",
+     "en": "adults’ worship"
+    },
+    {
+     "id": "c4-v6",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìsìn ọmọdé",
+     "en": "children’s service/worship"
+    },
+    {
+     "id": "c4-v7",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "bẹ̀rẹ̀",
+     "en": "to start"
+    },
+    {
+     "id": "c4-v8",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "dé",
+     "en": "to arrive"
+    },
+    {
+     "id": "c4-v9",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fẹ́",
+     "en": "to want/wish"
+    },
+    {
+     "id": "c4-v10",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jí",
+     "en": "to wake up"
+    },
+    {
+     "id": "c4-v11",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "lọ",
+     "en": "to go"
+    },
+    {
+     "id": "c4-v12",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "máa",
+     "en": "will"
+    },
+    {
+     "id": "c4-v13",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ní",
+     "en": "to have"
+    },
+    {
+     "id": "c4-v14",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wá",
+     "en": "to come"
+    },
+    {
+     "id": "c4-v15",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wà",
+     "en": "to be or to exist"
+    },
+    {
+     "id": "c4-v16",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "bá mi ṣeré",
+     "en": "play with me"
+    },
+    {
+     "id": "c4-v17",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gbá ilẹ̀",
+     "en": "to sweep the floor"
+    },
+    {
+     "id": "c4-v18",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jẹun ọ̀sán",
+     "en": "to eat lunch"
+    },
+    {
+     "id": "c4-v19",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jẹun alẹ́",
+     "en": "to eat dinner"
+    },
+    {
+     "id": "c4-v20",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jẹ́ kí á pàdé",
+     "en": "let us meet"
+    },
+    {
+     "id": "c4-v21",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "sọ fún…",
+     "en": "to tell…(e.g. someone)"
+    },
+    {
+     "id": "c4-v22",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "búlúù",
+     "en": "blue"
+    },
+    {
+     "id": "c4-v23",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "dúdú",
+     "en": "black"
+    },
+    {
+     "id": "c4-v24",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "funfun",
+     "en": "white"
+    },
+    {
+     "id": "c4-v25",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "píìnkì",
+     "en": "pink"
+    },
+    {
+     "id": "c4-v26",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "yẹn",
+     "en": "that"
+    },
+    {
+     "id": "c4-v27",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "yẹ́lò",
+     "en": "yellow"
+    },
+    {
+     "id": "c4-v28",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "bíi / bí",
+     "en": "like"
+    },
+    {
+     "id": "c4-v29",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "díẹ́",
+     "en": "a little"
+    },
+    {
+     "id": "c4-v30",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "ganan ni",
+     "en": "a lot (very)"
+    },
+    {
+     "id": "c4-v31",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "kúkú",
+     "en": "just"
+    },
+    {
+     "id": "c4-v32",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "tí..bá",
+     "en": "if"
+    },
+    {
+     "id": "c4-v33",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "nítorí pé",
+     "en": "because"
+    },
+    {
+     "id": "c4-v34",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní ẹ̀yìn ọ̀sẹ̀",
+     "en": "at the end of the week"
+    },
+    {
+     "id": "c4-v35",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní ọ̀dọ̀ Akin",
+     "en": "at Akin’s place"
+    },
+    {
+     "id": "c4-v36",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "lójoojúmọ́",
+     "en": "everyday"
+    },
+    {
+     "id": "c4-v37",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "lẹ́yìn náà",
+     "en": "following that /after that"
+    },
+    {
+     "id": "c4-v38",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "Nígbà wo ni ?",
+     "en": "when?"
+    },
+    {
+     "id": "c4-v39",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó dára",
+     "en": "that’s fine"
+    },
+    {
+     "id": "c4-v40",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó funfun bí eérú",
+     "en": "It is white like ashes (grey)"
+    },
+    {
+     "id": "c4-v41",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "Olórí ìlú Àmẹ́ríkà",
+     "en": "The President of the United States of America"
+    },
+    {
+     "id": "c4-v42",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ọmọ ọdún mélòó?",
+     "en": "how old?"
+    },
+    {
+     "id": "c4-v43",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "O ṣé",
+     "en": "thank you"
+    },
+    {
+     "id": "c4-v44",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó ti pẹ́ jù",
+     "en": "It is too late"
+    },
+    {
+     "id": "c4-v45",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó ti yá jù",
+     "en": "It is too early"
+    },
+    {
+     "id": "c4-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "The Interrogative 'Mélòó'",
+     "explanation": "Mélòó asks 'how many?' after a (singular) noun: Ìwé mélòó? 'How many books?' Answers use qualifying numerals: ìwé mẹ́ta 'three books'.",
+     "examples": [
+      {
+       "yo": "oókan kan",
+       "en": "one"
+      },
+      {
+       "yo": "Ìwé mélòó ni ó wà ní oríi tábìlì?",
+       "en": "How many books are on the table?"
+      },
+      {
+       "yo": "Ìwé mẹ́ta ni ó wà lóríi tábìlì",
+       "en": "There are three books on the table."
+      },
+      {
+       "yo": "ọmọ mẹ́tàdínlógún",
+       "en": "seveenteen children"
+      },
+      {
+       "yo": "àga méjì",
+       "en": "two chairs"
+      },
+      {
+       "yo": "ìwé mẹ́tàlá",
+       "en": "thirteen books"
+      },
+      {
+       "yo": "ogún ìyàwó",
+       "en": "twenty wives"
+      },
+      {
+       "yo": "àádọ́ta ìgbà",
+       "en": "fifty times"
+      },
+      {
+       "yo": "ọgọ́rùnún ọdún",
+       "en": "hundred years"
+      },
+      {
+       "yo": "ọgọ́tà ilé",
+       "en": "sixty houses"
+      }
+     ]
+    },
+    {
+     "id": "c4-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Aago mélòó ni ó lù? (What time is it?)",
+     "explanation": "Time is asked with Aago mélòó ni ó lù? 'What time has struck?' Answers: aago méje (7 o'clock); ààbọ̀ 'half past' (aago méje àábọ̀); ìṣẹ́jú 'minute' with lé 'past' and kù 'to': ó ku ìṣẹ́jú mẹ́wàá kí aago mẹ́jọ 'ten to eight'.",
+     "examples": [
+      {
+       "yo": "àárọ̀",
+       "en": "from about 4:00am to 11:59 am"
+      },
+      {
+       "yo": "ọ̀sán",
+       "en": "from about noon to 4:59 pm"
+      },
+      {
+       "yo": "ìrọ̀lẹ́",
+       "en": "from about 5:00 pm to 6:59 pm"
+      },
+      {
+       "yo": "alẹ́",
+       "en": "from about 7:00 pm to 10:00 or 11:59 pm"
+      },
+      {
+       "yo": "Dúpẹ́:",
+       "en": "_______________________"
+      },
+      {
+       "yo": "Tósìn:",
+       "en": "_______________________"
+      },
+      {
+       "yo": "Bàọ́lọ́jì",
+       "en": "Biology"
+      },
+      {
+       "yo": "Kẹ́mísìrì",
+       "en": "Chemistry"
+      },
+      {
+       "yo": "Físíìsì",
+       "en": "Physics"
+      },
+      {
+       "yo": "Èdèe Faransé",
+       "en": "French language"
+      }
+     ]
+    },
+    {
+     "id": "c4-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Asking for Age",
+     "explanation": "Age uses ọdún 'year': Ọmọ ọdún mélòó ni ọ́? 'How old are you?' — Ọmọ ọdún mẹ́rìndínlógún ni mí 'I am sixteen years old'.",
+     "examples": []
+    },
+    {
+     "id": "c4-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Àwọn Àwọ̀ (Colors)",
+     "explanation": "Core color terms: funfun 'white', dúdú 'black/dark', pupa 'red/light-complexioned'. Other colors are described with phrases, e.g. àwọ̀ ewé 'leaf-colored (green)', àwọ̀ ọ̀run 'sky-colored (blue)'.",
+     "examples": [
+      {
+       "yo": "Ènìyàn dúdú",
+       "en": "A Black person"
+      },
+      {
+       "yo": "Ènìyàn funfun",
+       "en": "A White person"
+      },
+      {
+       "yo": "Ènìyàn pupa",
+       "en": "A light skinned person"
+      },
+      {
+       "yo": "búlúù",
+       "en": "blue"
+      },
+      {
+       "yo": "yẹ́lò",
+       "en": "yellow"
+      },
+      {
+       "yo": "píìńkì",
+       "en": "pink"
+      },
+      {
+       "yo": "Ó dúdú díẹ̀",
+       "en": "S/he is not very dark"
+      },
+      {
+       "yo": "Pupa Dúdú",
+       "en": "Funfun"
+      },
+      {
+       "yo": "Ó dúdú bí ewé",
+       "en": "S/he/ It is black/dark like a leaf (green color)"
+      },
+      {
+       "yo": "Ó dúdú bí èédú",
+       "en": "S/he/ it is dark/black like charcoal"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "yorubaTitle": "Orí Karùnún",
+   "title": "My Family Tree",
+   "objectives": [
+    "How to describe people by using the verbs ‘jẹ́’, ‘ni’",
+    "How to use the negation ‘kọ́’",
+    "How to use the interrogative ‘ta ni’",
+    "How to describe one’s family"
+   ],
+   "items": [
+    {
+     "id": "c5-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aáwọ̀",
+     "en": "differences"
+    },
+    {
+     "id": "c5-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àbúrò",
+     "en": "younger sibling"
+    },
+    {
+     "id": "c5-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbà",
+     "en": "older person"
+    },
+    {
+     "id": "c5-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "agbolé",
+     "en": "compound"
+    },
+    {
+     "id": "c5-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àdúgbò",
+     "en": "neighborhood"
+    },
+    {
+     "id": "c5-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbàlagbà",
+     "en": "older person"
+    },
+    {
+     "id": "c5-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "agbẹjọ́rò",
+     "en": "lawyer"
+    },
+    {
+     "id": "c5-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àkójọpọ̀",
+     "en": "collection"
+    },
+    {
+     "id": "c5-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "akẹ́kọ̀ọ́",
+     "en": "student"
+    },
+    {
+     "id": "c5-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àlàáfíà",
+     "en": "peace"
+    },
+    {
+     "id": "c5-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "apòògùn",
+     "en": "pharmacist"
+    },
+    {
+     "id": "c5-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àpọ́nlé",
+     "en": "respect"
+    },
+    {
+     "id": "c5-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ara",
+     "en": "body"
+    },
+    {
+     "id": "c5-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àṣà",
+     "en": "culture"
+    },
+    {
+     "id": "c5-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "baálé",
+     "en": "male head (of family)"
+    },
+    {
+     "id": "c5-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "burẹ́wà",
+     "en": "ugly"
+    },
+    {
+     "id": "c5-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "dókítà",
+     "en": "doctor"
+    },
+    {
+     "id": "c5-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀gbọ́n",
+     "en": "older sibling"
+    },
+    {
+     "id": "c5-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀kọ́",
+     "en": "studies"
+    },
+    {
+     "id": "c5-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀wà",
+     "en": "beans"
+    },
+    {
+     "id": "c5-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gbogbo",
+     "en": "all"
+    },
+    {
+     "id": "c5-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdàgbàsókè",
+     "en": "progress, development"
+    },
+    {
+     "id": "c5-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdọ̀bálẹ̀",
+     "en": "prostration"
+    },
+    {
+     "id": "c5-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdílé",
+     "en": "family (immediate)"
+    },
+    {
+     "id": "c5-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìlú",
+     "en": "town, city, country"
+    },
+    {
+     "id": "c5-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìgbàgbọ́",
+     "en": "belief"
+    },
+    {
+     "id": "c5-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "igun",
+     "en": "branch (of family)"
+    },
+    {
+     "id": "c5-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìpàdé",
+     "en": "meeting"
+    },
+    {
+     "id": "c5-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìṣègùn",
+     "en": "medicine"
+    },
+    {
+     "id": "c5-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìtumọ̀",
+     "en": "the meaning"
+    },
+    {
+     "id": "c5-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kódà",
+     "en": "in fact"
+    },
+    {
+     "id": "c5-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mọ̀lẹ́bí",
+     "en": "family (extended)"
+    },
+    {
+     "id": "c5-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ojoojúmọ́",
+     "en": "every month"
+    },
+    {
+     "id": "c5-v34",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọkọ",
+     "en": "husband"
+    },
+    {
+     "id": "c5-v35",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "olórí",
+     "en": "head"
+    },
+    {
+     "id": "c5-v36",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oṣooṣù",
+     "en": "every month"
+    },
+    {
+     "id": "c5-v37",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀sọ̀ọ̀sẹ̀",
+     "en": "every week"
+    },
+    {
+     "id": "c5-v38",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oúnjẹ",
+     "en": "food"
+    },
+    {
+     "id": "c5-v39",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọjà",
+     "en": "market"
+    },
+    {
+     "id": "c5-v40",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọmọdé",
+     "en": "youth"
+    },
+    {
+     "id": "c5-v41",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pàjáwìrì",
+     "en": "emergency"
+    },
+    {
+     "id": "c5-v42",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "píparí",
+     "en": "settling of; completion of"
+    },
+    {
+     "id": "c5-v43",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "wúrà",
+     "en": "gold"
+    },
+    {
+     "id": "c5-v44",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bùrọ̀dáa lágbájá",
+     "en": "brother (of somebody)"
+    },
+    {
+     "id": "c5-v45",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ètò ẹbí",
+     "en": "organization of family"
+    },
+    {
+     "id": "c5-v46",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "dàrú",
+     "en": "confused, disorganized"
+    },
+    {
+     "id": "c5-v47",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fún",
+     "en": "for"
+    },
+    {
+     "id": "c5-v48",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbé",
+     "en": "to live in/at"
+    },
+    {
+     "id": "c5-v49",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbọdọ̀",
+     "en": "must"
+    },
+    {
+     "id": "c5-v50",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jẹ",
+     "en": "to eat"
+    },
+    {
+     "id": "c5-v51",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jẹ́",
+     "en": "to be"
+    },
+    {
+     "id": "c5-v52",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "kúnlẹ̀",
+     "en": "kneel down"
+    },
+    {
+     "id": "c5-v53",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "parí",
+     "en": "to complete"
+    },
+    {
+     "id": "c5-v54",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "sọ̀rọ̀",
+     "en": "to talk"
+    },
+    {
+     "id": "c5-v55",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "tí",
+     "en": "if"
+    },
+    {
+     "id": "c5-v56",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "túmọ̀ sí",
+     "en": "translates to/means/implies"
+    },
+    {
+     "id": "c5-v57",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wí pé",
+     "en": "said that"
+    },
+    {
+     "id": "c5-v58",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "bí tẹ̀lé",
+     "en": "to be born following"
+    },
+    {
+     "id": "c5-v59",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kóra jọ",
+     "en": "to get together"
+    },
+    {
+     "id": "c5-v60",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "lè dàrú",
+     "en": "can lead to chaos; can be disorganized"
+    },
+    {
+     "id": "c5-v61",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò ì tí ì",
+     "en": "has/have not yet"
+    },
+    {
+     "id": "c5-v62",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "máa ń wáyé",
+     "en": "always takes place"
+    },
+    {
+     "id": "c5-v63",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "lágbára",
+     "en": "to be strong"
+    },
+    {
+     "id": "c5-v64",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ṣe kókó",
+     "en": "is important; is crucial"
+    },
+    {
+     "id": "c5-v65",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ṣe pàtàkì",
+     "en": "is important"
+    },
+    {
+     "id": "c5-v66",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "ga",
+     "en": "tall"
+    },
+    {
+     "id": "c5-v67",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "kéré",
+     "en": "small"
+    },
+    {
+     "id": "c5-v68",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "kúrú",
+     "en": "short"
+    },
+    {
+     "id": "c5-v69",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "kọ̀ọ̀kan",
+     "en": "each"
+    },
+    {
+     "id": "c5-v70",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "sanra",
+     "en": "fat"
+    },
+    {
+     "id": "c5-v71",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "tóbi",
+     "en": "big"
+    },
+    {
+     "id": "c5-v72",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "tínínrín",
+     "en": "skinny (thin)"
+    },
+    {
+     "id": "c5-v73",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "péré",
+     "en": "only"
+    },
+    {
+     "id": "c5-v74",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "àti",
+     "en": "and"
+    },
+    {
+     "id": "c5-v75",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "nítorí èyí",
+     "en": "because of this"
+    },
+    {
+     "id": "c5-v76",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "nítorí pé",
+     "en": "because"
+    },
+    {
+     "id": "c5-v77",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "nípa",
+     "en": "about"
+    },
+    {
+     "id": "c5-v78",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "láàárín",
+     "en": "among, in the middle of"
+    },
+    {
+     "id": "c5-v79",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "nígbà mìíràn",
+     "en": "at other times"
+    },
+    {
+     "id": "c5-v80",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "mélòó ni",
+     "en": "how many?"
+    },
+    {
+     "id": "c5-v81",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ẹni tí ó bá juni lọ",
+     "en": "anyone that is older than oneself"
+    },
+    {
+     "id": "c5-v82",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ìdí èyí ni wí pé",
+     "en": "this/that is why"
+    },
+    {
+     "id": "c5-v83",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "kí ayé ó gún",
+     "en": "for the world to be in good shape"
+    },
+    {
+     "id": "c5-v84",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ọgbọ́n àti òye",
+     "en": "wisdom and understanding"
+    },
+    {
+     "id": "c5-v85",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ọ̀kan lára",
+     "en": "one of"
+    },
+    {
+     "id": "c5-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "The verbs 'jẹ́' and 'ni' (to be)",
+     "explanation": "Both mean 'to be'. Ni is equative and follows the complement: Olùkọ́ ni mí 'I am a teacher'. Jẹ́ precedes the complement: Mo jẹ́ olùkọ́. The negation of ni is kọ́: Olùkọ́ kọ́ ni mí 'I am not a teacher'.",
+     "examples": [
+      {
+       "yo": "Ladi jẹ́ dókítà.",
+       "en": "Ladi is a doctor."
+      },
+      {
+       "yo": "Mo jẹ́ akẹ́kọ̀ọ́.",
+       "en": "I am a student."
+      },
+      {
+       "yo": "Ẹ̀wà jẹ́ oúnjẹ tí ó dára láti jẹ",
+       "en": "Beans are good to eat."
+      },
+      {
+       "yo": "Màmáà mi jẹ́ ọmọ ogójì ọdún",
+       "en": "My mother is 40 years old"
+      },
+      {
+       "yo": "Kẹ́mi is 10 years old → Kẹ́mi",
+       "en": "is not 10 years old"
+      },
+      {
+       "yo": "Dókítà ni Ládi.",
+       "en": "Ladi is a doctor."
+      },
+      {
+       "yo": "Ọ̀la ni ọjà",
+       "en": "Tomorrow is market day."
+      },
+      {
+       "yo": "Ìyá ni wúrà",
+       "en": "Mother is gold."
+      },
+      {
+       "yo": "Àwọn ni màmáà mi.",
+       "en": "She is my mother."
+      },
+      {
+       "yo": "Àwọn kọ́ ni màmáà mi.",
+       "en": "She is not my mother."
+      }
+     ]
+    },
+    {
+     "id": "c5-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "The interrogative 'Ta ni'",
+     "explanation": "Ta ni…? asks 'who is…?': Ta ni èyí? 'Who is this?' — Bàbáà mi ni 'It is my father'.",
+     "examples": [
+      {
+       "yo": "Bàbá Ọlá: Ìyẹn dára o. Ta ni ọ̀rẹ́ẹ̀ rẹ?",
+       "en": "That’s nice. Who is your friend?"
+      },
+      {
+       "yo": "Láńre",
+       "en": "father."
+      }
+     ]
+    },
+    {
+     "id": "c5-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Ẹbí ní ìdílé Mẹ́ta (Three Generations of a Family)",
+     "explanation": "Family terms: bàbá 'father', ìyá/màmá 'mother', ẹ̀gbọ́n 'older sibling', àbúrò 'younger sibling' (no gender distinction), ọmọ 'child', ìyá àgbà 'grandmother', bàbá àgbà 'grandfather'. Seniority, not gender, organizes sibling terms.",
+     "examples": [
+      {
+       "yo": "Ẹbí",
+       "en": "Younger sibling"
+      },
+      {
+       "yo": "Bàbá",
+       "en": "Older sibling"
+      },
+      {
+       "yo": "Màmá",
+       "en": "Grandmother"
+      },
+      {
+       "yo": "Bàbáa bàbá",
+       "en": "Grandfather"
+      },
+      {
+       "yo": "Màmáa màmá",
+       "en": "Mother"
+      },
+      {
+       "yo": "Ẹ̀gbọ́n",
+       "en": "Father"
+      },
+      {
+       "yo": "Àbúrò",
+       "en": "Family"
+      },
+      {
+       "yo": "Ìkúnlẹ̀",
+       "en": "Respect"
+      },
+      {
+       "yo": "Ìdọ̀bálẹ̀",
+       "en": "Culture"
+      },
+      {
+       "yo": "Àpọ́nlé",
+       "en": "Compound"
+      }
+     ]
+    },
+    {
+     "id": "c5-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Describing People",
+     "explanation": "Descriptive verbs/adjectives: ga 'be tall', kúrú 'be short', tóbi 'be big', kéré 'be small', sanra 'be fat', tínrín 'be thin'; used directly as predicates: Ó ga 'He/she is tall'.",
+     "examples": [
+      {
+       "yo": "Àbúròò mi ọkùnrin lágbára",
+       "en": "My younger brother is strong"
+      },
+      {
+       "yo": "Ọ̀rẹ́ẹ̀ mi sanra",
+       "en": "My friend is fat"
+      },
+      {
+       "yo": "Mo kúrú",
+       "en": "I am short"
+      },
+      {
+       "yo": "Ẹ̀gbọ́nọ̀n mi tínínrín",
+       "en": "My older sibling is skinny"
+      },
+      {
+       "yo": "Bàbáà mi kúrú",
+       "en": "My father is short"
+      },
+      {
+       "yo": "Ọ̀rẹ́ẹ̀ mi tóbi",
+       "en": "My friend is big"
+      },
+      {
+       "yo": "Kò kúrú kò ga",
+       "en": "S/he is neither tall nor short"
+      },
+      {
+       "yo": "Ènìyàn dúdú",
+       "en": "a black person"
+      },
+      {
+       "yo": "Ènìyàn pupa",
+       "en": "a light-skinned person"
+      },
+      {
+       "yo": "Ènìyàn funfun",
+       "en": "a white person"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "yorubaTitle": "Orí Kẹfà",
+   "title": "Shop With Me",
+   "objectives": [
+    "The use of the interrogative ‘Eélòó",
+    "Oní-/Al-/Ẹl- /Ọl-",
+    "How to haggle",
+    "Numbers 100-3000"
+   ],
+   "items": [
+    {
+     "id": "c6-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aago",
+     "en": "clock/bell"
+    },
+    {
+     "id": "c6-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbàdo",
+     "en": "corn"
+    },
+    {
+     "id": "c6-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbẹ̀",
+     "en": "farmer"
+    },
+    {
+     "id": "c6-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbò",
+     "en": "ram"
+    },
+    {
+     "id": "c6-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àlùbọ́sà",
+     "en": "onion"
+    },
+    {
+     "id": "c6-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àmàlà",
+     "en": "yam floured meal"
+    },
+    {
+     "id": "c6-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aṣọ",
+     "en": "cloth/clothing"
+    },
+    {
+     "id": "c6-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ayò",
+     "en": "a game"
+    },
+    {
+     "id": "c6-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ewúrẹ́",
+     "en": "goat"
+    },
+    {
+     "id": "c6-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fìlà",
+     "en": "hat"
+    },
+    {
+     "id": "c6-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gààrí",
+     "en": "grain made from cassava"
+    },
+    {
+     "id": "c6-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìjọ̀gbọ̀n",
+     "en": "trouble"
+    },
+    {
+     "id": "c6-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ilá",
+     "en": "okra/okro"
+    },
+    {
+     "id": "c6-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìpolówó",
+     "en": "advertisement"
+    },
+    {
+     "id": "c6-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ìrìn-àjò",
+     "en": "journey"
+    },
+    {
+     "id": "c6-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "irú",
+     "en": "locust bean"
+    },
+    {
+     "id": "c6-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kẹ̀kẹ́",
+     "en": "bicycle"
+    },
+    {
+     "id": "c6-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "olóko",
+     "en": "farm owner"
+    },
+    {
+     "id": "c6-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òróró",
+     "en": "peanut oil/vegetable oil"
+    },
+    {
+     "id": "c6-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oúnjẹ",
+     "en": "food"
+    },
+    {
+     "id": "c6-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀gẹ̀dẹ̀",
+     "en": "plantain"
+    },
+    {
+     "id": "c6-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọjà",
+     "en": "market"
+    },
+    {
+     "id": "c6-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọjọ́",
+     "en": "day"
+    },
+    {
+     "id": "c6-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọkà / àmàlà",
+     "en": "meal made from yam flour"
+    },
+    {
+     "id": "c6-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀la",
+     "en": "tomorrow"
+    },
+    {
+     "id": "c6-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọlọ́jọ́",
+     "en": "periodic"
+    },
+    {
+     "id": "c6-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "màálù",
+     "en": "cow"
+    },
+    {
+     "id": "c6-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "méje-méje",
+     "en": "in sevens"
+    },
+    {
+     "id": "c6-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "sùúrù",
+     "en": "peace"
+    },
+    {
+     "id": "c6-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "wòsìwósì",
+     "en": "petty trading"
+    },
+    {
+     "id": "c6-v31",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àwọn ọjà kan",
+     "en": "some markets"
+    },
+    {
+     "id": "c6-v32",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "èlò ilé",
+     "en": "household items"
+    },
+    {
+     "id": "c6-v33",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹ̀kọ mímu",
+     "en": "pap"
+    },
+    {
+     "id": "c6-v34",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "erè oko",
+     "en": "farm produce"
+    },
+    {
+     "id": "c6-v35",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹ̀yà ọkọ̀",
+     "en": "car parts"
+    },
+    {
+     "id": "c6-v36",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìyá aláta",
+     "en": "female pepper seller"
+    },
+    {
+     "id": "c6-v37",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjà oko",
+     "en": "farm market/ village market"
+    },
+    {
+     "id": "c6-v38",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "tuntun",
+     "en": "new"
+    },
+    {
+     "id": "c6-v39",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó súnmọ́",
+     "en": "It’s near"
+    },
+    {
+     "id": "c6-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Interrogative 'Eélòó'",
+     "explanation": "Eélòó asks 'how much?': Eélòó ni? 'How much is it?' — Ogún náírà ni 'It is twenty naira (₦20)'.",
+     "examples": [
+      {
+       "yo": "Buyer: Eélòó ni ata yìí?",
+       "en": "How much is this pepper?"
+      },
+      {
+       "yo": "Seller: Ogúnun náírà ni.",
+       "en": "It is twenty naira (₦20)."
+      }
+     ]
+    },
+    {
+     "id": "c6-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Oní-/Al-/Ẹl-/Ọl- (owner/seller prefix)",
+     "explanation": "The prefix oní- 'owner/seller of' assimilates to the noun's first vowel: oní + ata → aláta 'pepper seller'; oní + ẹja → ẹlẹ́ja 'fish seller'; oní + ọtí → ọlọ́tí 'drink seller'; before i/consonant it stays oní-: oníṣòwò 'trader'.",
+     "examples": [
+      {
+       "yo": "oní + ata → aláta",
+       "en": "one who sells peppers"
+      },
+      {
+       "yo": "oní + ọmọ → ọlọ́mọ",
+       "en": "one who has a child"
+      },
+      {
+       "yo": "oní + ẹran → ẹlẹ́ran",
+       "en": "one who sells meat"
+      },
+      {
+       "yo": "oní + iṣu → oníṣu",
+       "en": "one who sells yams"
+      },
+      {
+       "yo": "oní + aago → aláago",
+       "en": "one who sells or fixes watches"
+      }
+     ]
+    },
+    {
+     "id": "c6-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Níná Ọjà (Haggling)",
+     "explanation": "Market bargaining: Eélòó ni? 'how much?', Ó wọ́n jù 'it is too expensive', Dín owó rẹ̀ kù 'reduce the price', Mo fẹ́ raà á 'I want to buy it'.",
+     "examples": []
+    },
+    {
+     "id": "c6-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Nọ́ńbà (Numbers 100–3000)",
+     "explanation": "Large numbers: ọgọ́rùnún (100), igba (200), ọ̀ọ́dúnrún (300), irinwó (400), ẹ̀ẹ́dẹ́gbẹ̀ta (500), ẹgbẹ̀ta (600), ẹgbẹ̀rún (1000), ẹgbàá (2000), ẹgbẹ̀ẹ́dógún (3000).",
+     "examples": [
+      {
+       "yo": "ẹgbàáta",
+       "en": "= 6,000 (2000 x 3)"
+      },
+      {
+       "yo": "ẹgbàárin",
+       "en": "= 8,000"
+      },
+      {
+       "yo": "ẹgbàáwàá or ọ̀kẹ́ kan",
+       "en": "= 20,000"
+      },
+      {
+       "yo": "ọ̀kẹ́ méjì",
+       "en": "= 40,000"
+      },
+      {
+       "yo": "àád",
+       "en": "= 180-10"
+      },
+      {
+       "yo": "ọgbọ̀n àti",
+       "en": "= 630"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "yorubaTitle": "Orí Keje",
+   "title": "Let's Find Something to Eat!",
+   "objectives": [
+    "How to express hunger and thirst",
+    "About food in the market",
+    "About daily meals",
+    "How to order food in a restaurant"
+   ],
+   "items": [
+    {
+     "id": "c7-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "adìẹ",
+     "en": "chicken"
+    },
+    {
+     "id": "c7-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alákọ̀wé",
+     "en": "educated person"
+    },
+    {
+     "id": "c7-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alárànán",
+     "en": "a type of fish"
+    },
+    {
+     "id": "c7-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àlejò",
+     "en": "visitor, guest"
+    },
+    {
+     "id": "c7-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbàdo",
+     "en": "corn"
+    },
+    {
+     "id": "c7-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "agbálùmọ̀",
+     "en": "wild cherry"
+    },
+    {
+     "id": "c7-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àkàrà",
+     "en": "food made from black eye peas/beans"
+    },
+    {
+     "id": "c7-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àlùbọ́sà",
+     "en": "onion"
+    },
+    {
+     "id": "c7-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àrọ̀",
+     "en": "drum (fish)"
+    },
+    {
+     "id": "c7-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àṣáró",
+     "en": "food made from yam"
+    },
+    {
+     "id": "c7-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ata",
+     "en": "pepper"
+    },
+    {
+     "id": "c7-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "awó",
+     "en": "guinea fowl"
+    },
+    {
+     "id": "c7-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "bọ̀ọ̀lì",
+     "en": "roasted plantain"
+    },
+    {
+     "id": "c7-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "bọ́tà",
+     "en": "butter"
+    },
+    {
+     "id": "c7-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "búrẹ́dì",
+     "en": "bread"
+    },
+    {
+     "id": "c7-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "dòdò",
+     "en": "fried plantain"
+    },
+    {
+     "id": "c7-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ègbo",
+     "en": "food made from corn"
+    },
+    {
+     "id": "c7-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èlùbọ́",
+     "en": "flour made from yam"
+    },
+    {
+     "id": "c7-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èpìyà",
+     "en": "tilapia (fish)"
+    },
+    {
+     "id": "c7-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èso",
+     "en": "fruit"
+    },
+    {
+     "id": "c7-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ewédú",
+     "en": "a type of leafy green"
+    },
+    {
+     "id": "c7-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀fọ́",
+     "en": "leafy green"
+    },
+    {
+     "id": "c7-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹja",
+     "en": "fish"
+    },
+    {
+     "id": "c7-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹran",
+     "en": "meat/beef"
+    },
+    {
+     "id": "c7-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀gúsí",
+     "en": "melon seed"
+    },
+    {
+     "id": "c7-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀bà",
+     "en": "food made from cassava"
+    },
+    {
+     "id": "c7-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀dọ̀",
+     "en": "liver"
+    },
+    {
+     "id": "c7-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀kọ",
+     "en": "a food made from corn"
+    },
+    {
+     "id": "c7-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹlẹ́dẹ̀",
+     "en": "pork(pig)"
+    },
+    {
+     "id": "c7-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹlẹran",
+     "en": "meat seller"
+    },
+    {
+     "id": "c7-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹmu",
+     "en": "palm wine"
+    },
+    {
+     "id": "c7-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀pà",
+     "en": "peanut"
+    },
+    {
+     "id": "c7-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀wà",
+     "en": "beans"
+    },
+    {
+     "id": "c7-v34",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹyin",
+     "en": "egg"
+    },
+    {
+     "id": "c7-v35",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fàájì",
+     "en": "fun"
+    },
+    {
+     "id": "c7-v36",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fáńtà",
+     "en": "fanta"
+    },
+    {
+     "id": "c7-v37",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fùfú",
+     "en": "food made from cassava"
+    },
+    {
+     "id": "c7-v38",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gààrí",
+     "en": "grains made from cassava"
+    },
+    {
+     "id": "c7-v39",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gbẹ̀gìrì",
+     "en": "bean stew"
+    },
+    {
+     "id": "c7-v40",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gúgúrú",
+     "en": "popcorn"
+    },
+    {
+     "id": "c7-v41",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "hámúbọ́gà",
+     "en": "hamburger"
+    },
+    {
+     "id": "c7-v42",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìbẹ́pẹ",
+     "en": "papaya"
+    },
+    {
+     "id": "c7-v43",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìgbákọ",
+     "en": "scoop"
+    },
+    {
+     "id": "c7-v44",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìgbín",
+     "en": "snail"
+    },
+    {
+     "id": "c7-v45",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìkọ́kọrẹ́",
+     "en": "wateryam porridge"
+    },
+    {
+     "id": "c7-v46",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ilá",
+     "en": "okra/okro"
+    },
+    {
+     "id": "c7-v47",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìnáwó",
+     "en": "ceremony"
+    },
+    {
+     "id": "c7-v48",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìpékeré",
+     "en": "plantain chips"
+    },
+    {
+     "id": "c7-v49",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìsọmọlórúkọ",
+     "en": "naming ceremony"
+    },
+    {
+     "id": "c7-v50",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìgbéyáwó",
+     "en": "marriage ceremony"
+    },
+    {
+     "id": "c7-v51",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìrẹsì/ráìsì",
+     "en": "rice"
+    },
+    {
+     "id": "c7-v52",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "irú",
+     "en": "locust bean"
+    },
+    {
+     "id": "c7-v53",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìsọ̀",
+     "en": "stall/booth"
+    },
+    {
+     "id": "c7-v54",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iṣu",
+     "en": "yam"
+    },
+    {
+     "id": "c7-v55",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iyán",
+     "en": "pounded yam/ food made from yam"
+    },
+    {
+     "id": "c7-v56",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kókà oòtù",
+     "en": "Quaker Oats"
+    },
+    {
+     "id": "c7-v57",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kídìnrín",
+     "en": "kidney"
+    },
+    {
+     "id": "c7-v58",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kóòkì",
+     "en": "Coca-Cola"
+    },
+    {
+     "id": "c7-v59",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kọfí",
+     "en": "coffee"
+    },
+    {
+     "id": "c7-v60",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "màálù",
+     "en": "cow meat (cow)"
+    },
+    {
+     "id": "c7-v61",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "màkàróni",
+     "en": "macaroni"
+    },
+    {
+     "id": "c7-v62",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "máńgòrò",
+     "en": "mango"
+    },
+    {
+     "id": "c7-v63",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mílíìkì",
+     "en": "milk"
+    },
+    {
+     "id": "c7-v64",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mínírà",
+     "en": "mineral/soft drinks"
+    },
+    {
+     "id": "c7-v65",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mọ́ínmọ́ín",
+     "en": "food made from black eye peas/beans"
+    },
+    {
+     "id": "c7-v66",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọbẹ̀",
+     "en": "stew"
+    },
+    {
+     "id": "c7-v67",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀bọ̀kún",
+     "en": "a type of fish"
+    },
+    {
+     "id": "c7-v68",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ògì",
+     "en": "food made from corn"
+    },
+    {
+     "id": "c7-v69",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ògúfe",
+     "en": "goat meat"
+    },
+    {
+     "id": "c7-v70",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òkèèrè",
+     "en": "foreign"
+    },
+    {
+     "id": "c7-v71",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òkèlè",
+     "en": "morsel"
+    },
+    {
+     "id": "c7-v72",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọjọ́-ìbí",
+     "en": "birthday"
+    },
+    {
+     "id": "c7-v73",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "omi",
+     "en": "water"
+    },
+    {
+     "id": "c7-v74",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníbàárà",
+     "en": "customer/buyer"
+    },
+    {
+     "id": "c7-v75",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀pẹ̀ òyìnbó",
+     "en": "pineapple"
+    },
+    {
+     "id": "c7-v76",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oríṣiríṣi",
+     "en": "different"
+    },
+    {
+     "id": "c7-v77",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òróró",
+     "en": "vegetable oil"
+    },
+    {
+     "id": "c7-v78",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọsàn",
+     "en": "orange"
+    },
+    {
+     "id": "c7-v79",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oúnjẹ",
+     "en": "food"
+    },
+    {
+     "id": "c7-v80",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "panla",
+     "en": "stockfish"
+    },
+    {
+     "id": "c7-v81",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pàtàkì",
+     "en": "important"
+    },
+    {
+     "id": "c7-v82",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pẹpusí",
+     "en": "Pepsi"
+    },
+    {
+     "id": "c7-v83",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pọfupọ́ọ̀fù",
+     "en": "puff-puff (fried snack made with flour)"
+    },
+    {
+     "id": "c7-v84",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "rárá",
+     "en": "no"
+    },
+    {
+     "id": "c7-v85",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tàtàsé/ tàtàṣé",
+     "en": "red pepper"
+    },
+    {
+     "id": "c7-v86",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tíì",
+     "en": "tea"
+    },
+    {
+     "id": "c7-v87",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "sandíìnì",
+     "en": "sardine"
+    },
+    {
+     "id": "c7-v88",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "sẹ́fúnọọ̀pù",
+     "en": "7 UP"
+    },
+    {
+     "id": "c7-v89",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "síríàlì",
+     "en": "Corn Flakes, Rice Krispies, etc"
+    },
+    {
+     "id": "c7-v90",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ṣàkì",
+     "en": "tripe"
+    },
+    {
+     "id": "c7-v91",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ṣáwá",
+     "en": "a type of smoked fish"
+    },
+    {
+     "id": "c7-v92",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ṣíìsì",
+     "en": "cheese"
+    },
+    {
+     "id": "c7-v93",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ṣinṣíìnì",
+     "en": "chinchin (fried snack made with flour)"
+    },
+    {
+     "id": "c7-v94",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ṣúgà",
+     "en": "sugar"
+    },
+    {
+     "id": "c7-v95",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tòlótòló",
+     "en": "turkey"
+    },
+    {
+     "id": "c7-v96",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tòmáàtì",
+     "en": "tomato"
+    },
+    {
+     "id": "c7-v97",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àmàlà iṣu",
+     "en": "food made from yam"
+    },
+    {
+     "id": "c7-v98",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àmàlàa / ọkàa lááfún",
+     "en": "food made from cassava"
+    },
+    {
+     "id": "c7-v99",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ara ẹran",
+     "en": "meat parts"
+    },
+    {
+     "id": "c7-v100",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àwọn aláṣọ",
+     "en": "fabric sellers"
+    },
+    {
+     "id": "c7-v101",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dokitọ pẹ́pẹ̀",
+     "en": "Dr. Pepper"
+    },
+    {
+     "id": "c7-v102",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "epo pupa",
+     "en": "palm oil"
+    },
+    {
+     "id": "c7-v103",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹja gbígbẹ",
+     "en": "dried/smoked fish"
+    },
+    {
+     "id": "c7-v104",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹja tùtú",
+     "en": "fresh fish"
+    },
+    {
+     "id": "c7-v105",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹran ìgbẹ́",
+     "en": "bush meat"
+    },
+    {
+     "id": "c7-v106",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹsẹ ẹran",
+     "en": "cow leg"
+    },
+    {
+     "id": "c7-v107",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé-ìtajà oúnjẹ",
+     "en": "restaurant"
+    },
+    {
+     "id": "c7-v108",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "jọ̀lọ́ọ̀fù ráìsì",
+     "en": "jollof rice"
+    },
+    {
+     "id": "c7-v109",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "màmá olóúnjẹ",
+     "en": "food seller"
+    },
+    {
+     "id": "c7-v110",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀gẹ̀dẹ̀ àgbagbà",
+     "en": "plantain"
+    },
+    {
+     "id": "c7-v111",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀gẹ̀dẹ̀ wẹ́wẹ́",
+     "en": "banana"
+    },
+    {
+     "id": "c7-v112",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ohun-èlò oúnjẹ",
+     "en": "food ingredients"
+    },
+    {
+     "id": "c7-v113",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "oúnjẹ olókèlè",
+     "en": "solid food (rolled into morsels)"
+    },
+    {
+     "id": "c7-v114",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọdún ìbílẹ̀",
+     "en": "traditional festival"
+    },
+    {
+     "id": "c7-v115",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọdún egúngún",
+     "en": "the masquerading festival"
+    },
+    {
+     "id": "c7-v116",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀bẹ̀ ilá",
+     "en": "okra stew"
+    },
+    {
+     "id": "c7-v117",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀bẹ̀ ẹ̀gúsí",
+     "en": "melon stew"
+    },
+    {
+     "id": "c7-v118",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọkà gidi/ àmàlà",
+     "en": "food made from yam"
+    },
+    {
+     "id": "c7-v119",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀nà méji",
+     "en": "two ways"
+    },
+    {
+     "id": "c7-v120",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀pẹ̀ òyìnbó",
+     "en": "pineapple"
+    },
+    {
+     "id": "c7-v121",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "púpọ̀ nínú",
+     "en": "a lot of"
+    },
+    {
+     "id": "c7-v122",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "rárá kògbà",
+     "en": "no deal"
+    },
+    {
+     "id": "c7-v123",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fẹ́ràn",
+     "en": "love/ like"
+    },
+    {
+     "id": "c7-v124",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fẹ́",
+     "en": "want/ need"
+    },
+    {
+     "id": "c7-v125",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fún",
+     "en": "to give"
+    },
+    {
+     "id": "c7-v126",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbàgbọ́",
+     "en": "to believe"
+    },
+    {
+     "id": "c7-v127",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ná",
+     "en": "shop/bargain/haggle"
+    },
+    {
+     "id": "c7-v128",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "dá lórí",
+     "en": "is about"
+    },
+    {
+     "id": "c7-v129",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fún mi",
+     "en": "give me"
+    },
+    {
+     "id": "c7-v130",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò gbọdọ̀",
+     "en": "must not"
+    },
+    {
+     "id": "c7-v131",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ló pọ̀ jù",
+     "en": "found the most"
+    },
+    {
+     "id": "c7-v132",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "pín sí",
+     "en": "categorized into"
+    },
+    {
+     "id": "c7-v133",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "rìn kọjá",
+     "en": "walk past"
+    },
+    {
+     "id": "c7-v134",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "tún lè rí",
+     "en": "can also find/see"
+    },
+    {
+     "id": "c7-v135",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "èyí",
+     "en": "this"
+    },
+    {
+     "id": "c7-v136",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "nìyẹn",
+     "en": "that"
+    },
+    {
+     "id": "c7-v137",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "ṣoṣo",
+     "en": "only"
+    },
+    {
+     "id": "c7-v138",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "dára",
+     "en": "good"
+    },
+    {
+     "id": "c7-v139",
+     "type": "vocab",
+     "pos": "adjective-phrase",
+     "yo": "ju òmíràn lọ",
+     "en": "than another one"
+    },
+    {
+     "id": "c7-v140",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "níbẹ̀",
+     "en": "there"
+    },
+    {
+     "id": "c7-v141",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "lẹ́ẹ̀kọ̀ọ̀kan",
+     "en": "once in a while"
+    },
+    {
+     "id": "c7-v142",
+     "type": "vocab",
+     "pos": "interrogative",
+     "yo": "ṣé ó gbà…?",
+     "en": "can I pay…?"
+    },
+    {
+     "id": "c7-v143",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "bí ó ti lẹ̀ jẹ́ pe",
+     "en": "in spite of the fact that"
+    },
+    {
+     "id": "c7-v144",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "lọ́nà mìíràn/ nígbà mìíràn",
+     "en": "in another vein/ in another light/ in other ways"
+    },
+    {
+     "id": "c7-v145",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ki a má gbàgbé pé",
+     "en": "don’t let us forget that"
+    },
+    {
+     "id": "c7-v146",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "oúnjẹ tí kì í ṣe olókèlè",
+     "en": "food (not rolled into morsels"
+    },
+    {
+     "id": "c7-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Verbs 'fẹ́' and 'fẹ́ràn'",
+     "explanation": "Fẹ́ = 'to want' (also 'to love'); fẹ́ràn = 'to like/love'. Fẹ́ + verb expresses 'want to': Mo fẹ́ jẹun 'I want to eat'. Mo fẹ́ràn ìrẹsì 'I like rice'.",
+     "examples": [
+      {
+       "yo": "Mo fẹ́ràn owó",
+       "en": "I like, or love money."
+      }
+     ]
+    },
+    {
+     "id": "c7-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Àwọn oúnjẹ òòjọ́ (Daily meals)",
+     "explanation": "Meals: oúnjẹ àárọ̀ 'breakfast', oúnjẹ ọ̀sán 'lunch', oúnjẹ alẹ́ 'dinner'. Hunger and thirst are expressed with 'pa' and 'gbẹ': Ebi ń pa mí 'I am hungry', Òùngbẹ ń gbẹ mí 'I am thirsty'.",
+     "examples": [
+      {
+       "yo": "Mo lè mu omi",
+       "en": "I can drink water."
+      }
+     ]
+    },
+    {
+     "id": "c7-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "In the Market",
+     "explanation": "Buying and selling food: ra 'to buy', ta 'to sell', ọjà 'market'. Mo fẹ́ ra ẹja 'I want to buy fish'. Names of staple foods: iṣu 'yam', ìrẹsì 'rice', ẹ̀wà 'beans', ọ̀gẹ̀dẹ̀ 'banana/plantain'.",
+     "examples": []
+    },
+    {
+     "id": "c7-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Rírà oúnjẹ nínúu búkà (Ordering food in a restaurant)",
+     "explanation": "In a búkà (local restaurant): Kí ni ẹ ní? 'What do you have?', Fún mi ní… 'Give me…', Mo fẹ́ jẹ iṣu àti ẹyin 'I want to eat yam and eggs'.",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "yorubaTitle": "Orí Kẹjọ",
+   "title": "Are You Feeling Good Today?",
+   "objectives": [
+    "How to use possessive forms of emphatic pronouns",
+    "About parts of the body",
+    "How to express what to do with different parts of the body",
+    "About the future tense",
+    "About health and sickness",
+    "About different types of sport"
+   ],
+   "items": [
+    {
+     "id": "c8-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aboyún",
+     "en": "pregnant lady"
+    },
+    {
+     "id": "c8-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbo",
+     "en": "concoction"
+    },
+    {
+     "id": "c8-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aládàáni",
+     "en": "private"
+    },
+    {
+     "id": "c8-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "apá",
+     "en": "arm"
+    },
+    {
+     "id": "c8-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "apòògùn",
+     "en": "pharmacist"
+    },
+    {
+     "id": "c8-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àrùn",
+     "en": "disease/illness"
+    },
+    {
+     "id": "c8-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "babaláwo",
+     "en": "the healers"
+    },
+    {
+     "id": "c8-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "babańlá",
+     "en": "ancestor"
+    },
+    {
+     "id": "c8-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èjìká",
+     "en": "shoulder"
+    },
+    {
+     "id": "c8-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "eré sísá",
+     "en": "athletics"
+    },
+    {
+     "id": "c8-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ewé",
+     "en": "leaf"
+    },
+    {
+     "id": "c8-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀ka",
+     "en": "branch"
+    },
+    {
+     "id": "c8-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹsẹ̀",
+     "en": "leg/foot"
+    },
+    {
+     "id": "c8-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀ṣẹ́ jíjà",
+     "en": "boxing"
+    },
+    {
+     "id": "c8-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gbajúmọ̀",
+     "en": "common"
+    },
+    {
+     "id": "c8-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdàgbàsókè",
+     "en": "progress"
+    },
+    {
+     "id": "c8-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iṣẹ́",
+     "en": "work"
+    },
+    {
+     "id": "c8-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iṣẹ́ abẹ",
+     "en": "surgery"
+    },
+    {
+     "id": "c8-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìlú",
+     "en": "city/town"
+    },
+    {
+     "id": "c8-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "irin ìsẹ́",
+     "en": "tool"
+    },
+    {
+     "id": "c8-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "itan",
+     "en": "thigh"
+    },
+    {
+     "id": "c8-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ìyá Àbíyè",
+     "en": "midwife"
+    },
+    {
+     "id": "c8-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "nọ́ọ̀sì",
+     "en": "nurse"
+    },
+    {
+     "id": "c8-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òlíńpíìkì",
+     "en": "Olympics"
+    },
+    {
+     "id": "c8-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníṣègùn",
+     "en": "doctor"
+    },
+    {
+     "id": "c8-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníṣẹ́ abẹ",
+     "en": "surgeon"
+    },
+    {
+     "id": "c8-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀làjú",
+     "en": "civilization"
+    },
+    {
+     "id": "c8-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "yọyínyọyín (dókítà eyín)",
+     "en": "dentist"
+    },
+    {
+     "id": "c8-v29",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "agbára omi àti ewé",
+     "en": "the power of water and herbs"
+    },
+    {
+     "id": "c8-v30",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "alábòójútó erée bọ́ọ̀lù àfẹsẹ̀gbá/rẹfirí",
+     "en": "soccer referee"
+    },
+    {
+     "id": "c8-v31",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àlọ́ pípa",
+     "en": "telling of folktales"
+    },
+    {
+     "id": "c8-v32",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bọ́ọ̀lù àjùsáwọ̀n",
+     "en": "basketball"
+    },
+    {
+     "id": "c8-v33",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bọ́ọ̀lù àfọwọ́gbá",
+     "en": "handball"
+    },
+    {
+     "id": "c8-v34",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bọ́ọ̀lù àfẹsẹ̀gbá",
+     "en": "soccer"
+    },
+    {
+     "id": "c8-v35",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà àrùn ọpọlọ",
+     "en": "psychiatrist"
+    },
+    {
+     "id": "c8-v36",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà eyín",
+     "en": "dentist"
+    },
+    {
+     "id": "c8-v37",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà ojú",
+     "en": "optometrist"
+    },
+    {
+     "id": "c8-v38",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà olùtọ́jú obìnrin",
+     "en": "gynecologist"
+    },
+    {
+     "id": "c8-v39",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà ọmọdé",
+     "en": "pediatrician"
+    },
+    {
+     "id": "c8-v40",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "egbò igi/ egbòogi",
+     "en": "medicine"
+    },
+    {
+     "id": "c8-v41",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "eléwé ọmọ",
+     "en": "herb seller"
+    },
+    {
+     "id": "c8-v42",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "eré ìdárayá",
+     "en": "sport/ game"
+    },
+    {
+     "id": "c8-v43",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ìjàkadì tàbí ẹkẹ",
+     "en": "wrestling"
+    },
+    {
+     "id": "c8-v44",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé ìta òògùn",
+     "en": "pharmacy"
+    },
+    {
+     "id": "c8-v45",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé ìbímọ",
+     "en": "delivery room"
+    },
+    {
+     "id": "c8-v46",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé ìwòsàn ìjọba",
+     "en": "Government/General hospital"
+    },
+    {
+     "id": "c8-v47",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé ẹ̀kọ́ gíga",
+     "en": "institution of higher education"
+    },
+    {
+     "id": "c8-v48",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "iṣẹ àjogúnba",
+     "en": "inherited job"
+    },
+    {
+     "id": "c8-v49",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "iṣẹ́ àrùn wíwò",
+     "en": "the job of curing diseases"
+    },
+    {
+     "id": "c8-v50",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Iṣẹ́ ìṣègùn",
+     "en": "medical practice"
+    },
+    {
+     "id": "c8-v51",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìtọ́jú aboyún",
+     "en": "pre-natal care"
+    },
+    {
+     "id": "c8-v52",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìtọ́jú aláìsàn",
+     "en": "care of the sick"
+    },
+    {
+     "id": "c8-v53",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìtọ́jú ọmọdé",
+     "en": "children’s care"
+    },
+    {
+     "id": "c8-v54",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìwé àṣẹ ìtọ́jú aláìsàn",
+     "en": "authorization to take care of the sick"
+    },
+    {
+     "id": "c8-v55",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìwòsàn òyìnbó",
+     "en": "western medicine"
+    },
+    {
+     "id": "c8-v56",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ohun búburú",
+     "en": "evil"
+    },
+    {
+     "id": "c8-v57",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "òkè ọrùn",
+     "en": "above the neck"
+    },
+    {
+     "id": "c8-v58",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "olùrànlọ́wọ́ rẹfirí",
+     "en": "assistant referee/line man"
+    },
+    {
+     "id": "c8-v59",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "oníṣègùn ìbílẹ̀",
+     "en": "traditional doctor"
+    },
+    {
+     "id": "c8-v60",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "òyìnbó amúnisìn",
+     "en": "colonial master"
+    },
+    {
+     "id": "c8-v61",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọmọ ìkókó",
+     "en": "an infant"
+    },
+    {
+     "id": "c8-v62",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀pọ̀lọpọ̀ ọ̀nà",
+     "en": "several ways"
+    },
+    {
+     "id": "c8-v63",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "pápá ìṣeré",
+     "en": "playground"
+    },
+    {
+     "id": "c8-v64",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "dìde",
+     "en": "to stand up"
+    },
+    {
+     "id": "c8-v65",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fò",
+     "en": "to jump"
+    },
+    {
+     "id": "c8-v66",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "fún",
+     "en": "to give"
+    },
+    {
+     "id": "c8-v67",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbóòórùn",
+     "en": "to smell"
+    },
+    {
+     "id": "c8-v68",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbọ́rọ̀",
+     "en": "to hear"
+    },
+    {
+     "id": "c8-v69",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jà",
+     "en": "to fight"
+    },
+    {
+     "id": "c8-v70",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jẹun",
+     "en": "to eat"
+    },
+    {
+     "id": "c8-v71",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jókòó",
+     "en": "to sit down"
+    },
+    {
+     "id": "c8-v72",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "juwọ́",
+     "en": "to wave hand"
+    },
+    {
+     "id": "c8-v73",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "kàpọ̀",
+     "en": "to put together"
+    },
+    {
+     "id": "c8-v74",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "kàwèé",
+     "en": "to read"
+    },
+    {
+     "id": "c8-v75",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "kọ̀wèé",
+     "en": "to write"
+    },
+    {
+     "id": "c8-v76",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "lò",
+     "en": "to use"
+    },
+    {
+     "id": "c8-v77",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "pàtẹ́wọ́",
+     "en": "to clap"
+    },
+    {
+     "id": "c8-v78",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rà",
+     "en": "to buy"
+    },
+    {
+     "id": "c8-v79",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rẹ́rìnín",
+     "en": "to laugh"
+    },
+    {
+     "id": "c8-v80",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rìn",
+     "en": "to walk"
+    },
+    {
+     "id": "c8-v81",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ríran",
+     "en": "to see"
+    },
+    {
+     "id": "c8-v82",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ronú",
+     "en": "to think"
+    },
+    {
+     "id": "c8-v83",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "sáré",
+     "en": "to run"
+    },
+    {
+     "id": "c8-v84",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "sín",
+     "en": "to sneeze"
+    },
+    {
+     "id": "c8-v85",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "sunkún",
+     "en": "to cry"
+    },
+    {
+     "id": "c8-v86",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wẹ̀",
+     "en": "to take a bath"
+    },
+    {
+     "id": "c8-v87",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "bá … jà (serial verb)",
+     "en": "to be afflicted with; fight with"
+    },
+    {
+     "id": "c8-v88",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fi ṣe (serial verb)",
+     "en": "make do"
+    },
+    {
+     "id": "c8-v89",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fojú sí",
+     "en": "to observe"
+    },
+    {
+     "id": "c8-v90",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fọ ẹnu",
+     "en": "to brush teeth"
+    },
+    {
+     "id": "c8-v91",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fun fèrè",
+     "en": "to play trumpet; to blow balloon"
+    },
+    {
+     "id": "c8-v92",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba bọ́ọ̀lù",
+     "en": "to play soccer"
+    },
+    {
+     "id": "c8-v93",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba ìwé àṣẹ",
+     "en": "to get permission"
+    },
+    {
+     "id": "c8-v94",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba ìwúre",
+     "en": "go to parents for prayers"
+    },
+    {
+     "id": "c8-v95",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gbá tẹníìsì",
+     "en": "to play tennis"
+    },
+    {
+     "id": "c8-v96",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jẹ́ ohun tí",
+     "en": "is something that"
+    },
+    {
+     "id": "c8-v97",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jẹ oúnjẹ àárọ̀",
+     "en": "to eat breakfast"
+    },
+    {
+     "id": "c8-v98",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jogún àìsàn wíwò",
+     "en": "to inherit the healing of diseases"
+    },
+    {
+     "id": "c8-v99",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jogún iṣẹ́",
+     "en": "inherit the profession"
+    },
+    {
+     "id": "c8-v100",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jọ̀ọ́ kúrò ojère",
+     "en": "please, leave me alone"
+    },
+    {
+     "id": "c8-v101",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò ní láti gbà",
+     "en": "do not have to obtain"
+    },
+    {
+     "id": "c8-v102",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kun ojú",
+     "en": "to put on make-up"
+    },
+    {
+     "id": "c8-v103",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "láti fi ṣe",
+     "en": "to make"
+    },
+    {
+     "id": "c8-v104",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "láti fi wo ààrùn",
+     "en": "to cure disease/illness"
+    },
+    {
+     "id": "c8-v105",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "láti já ewé",
+     "en": "to pluck leaves"
+    },
+    {
+     "id": "c8-v106",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "láti gbẹ̀bí",
+     "en": "to deliver (baby)"
+    },
+    {
+     "id": "c8-v107",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "láti mọ irú àrùn",
+     "en": "to know what type of disease"
+    },
+    {
+     "id": "c8-v108",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "lo agbára",
+     "en": "to use power"
+    },
+    {
+     "id": "c8-v109",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "lọ sí ilé-ìwé",
+     "en": "to go to school"
+    },
+    {
+     "id": "c8-v110",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "lọ rí (serial verb)",
+     "en": "to go see"
+    },
+    {
+     "id": "c8-v111",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "máa ń bọ Òrìṣà Ọlọ́mọ",
+     "en": "to worship the children’s deity"
+    },
+    {
+     "id": "c8-v112",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "máa ń dá ifá",
+     "en": "to consult the oracle"
+    },
+    {
+     "id": "c8-v113",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "máa ń gbo pọ̀",
+     "en": "to combine/to mix"
+    },
+    {
+     "id": "c8-v114",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "mọ̀ wípé",
+     "en": "to know that"
+    },
+    {
+     "id": "c8-v115",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "mú… wá (serial verb)",
+     "en": "to bring"
+    },
+    {
+     "id": "c8-v116",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ní ìgbàgbọ́ wípé",
+     "en": "to have the belief that"
+    },
+    {
+     "id": "c8-v117",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "nu ara",
+     "en": "to dry body"
+    },
+    {
+     "id": "c8-v118",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "pa ara",
+     "en": "to put on body lotion"
+    },
+    {
+     "id": "c8-v119",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ran … lọ́wọ́",
+     "en": "to help"
+    },
+    {
+     "id": "c8-v120",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ṣe ìtọ́jú ọmọ ìkókó",
+     "en": "to take care of the infant"
+    },
+    {
+     "id": "c8-v121",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "sọ wípé",
+     "en": "to say that"
+    },
+    {
+     "id": "c8-v122",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "tẹ dùrù",
+     "en": "to play piano"
+    },
+    {
+     "id": "c8-v123",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "tọ́ nńkan wò",
+     "en": "to taste something"
+    },
+    {
+     "id": "c8-v124",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "wà lára",
+     "en": "to be among"
+    },
+    {
+     "id": "c8-v125",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "wo tẹlifíṣàn",
+     "en": "to watch TV"
+    },
+    {
+     "id": "c8-v126",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "wọ aṣọ",
+     "en": "to put on clothes"
+    },
+    {
+     "id": "c8-v127",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "wọ bàtà",
+     "en": "to wear shoes"
+    },
+    {
+     "id": "c8-v128",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ya irun",
+     "en": "to comb hair"
+    },
+    {
+     "id": "c8-v129",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "ọ̀pọ̀lọpọ̀",
+     "en": "several"
+    },
+    {
+     "id": "c8-v130",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "wọ̀nyí",
+     "en": "these"
+    },
+    {
+     "id": "c8-v131",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "wọ́pọ̀",
+     "en": "common"
+    },
+    {
+     "id": "c8-v132",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "yàtọ̀",
+     "en": "different"
+    },
+    {
+     "id": "c8-v133",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "sáábà",
+     "en": "usually"
+    },
+    {
+     "id": "c8-v134",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "tún",
+     "en": "also"
+    },
+    {
+     "id": "c8-v135",
+     "type": "vocab",
+     "pos": "adverbial-phrase",
+     "yo": "tí mo bá jí",
+     "en": "when I wake up"
+    },
+    {
+     "id": "c8-v136",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "bíi Òṣun àti Ọya",
+     "en": "such as Òṣun and Ọya"
+    },
+    {
+     "id": "c8-v137",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "inú igbó",
+     "en": "inside the bush/forest"
+    },
+    {
+     "id": "c8-v138",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "kí ayé tó di ayé ọ̀làjú",
+     "en": "before the world became civilized"
+    },
+    {
+     "id": "c8-v139",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "kí wọ́n tó lè ṣe",
+     "en": "before they can do/make"
+    },
+    {
+     "id": "c8-v140",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "kí wọ́n tó gba",
+     "en": "before they can be given/awarded"
+    },
+    {
+     "id": "c8-v141",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "láti fi ṣe ìtọ́jú",
+     "en": "for taking care of"
+    },
+    {
+     "id": "c8-v142",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "láti kékeré",
+     "en": "from childhood"
+    },
+    {
+     "id": "c8-v143",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "láti òkè òkun",
+     "en": "from abroad/ from overseas"
+    },
+    {
+     "id": "c8-v144",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "láti …",
+     "en": "from …"
+    },
+    {
+     "id": "c8-v145",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "láti ọwọ́ àwọn babańlá",
+     "en": "from the ancestors"
+    },
+    {
+     "id": "c8-v146",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "lọ́wọ́ Ìjọba",
+     "en": "from government"
+    },
+    {
+     "id": "c8-v147",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní àárín",
+     "en": "in between/in the middle of"
+    },
+    {
+     "id": "c8-v148",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní ìgbàgbọ́ wípé",
+     "en": "believe that"
+    },
+    {
+     "id": "c8-v149",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní òwúrọ̀/àárọ̀",
+     "en": "in the morning"
+    },
+    {
+     "id": "c8-v150",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "nípa",
+     "en": "about"
+    },
+    {
+     "id": "c8-v151",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "nítorí èyí ni",
+     "en": "it’s because of this"
+    },
+    {
+     "id": "c8-v152",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "nítòrí ìdí èyí",
+     "en": "for this reason; because of this"
+    },
+    {
+     "id": "c8-v153",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "yàtọ̀ sí eléyìí",
+     "en": "besides this"
+    },
+    {
+     "id": "c8-v154",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "àwọn èyí tí ó wọ́pọ̀",
+     "en": "the most common"
+    },
+    {
+     "id": "c8-v155",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "bojúbojú àti ẹkùn mẹ́ran",
+     "en": "types of hide and seek games"
+    },
+    {
+     "id": "c8-v156",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "Ìlera ni oògùn ọrọ̀",
+     "en": "health is wealth"
+    },
+    {
+     "id": "c8-v157",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ìtumọ èyí ni pé",
+     "en": "this implies/this means that"
+    },
+    {
+     "id": "c8-v158",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "o dé nìyẹn",
+     "en": "You have come again"
+    },
+    {
+     "id": "c8-v159",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ó ṣe pàtàkì láti",
+     "en": "it is important to"
+    },
+    {
+     "id": "c8-v160",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "púpọ̀ nínú",
+     "en": "a lot of / many"
+    },
+    {
+     "id": "c8-v161",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "ṣe tán",
+     "en": "on completion/completed"
+    },
+    {
+     "id": "c8-v162",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "tí ó bá ń bá ènìyàn jà",
+     "en": "that people are afflicted with"
+    },
+    {
+     "id": "c8-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Possessive forms of emphatic pronouns",
+     "explanation": "Ti + possessive gives 'mine/yours/…': tèmi 'mine', tìrẹ 'yours (sg.)', tirẹ̀ 'his/hers/its', tiwa 'ours', tiyín 'yours (pl.)', tiwọn 'theirs': Ìwé yìí tèmi ni 'This book is mine'.",
+     "examples": []
+    },
+    {
+     "id": "c8-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Parts of the Body",
+     "explanation": "Body parts: orí 'head', ojú 'eye/face', imú 'nose', ẹnu 'mouth', etí 'ear', ọrùn 'neck', apá 'arm', ọwọ́ 'hand', ikùn 'stomach', ẹsẹ̀ 'leg/foot', orúkún 'knee', ìka 'finger/toe'.",
+     "examples": [
+      {
+       "yo": "Kí ni a = Kí la",
+       "en": "what do we…?"
+      }
+     ]
+    },
+    {
+     "id": "c8-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Ìlera àti àìsàn (Health and illness)",
+     "explanation": "Talking about health: Ara mi ń ro mí 'my body aches', orí ń fọ́ mi 'I have a headache', inú ń run mí 'I have a stomachache'. Àìsàn 'illness', ìlera 'health', dókítà 'doctor', oògùn 'medicine'.",
+     "examples": []
+    },
+    {
+     "id": "c8-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Eré Ìdárayá (Sports)",
+     "explanation": "Sports and exercise: eré ìdárayá 'sports/recreation', gba bọ́ọ̀lù 'play ball', sáré 'run', wẹ̀ 'swim/bathe'. Máa followed by verb also expresses habitual future activity.",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "yorubaTitle": "Orí Kẹsànán",
+   "title": "My Work Place",
+   "objectives": [
+    "How to describe different types of professions",
+    "How to use future tense",
+    "How to negate a sentence using ‘kò tí ì’",
+    "How to identify types of professions"
+   ],
+   "items": [
+    {
+     "id": "c9-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "adájọ́",
+     "en": "judge"
+    },
+    {
+     "id": "c9-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àgbẹ̀",
+     "en": "farmer"
+    },
+    {
+     "id": "c9-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "agbẹjọ́rò",
+     "en": "lawyer"
+    },
+    {
+     "id": "c9-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "akọ̀pẹ",
+     "en": "palm tree tapper"
+    },
+    {
+     "id": "c9-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alágbẹ̀dẹ",
+     "en": "blacksmith/goldsmith"
+    },
+    {
+     "id": "c9-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alápatà",
+     "en": "butcher"
+    },
+    {
+     "id": "c9-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aláró",
+     "en": "tie-dyer"
+    },
+    {
+     "id": "c9-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "akọ̀wé",
+     "en": "secretary"
+    },
+    {
+     "id": "c9-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alájàpá",
+     "en": "person who travels with goods in a truck"
+    },
+    {
+     "id": "c9-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àṣeyọrí",
+     "en": "success"
+    },
+    {
+     "id": "c9-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "awakọ̀",
+     "en": "driver"
+    },
+    {
+     "id": "c9-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "babaláwo",
+     "en": "Ifa priest/diviner"
+    },
+    {
+     "id": "c9-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "daran-daran",
+     "en": "shepherd"
+    },
+    {
+     "id": "c9-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "dókítà",
+     "en": "doctor"
+    },
+    {
+     "id": "c9-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹlẹ́ran",
+     "en": "meat seller"
+    },
+    {
+     "id": "c9-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "géńdé",
+     "en": "adult"
+    },
+    {
+     "id": "c9-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìránṣọ",
+     "en": "sewing"
+    },
+    {
+     "id": "c9-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìyàtọ̀",
+     "en": "difference"
+    },
+    {
+     "id": "c9-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "jagunjagun/ajagun",
+     "en": "warrior/soldier"
+    },
+    {
+     "id": "c9-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "méjéèjì",
+     "en": "both"
+    },
+    {
+     "id": "c9-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mẹkáníìkì",
+     "en": "mechanic"
+    },
+    {
+     "id": "c9-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "nọ́ọ̀sì",
+     "en": "nurse"
+    },
+    {
+     "id": "c9-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oko",
+     "en": "farm"
+    },
+    {
+     "id": "c9-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "olùkọ́",
+     "en": "teacher"
+    },
+    {
+     "id": "c9-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "onídìrí",
+     "en": "hair braider"
+    },
+    {
+     "id": "c9-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníṣòwò",
+     "en": "trader"
+    },
+    {
+     "id": "c9-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníròyìn",
+     "en": "newscaster, journalist"
+    },
+    {
+     "id": "c9-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníwóróbo",
+     "en": "petty trader"
+    },
+    {
+     "id": "c9-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọdẹ",
+     "en": "hunter"
+    },
+    {
+     "id": "c9-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọlọ́pàá",
+     "en": "police officer"
+    },
+    {
+     "id": "c9-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀rẹ́",
+     "en": "friend"
+    },
+    {
+     "id": "c9-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pẹjapẹja",
+     "en": "fisherman"
+    },
+    {
+     "id": "c9-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "sáyẹ́ńsì",
+     "en": "science"
+    },
+    {
+     "id": "c9-v34",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àtẹ títà",
+     "en": "display of goods for sale"
+    },
+    {
+     "id": "c9-v35",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àwọn ti wọ́n ní iṣẹ́ lọ́wọ́",
+     "en": "those who are working"
+    },
+    {
+     "id": "c9-v36",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àwọn tí wọ́n kàwé",
+     "en": "the educated"
+    },
+    {
+     "id": "c9-v37",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà ẹsẹ̀",
+     "en": "podiatrist"
+    },
+    {
+     "id": "c9-v38",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà eyín",
+     "en": "dentist"
+    },
+    {
+     "id": "c9-v39",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà olùtọ́jú obìnrin",
+     "en": "gynecologist"
+    },
+    {
+     "id": "c9-v40",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "dókítà ọmọdé",
+     "en": "pediatrician"
+    },
+    {
+     "id": "c9-v41",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "igbó kìjikìji",
+     "en": "thick forest"
+    },
+    {
+     "id": "c9-v42",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ilé-ìwé olùkọ́ni àgbà",
+     "en": "College of Education"
+    },
+    {
+     "id": "c9-v43",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ilé-ìwé gbogbo-ń-ṣe",
+     "en": "Polytechnic"
+    },
+    {
+     "id": "c9-v44",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ilé-ìwé mẹ́wàá",
+     "en": "secondary school"
+    },
+    {
+     "id": "c9-v45",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìlú ńlá",
+     "en": "city/big town"
+    },
+    {
+     "id": "c9-v46",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "iṣẹ́ àbáláyé",
+     "en": "traditional profession"
+    },
+    {
+     "id": "c9-v47",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Iṣẹ́ aṣerunlóge",
+     "en": "hair dresser"
+    },
+    {
+     "id": "c9-v48",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ìwé àṣẹ ìṣegùn òyìnbó",
+     "en": "Western medical certification"
+    },
+    {
+     "id": "c9-v49",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìwé kíkà",
+     "en": "studies"
+    },
+    {
+     "id": "c9-v50",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "kárà-kátà",
+     "en": "buying and selling/petty trading"
+    },
+    {
+     "id": "c9-v51",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ohun tí ó wúlò",
+     "en": "something that is useful"
+    },
+    {
+     "id": "c9-v52",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "oògùn ìṣẹ́",
+     "en": "remedy for poverty"
+    },
+    {
+     "id": "c9-v53",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "òwe Yorùbá",
+     "en": "Yorùbá proverb"
+    },
+    {
+     "id": "c9-v54",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjà etílé",
+     "en": "town market"
+    },
+    {
+     "id": "c9-v55",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjà eréko",
+     "en": "village market"
+    },
+    {
+     "id": "c9-v56",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọjọ́ iwájú",
+     "en": "(in )the future"
+    },
+    {
+     "id": "c9-v57",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọmọ kékeré",
+     "en": "a child"
+    },
+    {
+     "id": "c9-v58",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "oníwé ìròyìn",
+     "en": "journalist/newspaper columnist"
+    },
+    {
+     "id": "c9-v59",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọ̀nà oríṣiríṣi",
+     "en": "different ways"
+    },
+    {
+     "id": "c9-v60",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "yunifásítì",
+     "en": "university"
+    },
+    {
+     "id": "c9-v61",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Yunifásítì ìmọ̀ ẹ̀rọ",
+     "en": "University of Technology"
+    },
+    {
+     "id": "c9-v62",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Yunifásítì ẹ̀kọ́ àgbẹ̀",
+     "en": "University of Agriculture"
+    },
+    {
+     "id": "c9-v63",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "di/da",
+     "en": "to become"
+    },
+    {
+     "id": "c9-v64",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbà",
+     "en": "take"
+    },
+    {
+     "id": "c9-v65",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbayì",
+     "en": "honored/valued"
+    },
+    {
+     "id": "c9-v66",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbọ́dọ̀",
+     "en": "must"
+    },
+    {
+     "id": "c9-v67",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "yàn",
+     "en": "to choose"
+    },
+    {
+     "id": "c9-v68",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "bá fẹ́",
+     "en": "like to"
+    },
+    {
+     "id": "c9-v69",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "dẹ̀gbẹ́",
+     "en": "to hunt"
+    },
+    {
+     "id": "c9-v70",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "foju sí",
+     "en": "to observe"
+    },
+    {
+     "id": "c9-v71",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba ìwúre",
+     "en": "prayer for success"
+    },
+    {
+     "id": "c9-v72",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba ọdún púpọ̀",
+     "en": "take several years"
+    },
+    {
+     "id": "c9-v73",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gbé ìgbésẹ̀",
+     "en": "take up the responsibility"
+    },
+    {
+     "id": "c9-v74",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "jẹ́ kí",
+     "en": "to allow/let"
+    },
+    {
+     "id": "c9-v75",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò burú",
+     "en": "that’s fine"
+    },
+    {
+     "id": "c9-v76",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò kí ń sáábà",
+     "en": "it’s not always"
+    },
+    {
+     "id": "c9-v77",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò tí ì di géńdé",
+     "en": "has not become an adult"
+    },
+    {
+     "id": "c9-v78",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kọ́ iṣẹ́",
+     "en": "to learn a trade"
+    },
+    {
+     "id": "c9-v79",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "máa ń di ipò pàtàkì mú",
+     "en": "to hold important positions"
+    },
+    {
+     "id": "c9-v80",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "máa ń pẹ́ láti gbà",
+     "en": "to take a long time to obtain"
+    },
+    {
+     "id": "c9-v81",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "múra",
+     "en": "hasten to"
+    },
+    {
+     "id": "c9-v82",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "parí",
+     "en": "to complete/to end"
+    },
+    {
+     "id": "c9-v83",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "pàtẹ irè oko",
+     "en": "to display farm products"
+    },
+    {
+     "id": "c9-v84",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "rẹ́ni (rí ẹni)",
+     "en": "to find or see someone"
+    },
+    {
+     "id": "c9-v85",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "rọ irin",
+     "en": "to melt metals"
+    },
+    {
+     "id": "c9-v86",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ṣe àyẹ̀wo",
+     "en": "to take a look at"
+    },
+    {
+     "id": "c9-v87",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "sọ àkọsẹ̀jáyé ọmọ",
+     "en": "predict a child’s future"
+    },
+    {
+     "id": "c9-v88",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "tẹ̀lé",
+     "en": "to follow"
+    },
+    {
+     "id": "c9-v89",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "wọ́ pọ̀",
+     "en": "common"
+    },
+    {
+     "id": "c9-v90",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "yàn láàyò",
+     "en": "to favor by choice"
+    },
+    {
+     "id": "c9-v91",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "bíi",
+     "en": "like"
+    },
+    {
+     "id": "c9-v92",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "léwu púpọ̀",
+     "en": "to be very dangerous"
+    },
+    {
+     "id": "c9-v93",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "yìí",
+     "en": "this"
+    },
+    {
+     "id": "c9-v94",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "gan-an ni",
+     "en": "very much /a lot"
+    },
+    {
+     "id": "c9-v95",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "nígbà mìíràn",
+     "en": "sometimes"
+    },
+    {
+     "id": "c9-v96",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "fún ìdàgbàsókè ìlú",
+     "en": "for the progress of the city/town/community"
+    },
+    {
+     "id": "c9-v97",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "jìnnà sí",
+     "en": "far from"
+    },
+    {
+     "id": "c9-v98",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "nípa ìgbésí ayé",
+     "en": "about life"
+    },
+    {
+     "id": "c9-v99",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní àwùjọ",
+     "en": "in the community"
+    },
+    {
+     "id": "c9-v100",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní òde-òní",
+     "en": "today"
+    },
+    {
+     "id": "c9-v101",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "súnmọ́ abà",
+     "en": "near the hut"
+    },
+    {
+     "id": "c9-v102",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "tí ó yẹ",
+     "en": "that is required (of them)"
+    },
+    {
+     "id": "c9-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Verbs for Professions",
+     "explanation": "Professions use jẹ́ or ṣe + occupation: Mo jẹ́ dókítà / Mo ń ṣiṣẹ́ dókítà 'I am a doctor / I work as a doctor'. Ń ṣiṣẹ́ = 'is working'.",
+     "examples": [
+      {
+       "yo": "Kí ni ìwọ fẹ́ dà?",
+       "en": "What do you want to become?"
+      }
+     ]
+    },
+    {
+     "id": "c9-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Negation: 'kò tí ì' / 'kò ì tí ì'",
+     "explanation": "Kò tí ì (or kò ì tí ì) + verb means 'has not (yet)': Kò tí ì dé 'He/she has not yet arrived'; Wọn kò ì tí ì jẹun 'They have not yet eaten'.",
+     "examples": [
+      {
+       "yo": "èmi kò tí ì",
+       "en": "I have not"
+      },
+      {
+       "yo": "ìwọ kò tí ì",
+       "en": "You (sg.) have not"
+      },
+      {
+       "yo": "òun kò tí ì",
+       "en": "S/he has not"
+      }
+     ]
+    },
+    {
+     "id": "c9-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Professions",
+     "explanation": "Many profession nouns are derived with prefixes a- or oní-: akọ̀wé 'clerk/secretary', agbẹ̀ 'farmer', oníṣòwò 'trader', awakọ̀ 'driver', olùkọ́ 'teacher', dókítà 'doctor', lọ́yà 'lawyer'.",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "yorubaTitle": "Orí Kẹwàá",
+   "title": "Home Sweet Home!",
+   "objectives": [
+    "About ordinals",
+    "How to use reflexives",
+    "Vowel assimilation, vowel lengthening and vowel deletion",
+    "About old and new forms of housing",
+    "About your house COERLL",
+    "Yorúbà Yémi 227 CC – 2011 The University of Texas at Austin"
+   ],
+   "items": [
+    {
+     "id": "c10-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ààfin",
+     "en": "palace"
+    },
+    {
+     "id": "c10-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "abẹ",
+     "en": "razor"
+    },
+    {
+     "id": "c10-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "afínjú",
+     "en": "clean (person)"
+    },
+    {
+     "id": "c10-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alákọ̀wé",
+     "en": "educated person"
+    },
+    {
+     "id": "c10-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àtíkè (páúdà)",
+     "en": "powder"
+    },
+    {
+     "id": "c10-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "adìẹ",
+     "en": "chicken"
+    },
+    {
+     "id": "c10-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àga onítìmùtìmù",
+     "en": "sofa"
+    },
+    {
+     "id": "c10-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àjà",
+     "en": "story (house levels)"
+    },
+    {
+     "id": "c10-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àlejò",
+     "en": "guest"
+    },
+    {
+     "id": "c10-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "amọ̀",
+     "en": "clay"
+    },
+    {
+     "id": "c10-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aṣọ ìnura (táwẹ̀ẹ̀lì)",
+     "en": "towel"
+    },
+    {
+     "id": "c10-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àwùjọ",
+     "en": "a gathering (of people)"
+    },
+    {
+     "id": "c10-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àwòrán",
+     "en": "picture"
+    },
+    {
+     "id": "c10-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ayálégbé",
+     "en": "tenant"
+    },
+    {
+     "id": "c10-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "balùwẹ̀",
+     "en": "bathroom"
+    },
+    {
+     "id": "c10-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "búlọ́ọ̀kù",
+     "en": "cement"
+    },
+    {
+     "id": "c10-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "dìódóráńtì",
+     "en": "deodorant"
+    },
+    {
+     "id": "c10-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èékánná",
+     "en": "nails"
+    },
+    {
+     "id": "c10-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ehoro",
+     "en": "rabbit"
+    },
+    {
+     "id": "c10-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀dá ènìyàn",
+     "en": "human beings"
+    },
+    {
+     "id": "c10-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fèrèsé/wíńdò",
+     "en": "window"
+    },
+    {
+     "id": "c10-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fọ́sẹ́ẹ̀tì",
+     "en": "faucet"
+    },
+    {
+     "id": "c10-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fúláàtì",
+     "en": "apartment / flat"
+    },
+    {
+     "id": "c10-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gbajúmọ̀",
+     "en": "important"
+    },
+    {
+     "id": "c10-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "góòlù",
+     "en": "gold"
+    },
+    {
+     "id": "c10-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ibi",
+     "en": "place"
+    },
+    {
+     "id": "c10-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ibùsùn/bẹ́ẹ̀dì",
+     "en": "bed"
+    },
+    {
+     "id": "c10-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdọ̀tí",
+     "en": "dirt"
+    },
+    {
+     "id": "c10-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "igi ìfọyín/búrọ́ọ̀ṣì",
+     "en": "toothbrush"
+    },
+    {
+     "id": "c10-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìkángun",
+     "en": "one end of the house"
+    },
+    {
+     "id": "c10-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìkáṣọsí/kọ́bọ́ọ̀dù",
+     "en": "closet"
+    },
+    {
+     "id": "c10-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ilé ìgbọ̀nsẹ̀",
+     "en": "toilet"
+    },
+    {
+     "id": "c10-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìlera",
+     "en": "good health"
+    },
+    {
+     "id": "c10-v34",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìlú òkèèrè",
+     "en": "foreign country"
+    },
+    {
+     "id": "c10-v35",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìmọ́tótó",
+     "en": "cleanliness"
+    },
+    {
+     "id": "c10-v36",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìpara",
+     "en": "body lotion"
+    },
+    {
+     "id": "c10-v37",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìrọ̀rí",
+     "en": "pillow"
+    },
+    {
+     "id": "c10-v38",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iyanrìn",
+     "en": "sand"
+    },
+    {
+     "id": "c10-v39",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "jíígí",
+     "en": "mirror"
+    },
+    {
+     "id": "c10-v40",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kábínẹ́ẹ̀tì",
+     "en": "cabinet"
+    },
+    {
+     "id": "c10-v41",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kàhìnkàhìn",
+     "en": "sponge"
+    },
+    {
+     "id": "c10-v42",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kápẹ́ẹ̀tì",
+     "en": "carpet"
+    },
+    {
+     "id": "c10-v43",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kóòmù",
+     "en": "comb"
+    },
+    {
+     "id": "c10-v44",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "máràṣáná",
+     "en": "‘don’t buy matches’ (it's a type of window)"
+    },
+    {
+     "id": "c10-v45",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mèremère",
+     "en": "precious things"
+    },
+    {
+     "id": "c10-v46",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "míṣánnárì",
+     "en": "missionary"
+    },
+    {
+     "id": "c10-v47",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "mọlé-mọlé",
+     "en": "brick layer"
+    },
+    {
+     "id": "c10-v48",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ògiri",
+     "en": "wall"
+    },
+    {
+     "id": "c10-v49",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ojúlé",
+     "en": "room"
+    },
+    {
+     "id": "c10-v50",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọgbà",
+     "en": "yard"
+    },
+    {
+     "id": "c10-v51",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀lẹ/ ìmẹ́lẹ́",
+     "en": "laziness"
+    },
+    {
+     "id": "c10-v52",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọṣẹ ìfọyín (péèstì)",
+     "en": "toothpaste"
+    },
+    {
+     "id": "c10-v53",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pálọ̀",
+     "en": "living room"
+    },
+    {
+     "id": "c10-v54",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pákò/orín",
+     "en": "chewing stick"
+    },
+    {
+     "id": "c10-v55",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "rédíò",
+     "en": "radio"
+    },
+    {
+     "id": "c10-v56",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "síìńkì",
+     "en": "sink"
+    },
+    {
+     "id": "c10-v57",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tíṣù",
+     "en": "tissue"
+    },
+    {
+     "id": "c10-v58",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tòlótòló",
+     "en": "turkey"
+    },
+    {
+     "id": "c10-v59",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tọ́ọ̀bù",
+     "en": "bathtub"
+    },
+    {
+     "id": "c10-v60",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "apẹ̀ẹ̀rẹ̀ híhun",
+     "en": "basket weaving"
+    },
+    {
+     "id": "c10-v61",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àsìkòo fọ́ọ̀lù",
+     "en": "fall season"
+    },
+    {
+     "id": "c10-v62",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àsìkòo sípíríńgì",
+     "en": "spring season"
+    },
+    {
+     "id": "c10-v63",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àsìkòo sọ́mà",
+     "en": "summer season"
+    },
+    {
+     "id": "c10-v64",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àsìkòo wíńtà",
+     "en": "winter season"
+    },
+    {
+     "id": "c10-v65",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ òkè híhun",
+     "en": "traditional Yoruba cloth weaving"
+    },
+    {
+     "id": "c10-v66",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ pípa láró",
+     "en": "tie-dying"
+    },
+    {
+     "id": "c10-v67",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ènìyàn mímọ̀",
+     "en": "familiar face"
+    },
+    {
+     "id": "c10-v68",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹní híhun",
+     "en": "mat weaving"
+    },
+    {
+     "id": "c10-v69",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹyìn fífọ̀",
+     "en": "palm oil extraction"
+    },
+    {
+     "id": "c10-v70",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "igun ilé",
+     "en": "one angle/corner of the house"
+    },
+    {
+     "id": "c10-v71",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé alámọ̀",
+     "en": "brick house"
+    },
+    {
+     "id": "c10-v72",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilée onísìmẹ́ńtì",
+     "en": "house built with cement"
+    },
+    {
+     "id": "c10-v73",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé ìgbọ̀nsẹ̀",
+     "en": "toilet"
+    },
+    {
+     "id": "c10-v74",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìlẹ̀kẹ̀ sínsín",
+     "en": "bead-making"
+    },
+    {
+     "id": "c10-v75",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìyá àgbà",
+     "en": "old woman"
+    },
+    {
+     "id": "c10-v76",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "omi gbígbóná",
+     "en": "hot water"
+    },
+    {
+     "id": "c10-v77",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "omi tútù",
+     "en": "cold water"
+    },
+    {
+     "id": "c10-v78",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọṣẹ ìfọwọ́",
+     "en": "hand soap"
+    },
+    {
+     "id": "c10-v79",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọṣẹ ìfọrun (ṣampú)",
+     "en": "shampoo"
+    },
+    {
+     "id": "c10-v80",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọṣẹ ìwẹ̀",
+     "en": "bath soap"
+    },
+    {
+     "id": "c10-v81",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "kórira",
+     "en": "to dislike"
+    },
+    {
+     "id": "c10-v82",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "tẹ́pá mọ́ṣẹ́",
+     "en": "to be hardworking"
+    },
+    {
+     "id": "c10-v83",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "tẹ́jú",
+     "en": "spacious"
+    },
+    {
+     "id": "c10-v84",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "tónítóní",
+     "en": "stainless"
+    },
+    {
+     "id": "c10-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Ordinals",
+     "explanation": "Ordinals prefix k- to the numeral: kìíní 'first', kejì 'second', kẹta 'third', kẹrin 'fourth'… Ilé kìíní 'the first house'. Noun forms take è-/ì-: èkínní, èkejì.",
+     "examples": [
+      {
+       "yo": "oókan kan",
+       "en": "one"
+      },
+      {
+       "yo": "eéjì méjì",
+       "en": "two"
+      },
+      {
+       "yo": "ẹẹ́ta mẹ́ta",
+       "en": "three"
+      },
+      {
+       "yo": "ẹẹ́rin mẹ́rin",
+       "en": "four"
+      },
+      {
+       "yo": "aárùnún márùnún",
+       "en": "five"
+      },
+      {
+       "yo": "ẹẹ́fà mẹ́fà",
+       "en": "six"
+      },
+      {
+       "yo": "eéje méje",
+       "en": "seven"
+      },
+      {
+       "yo": "ẹẹ́jọ mẹ́jọ",
+       "en": "eight"
+      },
+      {
+       "yo": "ẹẹ́sànán mẹ́sànán",
+       "en": "nine"
+      },
+      {
+       "yo": "ẹẹ́wàá mẹ́wàá",
+       "en": "ten"
+      }
+     ]
+    },
+    {
+     "id": "c10-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "Reflexives and Vowel Processes",
+     "explanation": "Reflexives use ara + possessive: ara mi 'myself', ara rẹ̀ 'himself/herself'. Yorùbá speech shows vowel assimilation (ilé + ẹ̀ → iléè), vowel lengthening in possessive constructions, and vowel deletion in rapid speech (kí + ó → kó).",
+     "examples": [
+      {
+       "yo": "Mo ya irunùn mi fúnraraà mi.",
+       "en": "I combed my hair myself."
+      },
+      {
+       "yo": "Màmáà mi ya irunùn mi fún mi.",
+       "en": "My mother combed my hair for me."
+      },
+      {
+       "yo": "Màmáà mi bá mi ya irunùn mi.",
+       "en": "My mother helped me comb my hair."
+      },
+      {
+       "yo": "Túndé/ eyín → Túndé, fọ eyínìn rẹ̀ fúnraraa rẹ̀. Kí",
+       "en": "ni ò ń ṣe?"
+      },
+      {
+       "yo": "ojúmọ́ (day) → ojoojúmọ́",
+       "en": "(every day)"
+      },
+      {
+       "yo": "àárọ̀ (morning) → àràárọ̀",
+       "en": "(every morning)"
+      },
+      {
+       "yo": "ọ̀sán (afternoon) → ọ̀sọ̀ọ̀sán",
+       "en": "(every afternoon)"
+      },
+      {
+       "yo": "alẹ́ (night) → alaalẹ́",
+       "en": "(every evening)"
+      },
+      {
+       "yo": "ọ̀sẹ̀ (week) → ọ̀sọ̀ọ̀sẹ̀",
+       "en": "(every week)"
+      },
+      {
+       "yo": "ọdún (year) → ọdọọdún",
+       "en": "(every year)"
+      }
+     ]
+    },
+    {
+     "id": "c10-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Ilée wa (Our House) I",
+     "explanation": "Rooms and parts of the house: yàrá 'bedroom', pálọ̀ 'parlor/living room', ilé ìdáná 'kitchen', balùwẹ̀ 'bathroom', ilé ìgbọ̀nsẹ̀ 'toilet', ọgbà 'yard/garden', ilẹ̀kùn 'door', fèrèsé 'window'.",
+     "examples": []
+    },
+    {
+     "id": "c10-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Ilée wa (Our House) II",
+     "explanation": "Describing housing, old and new: traditional agboolé 'family compound' versus modern houses; positions with ní: òkè 'upstairs/top', ìsàlẹ̀ 'downstairs/bottom'.",
+     "examples": []
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "yorubaTitle": "Orí Kọkànlá",
+   "title": "Nice Style!",
+   "objectives": [
+    "About different types of clothing",
+    "About seasonal clothings",
+    "The use of the verbs fi_ lé / fi_ kọ́, wọ̀, dé/gẹ̀, wé, ró",
+    "Further use of interrogatives",
+    "Current trends in fashion COERLL",
+    "Yorúbà Yémi 259 CC – 2011 The University of Texas at Austin"
+   ],
+   "items": [
+    {
+     "id": "c11-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àpọ́nlé",
+     "en": "respect"
+    },
+    {
+     "id": "c11-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àṣà",
+     "en": "culture"
+    },
+    {
+     "id": "c11-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "aṣọ",
+     "en": "clothe"
+    },
+    {
+     "id": "c11-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "bùbá",
+     "en": "a shirt or a blouse (Yorùbá style)"
+    },
+    {
+     "id": "c11-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "búláòsì",
+     "en": "blouse (western style)"
+    },
+    {
+     "id": "c11-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èjìká",
+     "en": "shoulder"
+    },
+    {
+     "id": "c11-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "fìlà",
+     "en": "hat"
+    },
+    {
+     "id": "c11-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gèlè",
+     "en": "a scarflike headgear"
+    },
+    {
+     "id": "c11-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "gínnì",
+     "en": "guinea"
+    },
+    {
+     "id": "c11-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìborùn",
+     "en": "shawl"
+    },
+    {
+     "id": "c11-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìbọsẹ̀",
+     "en": "sock(s)"
+    },
+    {
+     "id": "c11-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìbọ̀wọ́",
+     "en": "glove(s)"
+    },
+    {
+     "id": "c11-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìgbéyàwó",
+     "en": "wedding"
+    },
+    {
+     "id": "c11-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìmúra",
+     "en": "an outfit"
+    },
+    {
+     "id": "c11-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìró",
+     "en": "a wrap-around cloth/ wrapper"
+    },
+    {
+     "id": "c11-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìsìnkú",
+     "en": "funeral"
+    },
+    {
+     "id": "c11-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìsọmọlórúkọ",
+     "en": "naming ceremony"
+    },
+    {
+     "id": "c11-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "iyì",
+     "en": "honor"
+    },
+    {
+     "id": "c11-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "jákẹ́ẹ̀tì",
+     "en": "jacket"
+    },
+    {
+     "id": "c11-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "jíìnsì",
+     "en": "jeans"
+    },
+    {
+     "id": "c11-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kọjúsọ́kọ",
+     "en": "‘to face one’s husband’"
+    },
+    {
+     "id": "c11-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kóòtù",
+     "en": "coat"
+    },
+    {
+     "id": "c11-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "obìnrin",
+     "en": "female"
+    },
+    {
+     "id": "c11-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oko",
+     "en": "farm"
+    },
+    {
+     "id": "c11-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọjà",
+     "en": "market"
+    },
+    {
+     "id": "c11-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọkùnrin",
+     "en": "male"
+    },
+    {
+     "id": "c11-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọyẹ́",
+     "en": "harmattan"
+    },
+    {
+     "id": "c11-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "pàtàkì",
+     "en": "important"
+    },
+    {
+     "id": "c11-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ṣòkòtò",
+     "en": "a pair of pants"
+    },
+    {
+     "id": "c11-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "súwẹ́tà",
+     "en": "sweater"
+    },
+    {
+     "id": "c11-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "tíṣẹẹ̀tì",
+     "en": "t-shirt"
+    },
+    {
+     "id": "c11-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "síkẹ́ẹ̀tì",
+     "en": "skirt"
+    },
+    {
+     "id": "c11-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "yẹtí",
+     "en": "earring(s)"
+    },
+    {
+     "id": "c11-v34",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àsìkòo fọ́ọ̀lù",
+     "en": "fall season"
+    },
+    {
+     "id": "c11-v35",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àkókò kọ̀ọ̀kan",
+     "en": "each season"
+    },
+    {
+     "id": "c11-v36",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àsìkò mẹ́rin ọ̀tọ̀ọ̀tọ̀",
+     "en": "four different seasons"
+    },
+    {
+     "id": "c11-v37",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ ẹ̀ẹ̀rùn",
+     "en": "clothes for the dry season"
+    },
+    {
+     "id": "c11-v38",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ òde",
+     "en": "formal wear"
+    },
+    {
+     "id": "c11-v39",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ ojoojúmọ́",
+     "en": "informal clothing"
+    },
+    {
+     "id": "c11-v40",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ òjò",
+     "en": "clothes for the rainy season"
+    },
+    {
+     "id": "c11-v41",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ òkè",
+     "en": "woven material"
+    },
+    {
+     "id": "c11-v42",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ léèsì",
+     "en": "lace material"
+    },
+    {
+     "id": "c11-v43",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "aṣọ tẹ́ẹ́rẹ́",
+     "en": "strip of cloth"
+    },
+    {
+     "id": "c11-v44",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "àwọn ọlọ́lá",
+     "en": "rich people"
+    },
+    {
+     "id": "c11-v45",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹ̀wùu kòlápá",
+     "en": "sleeveless clothing"
+    },
+    {
+     "id": "c11-v46",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ibi iṣẹ́/ ibiṣẹ́",
+     "en": "workplace"
+    },
+    {
+     "id": "c11-v47",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìgbà ooru",
+     "en": "hot weather"
+    },
+    {
+     "id": "c11-v48",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilẹ̀ òkèèrè",
+     "en": "foreign countries"
+    },
+    {
+     "id": "c11-v49",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "orílẹ̀-èdèe Àmẹ́ríkà",
+     "en": "USA"
+    },
+    {
+     "id": "c11-v50",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "látàrí ooru",
+     "en": "as a result of heat"
+    },
+    {
+     "id": "c11-v51",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ṣòkòtò péńpé",
+     "en": "short pants/shorts"
+    },
+    {
+     "id": "c11-v52",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "dé/gẹ̀",
+     "en": "to wear, e.g. a hat"
+    },
+    {
+     "id": "c11-v53",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbayì",
+     "en": "popular"
+    },
+    {
+     "id": "c11-v54",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "gbọ́dọ̀",
+     "en": "must"
+    },
+    {
+     "id": "c11-v55",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jẹ́",
+     "en": "to be"
+    },
+    {
+     "id": "c11-v56",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "nípọn",
+     "en": "thick"
+    },
+    {
+     "id": "c11-v57",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "ró",
+     "en": "to wrap around"
+    },
+    {
+     "id": "c11-v58",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wé",
+     "en": "to tie, e. g. a headgear"
+    },
+    {
+     "id": "c11-v59",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wọ",
+     "en": "to wear ( clothes, shoes, or other apparel)"
+    },
+    {
+     "id": "c11-v60",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "wọ́n",
+     "en": "to be expensive"
+    },
+    {
+     "id": "c11-v61",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "di ìgbàdí",
+     "en": "wrap-around waist"
+    },
+    {
+     "id": "c11-v62",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fún … láàyè",
+     "en": "allow"
+    },
+    {
+     "id": "c11-v63",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "irú… wo?",
+     "en": "what type?"
+    },
+    {
+     "id": "c11-v64",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò pé",
+     "en": "not complete"
+    },
+    {
+     "id": "c11-v65",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "pa òwe",
+     "en": "say proverbially"
+    },
+    {
+     "id": "c11-v66",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "yàtọ̀ sí",
+     "en": "different from"
+    },
+    {
+     "id": "c11-v67",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "oríṣiríṣi",
+     "en": "different types"
+    },
+    {
+     "id": "c11-v68",
+     "type": "vocab",
+     "pos": "conjunction",
+     "yo": "tàbí",
+     "en": "or"
+    },
+    {
+     "id": "c11-v69",
+     "type": "vocab",
+     "pos": "prepositional-phrase",
+     "yo": "ní ọ̀nà mìíràn",
+     "en": "in another way"
+    },
+    {
+     "id": "c11-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Aṣọ wíwọ̀ ní ilẹ̀ẹ Yorùbá (Types of Clothing)",
+     "explanation": "Traditional dress: bùbá 'blouse/shirt', ìró 'wrap skirt', gèlè 'head-tie', ṣòkòtò 'trousers', agbádá 'flowing gown', fìlà 'cap', bàtà 'shoes'.",
+     "examples": []
+    },
+    {
+     "id": "c11-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "More Interrogatives",
+     "explanation": "Further question words: Irú … wo? 'which kind of…?', Níbo? 'where?', Báwo? 'how?': Irú aṣọ wo ni o fẹ́? 'Which kind of cloth do you want?'",
+     "examples": [
+      {
+       "yo": "Q. Ta ni ó wà nínúu yàrá nàá?",
+       "en": "Who is inside the room?"
+      },
+      {
+       "yo": "R. Ìdáhùn: Kò sí ẹnì kankan nínúu yàrá nàá.",
+       "en": "Nobody is inside the room."
+      },
+      {
+       "yo": "Q. Ìwée ta ni yìí?",
+       "en": "Whose book is this?"
+      },
+      {
+       "yo": "Q. Ta ni o fẹ́ràn ni ilé-ìwéè rẹ?",
+       "en": "Who do you like in your school?"
+      },
+      {
+       "yo": "R. Mo fẹ́rànan olùkọ́ọ̀ mi.",
+       "en": "I like my teacher."
+      },
+      {
+       "yo": "Q. Kí ni ò ń ṣe nísìnyí?",
+       "en": "What are you doing now?"
+      },
+      {
+       "yo": "R. Mò ń ka ìwéè mi.",
+       "en": "I’m reading my book."
+      },
+      {
+       "yo": "Q. Kí nì yìí?",
+       "en": "What is this?"
+      },
+      {
+       "yo": "R. Aáyán ńlá ni. Yéèpà!",
+       "en": "It’s a big cockroach. Wow!"
+      },
+      {
+       "yo": "Q. Kí ní ò ń kà?",
+       "en": "What are you reading?"
+      }
+     ]
+    },
+    {
+     "id": "c11-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Clothing Verbs: fi…lé/kọ́, wọ̀, dé, wé, ró, gẹ̀",
+     "explanation": "Different verbs for wearing different items: wọ̀ 'wear (body/feet)' — wọ aṣọ/bàtà; dé 'wear (on head)' — dé fìlà; wé 'tie (head-tie)' — wé gèlè; ró 'wrap (skirt)' — ró ìró; fi…lé/kọ́ 'put/hang on'.",
+     "examples": []
+    },
+    {
+     "id": "c11-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Seasonal Clothings",
+     "explanation": "Clothing follows the seasons: heavy cloth (aṣọ tí ó wúwo) for òtútù 'the cold/rainy season', light cloth (aṣọ fẹ́lẹ́fẹ́lẹ́) for ẹ̀rùn 'the dry/hot season'.",
+     "examples": [
+      {
+       "yo": "Nígbà wo ni wà á lọ sí ilé?",
+       "en": "When are you going home?"
+      },
+      {
+       "yo": "Nígbà wo ni ilé-ẹ̀kọ́ gíga Yunifásítì tiTexas",
+       "en": "When does the school year begin at"
+      },
+      {
+       "yo": "ní Austin ń bẹ̀rẹ̀ lọ́dún?",
+       "en": "the University of Texas at Austin?"
+      },
+      {
+       "yo": "Ní oṣù kẹjọ ọdún ni.",
+       "en": "It’s in the eighth month of the year."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "yorubaTitle": "Orí Kejìlá",
+   "title": "Campus Life",
+   "objectives": [
+    "About the school system",
+    "How to tell your friend about your course schedule",
+    "How to describe your school’s facilities to your friend",
+    "About life on campus COERLL",
+    "Yorúbà Yémi 281 CC – 2011 The University of Texas at Austin"
+   ],
+   "items": [
+    {
+     "id": "c12-v1",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "áàtì/ọnà",
+     "en": "arts"
+    },
+    {
+     "id": "c12-v2",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "adájọ́",
+     "en": "judge"
+    },
+    {
+     "id": "c12-v3",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "agbára",
+     "en": "strength"
+    },
+    {
+     "id": "c12-v4",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "agbègbè",
+     "en": "area"
+    },
+    {
+     "id": "c12-v5",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àjànàkú / erin",
+     "en": "elephant"
+    },
+    {
+     "id": "c12-v6",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "akẹ́gbẹ́ẹ",
+     "en": "colleague"
+    },
+    {
+     "id": "c12-v7",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àkọ́dá",
+     "en": "first to establish"
+    },
+    {
+     "id": "c12-v8",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àkọ́sórí",
+     "en": "memory verse"
+    },
+    {
+     "id": "c12-v9",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "alákòóso",
+     "en": "governing council"
+    },
+    {
+     "id": "c12-v10",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àńfààní",
+     "en": "opportunity"
+    },
+    {
+     "id": "c12-v11",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "apá",
+     "en": "section/arm"
+    },
+    {
+     "id": "c12-v12",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àpọ́nlé",
+     "en": "exaggeration"
+    },
+    {
+     "id": "c12-v13",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àyè",
+     "en": "opportunity"
+    },
+    {
+     "id": "c12-v14",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "àyẹ̀wò",
+     "en": "experiment"
+    },
+    {
+     "id": "c12-v15",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "BÍ-EÈ",
+     "en": "B.A."
+    },
+    {
+     "id": "c12-v16",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "BÍ-ẸẸ̀DÌ",
+     "en": "B. Ed."
+    },
+    {
+     "id": "c12-v17",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "BÍ-ẸẸ̀SÌ",
+     "en": "B.Sc."
+    },
+    {
+     "id": "c12-v18",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "dáná",
+     "en": "cook"
+    },
+    {
+     "id": "c12-v19",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "èsì",
+     "en": "result(s)"
+    },
+    {
+     "id": "c12-v20",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹ̀kọ́",
+     "en": "course(s)"
+    },
+    {
+     "id": "c12-v21",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹlòmíìn",
+     "en": "another person"
+    },
+    {
+     "id": "c12-v22",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ẹ́M-EÈ",
+     "en": "M.A."
+    },
+    {
+     "id": "c12-v23",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ẹ́M-ẸẸ̀DÌ",
+     "en": "M. Ed."
+    },
+    {
+     "id": "c12-v24",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ẹ́M-ẸẸ̀SÌ",
+     "en": "M. Sc."
+    },
+    {
+     "id": "c12-v25",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ẹnjiníà",
+     "en": "engineer"
+    },
+    {
+     "id": "c12-v26",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ibùgbé",
+     "en": "residence"
+    },
+    {
+     "id": "c12-v27",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ibùjókòó",
+     "en": "office"
+    },
+    {
+     "id": "c12-v28",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdárayá",
+     "en": "entertainment"
+    },
+    {
+     "id": "c12-v29",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìdánwò",
+     "en": "examination"
+    },
+    {
+     "id": "c12-v30",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìgboyè",
+     "en": "the degree of"
+    },
+    {
+     "id": "c12-v31",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ilé-ìkàwé",
+     "en": "library"
+    },
+    {
+     "id": "c12-v32",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "imọ̀-ẹ̀kọ́",
+     "en": "education (as a discipline)"
+    },
+    {
+     "id": "c12-v33",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "Ìmọ̀-ẹ̀rọ",
+     "en": "engineering (as a discipline)"
+    },
+    {
+     "id": "c12-v34",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "irun",
+     "en": "hair"
+    },
+    {
+     "id": "c12-v35",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìṣẹ́jú",
+     "en": "minute"
+    },
+    {
+     "id": "c12-v36",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìṣirò",
+     "en": "math"
+    },
+    {
+     "id": "c12-v37",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ìṣòro",
+     "en": "challenges, problems"
+    },
+    {
+     "id": "c12-v38",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kàńtíìnì",
+     "en": "canteen/restaurant"
+    },
+    {
+     "id": "c12-v39",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kẹ́míkà",
+     "en": "chemical"
+    },
+    {
+     "id": "c12-v40",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kíkẹ́kọ̀ọ́",
+     "en": "the study of"
+    },
+    {
+     "id": "c12-v41",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "kọ́kọ́",
+     "en": "first"
+    },
+    {
+     "id": "c12-v42",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "láàbù",
+     "en": "laboratory"
+    },
+    {
+     "id": "c12-v43",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "lítíréṣọ̀",
+     "en": "literature"
+    },
+    {
+     "id": "c12-v44",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "obìnrin",
+     "en": "female"
+    },
+    {
+     "id": "c12-v45",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "odindin",
+     "en": "whole"
+    },
+    {
+     "id": "c12-v46",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ojoojúmọ́",
+     "en": "everyday"
+    },
+    {
+     "id": "c12-v47",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oko",
+     "en": "farm"
+    },
+    {
+     "id": "c12-v48",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "olùkọ́",
+     "en": "teacher"
+    },
+    {
+     "id": "c12-v49",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òmìnira",
+     "en": "independence"
+    },
+    {
+     "id": "c12-v50",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọmọwé",
+     "en": "a person who holds a Ph.D"
+    },
+    {
+     "id": "c12-v51",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "oníròyìn",
+     "en": "journalist"
+    },
+    {
+     "id": "c12-v52",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òtítọ́",
+     "en": "truth"
+    },
+    {
+     "id": "c12-v53",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ósítẹ̀lì",
+     "en": "hostel"
+    },
+    {
+     "id": "c12-v54",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọkùnrin",
+     "en": "male"
+    },
+    {
+     "id": "c12-v55",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ́ọ̀lù",
+     "en": "hall"
+    },
+    {
+     "id": "c12-v56",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "òpópónà",
+     "en": "street"
+    },
+    {
+     "id": "c12-v57",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "ọ̀tun",
+     "en": "new"
+    },
+    {
+     "id": "c12-v58",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "politẹ́kíníìkì",
+     "en": "polytechnic"
+    },
+    {
+     "id": "c12-v59",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "sáyẹ́ńsì",
+     "en": "science"
+    },
+    {
+     "id": "c12-v60",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "simẹ́sítà/sáà",
+     "en": "semester"
+    },
+    {
+     "id": "c12-v61",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "títì",
+     "en": "street"
+    },
+    {
+     "id": "c12-v62",
+     "type": "vocab",
+     "pos": "noun",
+     "yo": "wákàtí",
+     "en": "hour"
+    },
+    {
+     "id": "c12-v63",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bọ́ọ̀lù àfẹsẹ̀gbá",
+     "en": "soccer"
+    },
+    {
+     "id": "c12-v64",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bọ́ọ̀lù àfọwọ́gbá",
+     "en": "handball"
+    },
+    {
+     "id": "c12-v65",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "bọ́ọ̀lù àjùsáwọ̀n",
+     "en": "basketball"
+    },
+    {
+     "id": "c12-v66",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "òfin àti ìlànà ìtọ́ sọ́nà",
+     "en": "rules and regulations"
+    },
+    {
+     "id": "c12-v67",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹ̀ka ẹ̀kọ́",
+     "en": "branches of study"
+    },
+    {
+     "id": "c12-v68",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ẹ̀ka àṣà àti ijó",
+     "en": "Department of Culture and Dance"
+    },
+    {
+     "id": "c12-v69",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ẹ̀ka ẹ̀kọ́ọ olùkọ́ni",
+     "en": "Faculty of Education"
+    },
+    {
+     "id": "c12-v70",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ẹ̀ka ẹ̀kọ́ iṣẹ́-ọnà",
+     "en": "Faculty of Arts"
+    },
+    {
+     "id": "c12-v71",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ẹ̀ka ẹ̀kọ́ iṣẹ́ àgbẹ̀",
+     "en": "Faculty of Agriculture"
+    },
+    {
+     "id": "c12-v72",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹ̀kọ́ èdèe Yorùbá",
+     "en": "Yoruba language course"
+    },
+    {
+     "id": "c12-v73",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹ̀kọ́ onípò àkọ́kọ́",
+     "en": "first degree"
+    },
+    {
+     "id": "c12-v74",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ẹnu-ọ̀nà àbáwọlé",
+     "en": "entrance"
+    },
+    {
+     "id": "c12-v75",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìbàmú pẹ̀lú òfin ilé-ìwé",
+     "en": "in accordance with university rules"
+    },
+    {
+     "id": "c12-v76",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "igba ènìyàn",
+     "en": "200 people"
+    },
+    {
+     "id": "c12-v77",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé aláràbarà",
+     "en": "house with designs"
+    },
+    {
+     "id": "c12-v78",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ilé-ẹ̀kọ́ọ sẹ́kọ́ńdìrì àgbà",
+     "en": "Senior Secondary School (SSS)"
+    },
+    {
+     "id": "c12-v79",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ilé-ẹ̀kọ́ọ sẹ́kọ́ńdìrì kékeré",
+     "en": "Junior Secondary School (JSS)"
+    },
+    {
+     "id": "c12-v80",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé-ìfowópamọ́sí",
+     "en": "bank"
+    },
+    {
+     "id": "c12-v81",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé gogoro",
+     "en": "tall building/tower"
+    },
+    {
+     "id": "c12-v82",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ilé-ẹ̀kọ́ alákọ̀ọ́bẹ̀rẹ̀",
+     "en": "primary/ elementary school"
+    },
+    {
+     "id": "c12-v83",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ilé- ẹ̀kọ́ọ sẹ́kọ́ńdìrì",
+     "en": "secondary school (high school)"
+    },
+    {
+     "id": "c12-v84",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìmọ̀ iṣẹ́ àgbẹ̀",
+     "en": "agricultural science/farming"
+    },
+    {
+     "id": "c12-v85",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "iṣẹ́-ọnà aláràbarà",
+     "en": "artistic work"
+    },
+    {
+     "id": "c12-v86",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ìwádìí ìjìnlẹ̀",
+     "en": "research"
+    },
+    {
+     "id": "c12-v87",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "kíláàsìi sáyẹ́ńsì",
+     "en": "science class"
+    },
+    {
+     "id": "c12-v88",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "lẹ́kíṣọ́ tiatà",
+     "en": "lecture theater"
+    },
+    {
+     "id": "c12-v89",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "odidi ọdún mẹ́fà",
+     "en": "a whole/ good six years"
+    },
+    {
+     "id": "c12-v90",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "oyè ìmọ̀ ìjìnlẹ̀",
+     "en": "Ph.D"
+    },
+    {
+     "id": "c12-v91",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọgbà àwọn ẹranko",
+     "en": "zoo"
+    },
+    {
+     "id": "c12-v92",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọgbàa yunifásítì/kámpọ́ọ̀sì",
+     "en": "university campus/campus"
+    },
+    {
+     "id": "c12-v93",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Ọba‘bìrin Èlísábẹ́ẹ̀tì",
+     "en": "Queen Elizabeth"
+    },
+    {
+     "id": "c12-v94",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "ọmọ ilé-ẹ̀kọ́",
+     "en": "student"
+    },
+    {
+     "id": "c12-v95",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "yàrá ìgbẹ̀kọ́",
+     "en": "classroom"
+    },
+    {
+     "id": "c12-v96",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "tiatà ìdánilẹ́kọ̀ọ́",
+     "en": "lecture theatre"
+    },
+    {
+     "id": "c12-v97",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Yunifásítì ti àgíríìkì/ ìmọ̀ iṣẹ́ àgbẹ̀",
+     "en": "University of Agriculture"
+    },
+    {
+     "id": "c12-v98",
+     "type": "vocab",
+     "pos": "noun-phrase",
+     "yo": "Yunifásítì ti tẹkinọ́lọ́jì/ ìmọ̀-ẹ̀rọ",
+     "en": "University of Technology"
+    },
+    {
+     "id": "c12-v99",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "jọrọ̀",
+     "en": "to enjoy the benefits"
+    },
+    {
+     "id": "c12-v100",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "pegedé",
+     "en": "to succeed"
+    },
+    {
+     "id": "c12-v101",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rántí",
+     "en": "to remember"
+    },
+    {
+     "id": "c12-v102",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "retí",
+     "en": "to expect"
+    },
+    {
+     "id": "c12-v103",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rojọ́/ wíjọ́",
+     "en": "to complain"
+    },
+    {
+     "id": "c12-v104",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "rọ́jú",
+     "en": "to hang in there"
+    },
+    {
+     "id": "c12-v105",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "tán",
+     "en": "to end"
+    },
+    {
+     "id": "c12-v106",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "yàtọ̀",
+     "en": "different"
+    },
+    {
+     "id": "c12-v107",
+     "type": "vocab",
+     "pos": "verb",
+     "yo": "yìn",
+     "en": "to praise"
+    },
+    {
+     "id": "c12-v108",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "(dá)_sílẹ̀",
+     "en": "establish"
+    },
+    {
+     "id": "c12-v109",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "dojú kọ",
+     "en": "to be faced with"
+    },
+    {
+     "id": "c12-v110",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "fi ọ̀rọ̀ jomi toro ọ̀rọ̀",
+     "en": "discuss/ deliberate"
+    },
+    {
+     "id": "c12-v111",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "gba ìgbéga",
+     "en": "to be promoted"
+    },
+    {
+     "id": "c12-v112",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kò rọrùn",
+     "en": "not easy"
+    },
+    {
+     "id": "c12-v113",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "kú iṣẹ́",
+     "en": "well done!"
+    },
+    {
+     "id": "c12-v114",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "má ṣèyọnu",
+     "en": "don’t worry/never mind"
+    },
+    {
+     "id": "c12-v115",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "múra sí ẹ̀kọ́",
+     "en": "be more studious"
+    },
+    {
+     "id": "c12-v116",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ri dájú wipe",
+     "en": "ensure that"
+    },
+    {
+     "id": "c12-v117",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "ṣe kí n ri ẹ",
+     "en": "show what you can do"
+    },
+    {
+     "id": "c12-v118",
+     "type": "vocab",
+     "pos": "verb-phrase",
+     "yo": "wọ̀ ___ lọ́rùn",
+     "en": "to be overwhelmed"
+    },
+    {
+     "id": "c12-v119",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "gbámúṣé",
+     "en": "very good/very nice"
+    },
+    {
+     "id": "c12-v120",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "láìpẹ́",
+     "en": "very soon"
+    },
+    {
+     "id": "c12-v121",
+     "type": "vocab",
+     "pos": "adjective",
+     "yo": "ní gẹ́lẹ́",
+     "en": "as soon as"
+    },
+    {
+     "id": "c12-v122",
+     "type": "vocab",
+     "pos": "adverb",
+     "yo": "káàkiri",
+     "en": "all around/everywhere"
+    },
+    {
+     "id": "c12-v123",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "já fáfá",
+     "en": "smart"
+    },
+    {
+     "id": "c12-v124",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "tí ó tóbi",
+     "en": "that is big"
+    },
+    {
+     "id": "c12-v125",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "tó mòye",
+     "en": "that are knowledgeable"
+    },
+    {
+     "id": "c12-v126",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "tó ń gbowó rẹpẹtẹ",
+     "en": "making big bucks"
+    },
+    {
+     "id": "c12-v127",
+     "type": "vocab",
+     "pos": "expression",
+     "yo": "wò ó!",
+     "en": "hey, you see…!"
+    },
+    {
+     "id": "c12-g1",
+     "type": "grammar",
+     "lesson": 1,
+     "title": "Ilé-Ìwé (School System)",
+     "explanation": "School vocabulary: ilé-ìwé 'school', ilé-ìwé alákọ̀ọ́bẹ̀rẹ̀ 'primary school', ilé-ìwé girama 'secondary school', yunifásítì/fásitì 'university', akẹ́kọ̀ọ́ 'student', olùkọ́ 'teacher'.",
+     "examples": [
+      {
+       "yo": "onímọ̀-ẹ̀rọ",
+       "en": "memory verse"
+      },
+      {
+       "yo": "èdè",
+       "en": "math"
+      },
+      {
+       "yo": "àkọ́sórí",
+       "en": "arts"
+      },
+      {
+       "yo": "ìṣirò",
+       "en": "language"
+      },
+      {
+       "yo": "áàtì",
+       "en": "engineer"
+      },
+      {
+       "yo": "ìdánwò",
+       "en": "experiment"
+      },
+      {
+       "yo": "adájọ́",
+       "en": "engineering"
+      },
+      {
+       "yo": "oníròyìn",
+       "en": "judge"
+      },
+      {
+       "yo": "ìmọ̀-ẹ̀rọ",
+       "en": "examination"
+      },
+      {
+       "yo": "àyẹ̀wò",
+       "en": "journalist"
+      }
+     ]
+    },
+    {
+     "id": "c12-g2",
+     "type": "grammar",
+     "lesson": 2,
+     "title": "University Course Schedules",
+     "explanation": "Talking about courses and schedules: combining days of the week, times, and subjects: Mo ní kíláàsì Yorùbá ní aago mẹ́sànán ní ọjọ́ Ajé 'I have Yorùbá class at 9 on Monday'.",
+     "examples": []
+    },
+    {
+     "id": "c12-g3",
+     "type": "grammar",
+     "lesson": 3,
+     "title": "Facilities",
+     "explanation": "Campus facilities: ilé-ìkàwé 'library', láàbù 'laboratory', gbọ̀ngàn 'hall', ilé oúnjẹ 'cafeteria', pápá ìṣeré 'sports field'.",
+     "examples": []
+    },
+    {
+     "id": "c12-g4",
+     "type": "grammar",
+     "lesson": 4,
+     "title": "Campus Life",
+     "explanation": "Describing daily life on campus: classes, studying (kàwé 'to read/study'), friends, and activities, combining the chapter's vocabulary with earlier grammar.",
+     "examples": []
+    }
+   ]
+  }
+ ]
+}

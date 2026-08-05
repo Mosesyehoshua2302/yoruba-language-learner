@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Yorùbá orthography needs full combining-diacritic support (ọ́, ẹ̀, ṣ + tone
+   marks). Noto Sans / DejaVu Sans render these correctly; lang="yo" is set on
+   Yorùbá text nodes so the browser picks appropriate glyph shaping. */
+:lang(yo) {
+  font-family: 'Noto Sans', 'DejaVu Sans', Arial, system-ui, sans-serif;
+}
+
+html {
+  color-scheme: light;
+}
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink-50 text-ink-900 antialiased transition-colors duration-300;
+  font-family: 'Noto Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+html.dark body {
+  @apply bg-ink-950 text-ink-100;
+}
+
+/* ---------------------------------------------------------------------
+   Buttons & cards
+   --------------------------------------------------------------------- */
+
+.btn {
+  @apply rounded-xl px-4 py-2 font-medium transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97];
+}
+.btn-primary {
+  @apply btn bg-forest-700 text-white shadow-soft hover:bg-forest-600 hover:shadow-soft-lg;
+}
+html.dark .btn-primary {
+  @apply bg-forest-500 hover:bg-forest-400;
+}
+.btn-secondary {
+  @apply btn bg-ink-100 text-ink-800 hover:bg-ink-200;
+}
+html.dark .btn-secondary {
+  @apply bg-ink-800 text-ink-100 hover:bg-ink-700;
+}
+.btn-ghost {
+  @apply btn bg-transparent text-ink-600 hover:bg-ink-100;
+}
+html.dark .btn-ghost {
+  @apply text-ink-300 hover:bg-ink-800;
+}
+
+.card {
+  @apply rounded-2xl bg-white border border-ink-200/70 shadow-soft transition-colors duration-300;
+}
+html.dark .card {
+  @apply bg-ink-900 border-ink-700/60;
+}
+
+/* ---------------------------------------------------------------------
+   Motion utilities
+   --------------------------------------------------------------------- */
+
+.shimmer-surface {
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+}
+
+.view-transition {
+  animation: fade-up 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ---------------------------------------------------------------------
+   Flip card (Review)
+   --------------------------------------------------------------------- */
+
+.flip-scene {
+  perspective: 1600px;
+}
+.flip-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flip-card.is-flipped {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-face-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+/* ---------------------------------------------------------------------
+   Progress ring
+   --------------------------------------------------------------------- */
+
+.ring-progress {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------------------
+   Badge medallion
+   --------------------------------------------------------------------- */
+
+.medallion {
+  @apply relative flex items-center justify-center rounded-full border transition-all duration-200;
+}
+.medallion--unlocked {
+  @apply border-gold-300 bg-gradient-to-b from-gold-50 to-gold-100 text-gold-700 shadow-soft;
+}
+html.dark .medallion--unlocked {
+  @apply border-gold-500/40 from-gold-900/40 to-ink-900 text-gold-300;
+}
+.medallion--locked {
+  @apply border-ink-200 bg-ink-50 text-ink-300;
+}
+html.dark .medallion--locked {
+  @apply border-ink-700 bg-ink-800/60 text-ink-600;
+}
+
+/* Badge shelf hover accents (Dashboard). Unlocked medallions get a shine
+   sweep, locked ones get a small rattle — both skipped entirely for anyone
+   who has asked the OS for reduced motion. */
+@keyframes shine-sweep {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+@keyframes badge-shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-2px) rotate(-3deg); }
+  40% { transform: translateX(2px) rotate(3deg); }
+  60% { transform: translateX(-1.5px) rotate(-2deg); }
+  80% { transform: translateX(1.5px) rotate(2deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  button:hover > .medallion--unlocked.shimmer-surface {
+    animation: shine-sweep 0.9s ease;
+  }
+  button:hover > .medallion--locked,
+  div:hover > .medallion--locked {
+    animation: badge-shake 0.45s ease-in-out;
+  }
+}
+
+/* The :lang(yo) rule above pins Yorùbá text to sans faces with reliable
+   combining-diacritic support; .font-display opts specific Yorùbá display
+   text (wordmark, flashcard fronts) back into the serif stack. */
+.font-display:lang(yo),
+.font-display :lang(yo) {
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+}
+
+/* scrollbar polish (webkit) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ink-300 rounded-full;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  @apply bg-ink-700;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
