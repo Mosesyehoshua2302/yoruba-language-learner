@@ -1,29 +1,30 @@
-import type { ReactNode, SVGProps } from 'react';
+import type { ReactNode, SVGProps } from "react";
 
 export type IconName =
-  | 'seedling'
-  | 'book'
-  | 'compass'
-  | 'trophy'
-  | 'flame'
-  | 'target'
-  | 'medal'
-  | 'quill'
-  | 'clock'
-  | 'star'
-  | 'sun'
-  | 'moon'
-  | 'check'
-  | 'x'
-  | 'lock'
-  | 'arrow-right'
-  | 'sparkle'
-  | 'chart'
-  | 'refresh'
-  | 'scroll'
-  | 'headband'
-  | 'crown'
-  | 'lightning';
+  | "seedling"
+  | "book"
+  | "compass"
+  | "trophy"
+  | "flame"
+  | "target"
+  | "medal"
+  | "quill"
+  | "clock"
+  | "star"
+  | "sun"
+  | "moon"
+  | "check"
+  | "x"
+  | "lock"
+  | "arrow-right"
+  | "sparkle"
+  | "chart"
+  | "refresh"
+  | "scroll"
+  | "headband"
+  | "crown"
+  | "lightning"
+  | "logout";
 
 const PATHS: Record<IconName, ReactNode> = {
   seedling: (
@@ -102,7 +103,7 @@ const PATHS: Record<IconName, ReactNode> = {
       <path d="M8 11V8a4 4 0 018 0v3" />
     </>
   ),
-  'arrow-right': <path d="M4 12h15M13.5 5.5L20 12l-6.5 6.5" />,
+  "arrow-right": <path d="M4 12h15M13.5 5.5L20 12l-6.5 6.5" />,
   sparkle: (
     <>
       <path d="M11 4l1.7 4.8L17.5 10.5l-4.8 1.7L11 17l-1.7-4.8L4.5 10.5l4.8-1.7z" />
@@ -148,13 +149,20 @@ const PATHS: Record<IconName, ReactNode> = {
     </>
   ),
   lightning: <path d="M13 2.5L4 14h6.5l-1 7.5L20 10h-6.5l-.5-7.5z" />,
+  logout: (
+    <>
+      <path d="M14 4H6a2 2 0 00-2 2v12a2 2 0 002 2h8" />
+      <path d="M18 15l3-3-3-3" />
+      <path d="M21 12H9" />
+    </>
+  ),
 };
 
 export function Icon({
   name,
   size = 20,
   ...rest
-}: { name: IconName; size?: number } & Omit<SVGProps<SVGSVGElement>, 'name'>) {
+}: { name: IconName; size?: number } & Omit<SVGProps<SVGSVGElement>, "name">) {
   return (
     <svg
       viewBox="0 0 24 24"

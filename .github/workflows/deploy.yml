@@ -1,0 +1,167 @@
+name: Deploy Infrastructure
+
+# Gated deployment pipeline for the Yoruba Ye Mi app.
+#
+# Flow (each deploy stage is gated by a GitHub Environment approval):
+#
+#   validate  ->  [approval]  deploy-backend  ->  [approval]  deploy-frontend
+#
+# The backend must deploy before the frontend because FrontendStack consumes
+# the backend API URL (see infra/bin/app.ts). The frontend job rebuilds the SPA
+# (dist/ is gitignored) so the CDK BucketDeployment has assets to upload.
+#
+# ---------------------------------------------------------------------------
+# One-time setup required in the GitHub repo before this works:
+#
+# 1. AWS OIDC — create an IAM role that trusts GitHub's OIDC provider and has
+#    permissions to deploy the CDK stacks (CloudFormation, S3, CloudFront,
+#    Lambda, DynamoDB, Cognito, API Gateway, IAM). Put its ARN in the repo
+#    variable AWS_DEPLOY_ROLE_ARN and the region in AWS_REGION.
+#      Settings -> Secrets and variables -> Actions -> Variables
+#
+# 2. Bootstrap CDK once per account/region (locally):
+#      cd App/infra && npx cdk bootstrap aws://<ACCOUNT_ID>/<REGION>
+#
+# 3. Approval gates — create two GitHub Environments, each with "Required
+#    reviewers" set to whoever approves deploys:
+#      Settings -> Environments -> New environment
+#        - production-backend
+#        - production-frontend
+#    The "Required reviewers" setting is what pauses the run and opens the
+#    approval window between stages.
+# ---------------------------------------------------------------------------
+
+on:
+  # Manual trigger — gives you an explicit "run the pipeline" button.
+  workflow_dispatch:
+  # Auto-run on pushes to main that touch the app or infra.
+  push:
+    branches: [main]
+    paths:
+      - 'App/**'
+      - '.github/workflows/deploy.yml'
+
+# Only one deploy pipeline at a time; don't cancel an in-flight deploy.
+concurrency:
+  group: deploy-infrastructure
+  cancel-in-progress: false
+
+# Least-privilege default; the id-token permission is needed for AWS OIDC.
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  APP_DIR: App
+  INFRA_DIR: App/infra
+  NODE_VERSION: '20'
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Stage 0: Validate. No approval, no AWS credentials, no changes to cloud.
+  # Builds the frontend and synthesizes the CDK app so a broken commit fails
+  # fast before any approver is asked to sign off.
+  # ---------------------------------------------------------------------------
+  validate:
+    name: Build & Synth (no deploy)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install frontend deps
+        working-directory: ${{ env.APP_DIR }}
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: ${{ env.APP_DIR }}
+        run: npm run build
+
+      - name: Install infra deps
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npm ci
+
+      - name: Type-check infra
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npm run build
+
+      - name: CDK synth (all stacks)
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npx cdk synth --all
+
+  # ---------------------------------------------------------------------------
+  # Stage 1: Deploy backend. Gated by the "production-backend" environment.
+  # Deploys Cognito + API + DynamoDB. Must succeed before the frontend so the
+  # API URL cross-stack reference resolves.
+  # ---------------------------------------------------------------------------
+  deploy-backend:
+    name: Deploy Backend
+    needs: validate
+    runs-on: ubuntu-latest
+    environment: production-backend   # <-- approval window (required reviewers)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install infra deps
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npm ci
+
+      - name: Deploy backend stack
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npx cdk deploy YorubaYeMiBackend --require-approval never
+
+  # ---------------------------------------------------------------------------
+  # Stage 2: Deploy frontend. Gated by the "production-frontend" environment.
+  # Rebuilds the SPA (dist/ is gitignored) then deploys S3 + CloudFront; the
+  # BucketDeployment picks up App/dist and writes runtime config.json.
+  # ---------------------------------------------------------------------------
+  deploy-frontend:
+    name: Deploy Frontend
+    needs: deploy-backend
+    runs-on: ubuntu-latest
+    environment: production-frontend  # <-- approval window (required reviewers)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install frontend deps
+        working-directory: ${{ env.APP_DIR }}
+        run: npm ci
+
+      - name: Build frontend (produces dist/ for the CDK asset)
+        working-directory: ${{ env.APP_DIR }}
+        run: npm run build
+
+      - name: Install infra deps
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npm ci
+
+      - name: Deploy frontend stack
+        working-directory: ${{ env.INFRA_DIR }}
+        run: npx cdk deploy YorubaYeMiFrontend --require-approval never

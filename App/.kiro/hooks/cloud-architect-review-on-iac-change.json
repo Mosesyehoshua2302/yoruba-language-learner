@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Cloud Architect Review on IaC Change",
+      "trigger": "PostFileSave",
+      "description": "When an infrastructure-as-code file is saved, activate the cloud-architect-reviewer skill to review the change against AWS best practices and the Well-Architected Framework, with cited, active AWS documentation.",
+      "matcher": "(^|/)(infra|infrastructure|cdk)/|cdk\\.json$|(^|/)(template|serverless)\\.ya?ml$|\\.tf(\\.json)?$|deploy\\.ya?ml$",
+      "action": {
+        "type": "agent",
+        "prompt": "An infrastructure-as-code file was just saved. Activate the `cloud-architect-reviewer` skill (via the skill activation / disclose_context tool) and follow it to review the change.\n\nFirst confirm the saved file is genuinely infrastructure-as-code or cloud architecture config (AWS CDK, CloudFormation, SAM, Terraform, Serverless Framework, Pulumi, or related deployment/config such as cdk.json, IAM policies, or CI deploy workflows). If it is NOT infrastructure/cloud code, do nothing and stay silent — do not review application logic, UI, or unrelated files.\n\nIf it IS infrastructure/cloud code, perform the review exactly as the cloud-architect-reviewer skill instructs: read the changed file and the stack/constructs it depends on, assess against the AWS Well-Architected pillars, keep findings concise and ranked by severity, and cite active, relevant AWS documentation (validated via web search/fetch, never from memory) for every proposal or consideration. Review and advise only — do not modify infrastructure unless the user explicitly asks."
+      }
+    }
+  ]
+}

@@ -1,21 +1,31 @@
-import React, { createContext, useContext, useEffect, useMemo, useReducer, useRef } from 'react';
-import contentJson from '../data/content.json';
-import type { Content, Grade, LearnerState, AssessmentResult } from '../types';
-import { reviewWithGrade } from '../lib/srs';
-import { applyAssessment, sweepDemotions } from '../lib/gate';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+} from "react";
+import contentJson from "../data/content.json";
+import type { Content, Grade, LearnerState, AssessmentResult } from "../types";
+import { reviewWithGrade } from "../lib/srs";
+import { applyAssessment, sweepDemotions } from "../lib/gate";
 import {
   applyAssessmentGamification,
   applyGradeGamification,
   applyIntroduceGamification,
   levelForXp,
   sweepBadges,
-} from '../lib/gamification';
-import * as storage from '../lib/storage';
-import * as api from '../lib/api';
+} from "../lib/gamification";
+import * as storage from "../lib/storage";
+import * as api from "../lib/api";
+import { useAuth } from "./auth";
 
 export const content = contentJson as unknown as Content;
 export const allVocab = content.chapters.flatMap((ch) =>
-  ch.items.filter((i): i is Extract<typeof i, { type: 'vocab' }> => i.type === 'vocab'),
+  ch.items.filter(
+    (i): i is Extract<typeof i, { type: "vocab" }> => i.type === "vocab",
+  ),
 );
 
 // ---------------------------------------------------------------------------
@@ -25,8 +35,8 @@ export const allVocab = content.chapters.flatMap((ch) =>
 // ---------------------------------------------------------------------------
 
 export type CelebrationEvent =
-  | { kind: 'badge'; badgeId: string }
-  | { kind: 'level'; level: number };
+  | { kind: "badge"; badgeId: string }
+  | { kind: "level"; level: number };
 
 type CelebrationListener = (e: CelebrationEvent) => void;
 const celebrationListeners = new Set<CelebrationListener>();
@@ -43,21 +53,26 @@ function emitCelebration(e: CelebrationEvent) {
 }
 
 type Action =
-  | { type: 'grade-card'; itemId: string; grade: Grade; now?: number }
-  | { type: 'introduce'; itemIds: string[]; now?: number }
-  | { type: 'assessment'; result: AssessmentResult }
-  | { type: 'sweep-demotions' }
-  | { type: 'reset' }
-  | { type: 'hydrate'; state: LearnerState };
+  | { type: "grade-card"; itemId: string; grade: Grade; now?: number }
+  | { type: "introduce"; itemIds: string[]; now?: number }
+  | { type: "assessment"; result: AssessmentResult }
+  | { type: "sweep-demotions" }
+  | { type: "reset"; sub: string }
+  | { type: "hydrate"; state: LearnerState };
 
-function withBadgeSweep(next: LearnerState, extraIds: string[] = []): LearnerState {
+function withBadgeSweep(
+  next: LearnerState,
+  extraIds: string[] = [],
+): LearnerState {
   const swept = sweepBadges(next.gamification, next, content, extraIds);
-  return swept.gamification === next.gamification ? next : { ...next, gamification: swept.gamification };
+  return swept.gamification === next.gamification
+    ? next
+    : { ...next, gamification: swept.gamification };
 }
 
 function reducer(state: LearnerState, action: Action): LearnerState {
   switch (action.type) {
-    case 'grade-card': {
+    case "grade-card": {
       const now = action.now ?? Date.now();
       const card = state.cards[action.itemId];
       if (!card) return state;
@@ -83,14 +98,20 @@ function reducer(state: LearnerState, action: Action): LearnerState {
         Object.values(next.cards).filter((c) => c.chapterId === chId),
       );
       next = { ...next, chapters: swept.chapters };
-      next = { ...next, gamification: applyGradeGamification(next.gamification, { grade: action.grade }) };
+      next = {
+        ...next,
+        gamification: applyGradeGamification(next.gamification, {
+          grade: action.grade,
+        }),
+      };
       return withBadgeSweep(next);
     }
-    case 'introduce': {
+    case "introduce": {
       const now = action.now ?? Date.now();
       const day = new Date(now).toISOString().slice(0, 10);
       const cards = { ...state.cards };
-      let count = state.introducedToday.day === day ? state.introducedToday.count : 0;
+      let count =
+        state.introducedToday.day === day ? state.introducedToday.count : 0;
       let newlyIntroduced = 0;
       for (const id of action.itemIds) {
         const c = cards[id];
@@ -105,10 +126,16 @@ function reducer(state: LearnerState, action: Action): LearnerState {
         cards,
         introducedToday: { day, count },
       };
-      next = { ...next, gamification: applyIntroduceGamification(next.gamification, newlyIntroduced) };
+      next = {
+        ...next,
+        gamification: applyIntroduceGamification(
+          next.gamification,
+          newlyIntroduced,
+        ),
+      };
       return withBadgeSweep(next);
     }
-    case 'assessment': {
+    case "assessment": {
       const statusBefore = state.chapters[action.result.chapterId]?.status;
       const chapters = applyAssessment(
         state.chapters,
@@ -129,30 +156,39 @@ function reducer(state: LearnerState, action: Action): LearnerState {
           passed: action.result.passed,
         }),
       };
-      const comeback = statusBefore === 'demoted' && statusAfter === 'passed';
-      return withBadgeSweep(next, comeback ? ['comeback'] : []);
+      const comeback = statusBefore === "demoted" && statusAfter === "passed";
+      return withBadgeSweep(next, comeback ? ["comeback"] : []);
     }
-    case 'sweep-demotions': {
+    case "sweep-demotions": {
       const swept = sweepDemotions(state.chapters, (chId) =>
         Object.values(state.cards).filter((c) => c.chapterId === chId),
       );
       return { ...state, chapters: swept.chapters };
     }
-    case 'reset':
-      storage.reset();
+    case "reset":
+      storage.reset(action.sub);
       return storage.freshState(content);
-    case 'hydrate':
+    case "hydrate":
       return action.state;
     default:
       return state;
   }
 }
 
-const StoreCtx = createContext<{ state: LearnerState; dispatch: React.Dispatch<Action> } | null>(null);
+const StoreCtx = createContext<{
+  state: LearnerState;
+  dispatch: React.Dispatch<Action>;
+} | null>(null);
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
-  const [state, dispatch] = useReducer(reducer, undefined as unknown as LearnerState, () =>
-    storage.load(content),
+  // StoreProvider only mounts once signed in (or in local dev, where sub is
+  // "local"); namespace the cache by the user's Cognito sub.
+  const { sub: authSub } = useAuth();
+  const sub = authSub ?? "local";
+  const [state, dispatch] = useReducer(
+    reducer,
+    undefined as unknown as LearnerState,
+    () => storage.load(content, sub),
   );
 
   // Postgres (via server/) is the source of truth; localStorage is only an
@@ -164,7 +200,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     let cancelled = false;
     api.fetchState().then((serverState) => {
       if (cancelled) return;
-      if (serverState) dispatch({ type: 'hydrate', state: storage.reconcile(serverState, content) });
+      if (serverState)
+        dispatch({
+          type: "hydrate",
+          state: storage.reconcile(serverState, content),
+        });
       hydrated.current = true;
     });
     return () => {
@@ -174,12 +214,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
   const saveTimer = useRef<ReturnType<typeof setTimeout>>();
   useEffect(() => {
-    storage.save(state);
+    storage.save(state, sub);
     if (!hydrated.current) return;
     clearTimeout(saveTimer.current);
     saveTimer.current = setTimeout(() => api.saveState(state), 600);
     return () => clearTimeout(saveTimer.current);
-  }, [state]);
+  }, [state, sub]);
 
   const prevGamification = useRef(state.gamification);
   useEffect(() => {
@@ -188,11 +228,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     prevGamification.current = state.gamification;
     const known = new Set(prev.unlockedBadges);
     for (const id of state.gamification.unlockedBadges) {
-      if (!known.has(id)) emitCelebration({ kind: 'badge', badgeId: id });
+      if (!known.has(id)) emitCelebration({ kind: "badge", badgeId: id });
     }
     const levelBefore = levelForXp(prev.xp).level;
     const levelAfter = levelForXp(state.gamification.xp).level;
-    if (levelAfter > levelBefore) emitCelebration({ kind: 'level', level: levelAfter });
+    if (levelAfter > levelBefore)
+      emitCelebration({ kind: "level", level: levelAfter });
   }, [state.gamification]);
 
   const value = useMemo(() => ({ state, dispatch }), [state]);
@@ -201,6 +242,6 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
 
 export function useStore() {
   const ctx = useContext(StoreCtx);
-  if (!ctx) throw new Error('useStore outside provider');
+  if (!ctx) throw new Error("useStore outside provider");
   return ctx;
 }

@@ -3,20 +3,22 @@
 Infrastructure-as-code for hosting the Yorùbá Yé Mi app on AWS. Two CloudFormation
 stacks, defined with AWS CDK v2 in TypeScript:
 
-| Stack | Name | What it holds |
-|---|---|---|
-| Frontend | `YorubaYeMiFrontend` | S3 (private) + CloudFront — serves the built SPA |
-| Backend | `YorubaYeMiBackend` | Cognito user pool + HTTP API + Lambda + DynamoDB — cross-device state sync |
+| Stack    | Name                 | What it holds                                                              |
+| -------- | -------------------- | -------------------------------------------------------------------------- |
+| Frontend | `YorubaYeMiFrontend` | S3 (private) + CloudFront — serves the built SPA                           |
+| Backend  | `YorubaYeMiBackend`  | Cognito user pool + HTTP API + Lambda + DynamoDB — cross-device state sync |
 
 ## What is being built, and why
 
 ### The app today
+
 The SPA is fully offline-first: all learner state (SRS cards, chapter progress,
 XP/badges) lives in `localStorage`. That is great for a single browser but state
 is lost if the browser data is cleared and can't follow the learner across
 devices.
 
 ### Frontend stack — static hosting done properly
+
 - **S3 bucket, fully private** (`BlockPublicAccess.BLOCK_ALL`, SSL enforced).
   Nothing is served from S3 directly.
 - **CloudFront distribution** in front, using **Origin Access Control** so only
@@ -36,6 +38,7 @@ a static SPA on AWS. No servers, scales automatically, and the whole thing is
 usually pennies per month at small scale.
 
 ### Backend stack — the "empower it" foundation
+
 The goal is to let a signed-in learner sync progress across devices without
 giving up the offline-first model. localStorage remains the source of truth in
 the browser; the backend is a durable mirror.
@@ -45,14 +48,15 @@ the browser; the backend is a durable mirror.
   `LearnerState` blob plus `updatedAt`. The state is small (≪ 400 KB item limit)
   and is always read/written whole, so a single-item model is the simplest
   correct design — no migrations, no partial-update conflicts.
-- **Cognito user pool** — email sign-up/sign-in, SRP auth flow, email recovery.
-  `RETAIN`ed so user accounts survive accidental stack deletion.
+- **Cognito user pool + Hosted UI** — email sign-up/sign-in via the Cognito
+  Hosted UI (OAuth2 authorization code + PKCE, no client secret), on a prefix
+  domain. `RETAIN`ed so user accounts survive accidental stack deletion.
 - **HTTP API (API Gateway v2)** — cheaper and simpler than REST API Gateway.
   Every route requires a valid Cognito JWT (JWT authorizer); the Lambda derives
   the user id from the token's `sub` claim, so a user can only ever touch their
   own row.
-- **One Lambda** (`lambda/state-handler.ts`, Node 20, ARM64, bundled by
-  esbuild):
+- **One Lambda** (`lambda/state_handler.py`, Python 3.13, ARM64; boto3 ships in
+  the managed runtime, so no bundling step):
   - `GET /state` → returns the saved `{ state, updatedAt }` or 404 if none.
   - `PUT /state` → validates and stores `{ state }`, returns `{ updatedAt }`.
   - Payloads capped at 380 KB; body must parse as JSON with a numeric
@@ -62,16 +66,41 @@ the browser; the backend is a durable mirror.
 patch. Every piece is pay-per-request, which fits an app with one (or a handful
 of) users today but doesn't need rearchitecting if that grows.
 
+### Auth + first deploy (the manual callback-URL step)
+
+The Cognito app client must list the app's callback/logout URLs, but the
+CloudFront URL does not exist until the frontend stack is first deployed. These
+URLs are therefore supplied manually as CDK context (they default to
+`http://localhost:5173/...` for dev):
+
+1. **First deploy** with the localhost defaults (backend then frontend). Note
+   the `YorubaYeMiFrontend.SiteUrl` (CloudFront URL) from the outputs.
+2. **Redeploy the backend** with the real URLs so Hosted UI will redirect back:
+   ```bash
+   npx cdk deploy YorubaYeMiBackend \
+     -c authCallbackUrls=https://<cloudfront-domain>/callback \
+     -c authLogoutUrls=https://<cloudfront-domain>/
+   ```
+3. **Redeploy the frontend** so `config.json` carries the same redirect URIs:
+   ```bash
+   npm run build   # in App/
+   npx cdk deploy YorubaYeMiFrontend \
+     -c authCallbackUrls=https://<cloudfront-domain>/callback \
+     -c authLogoutUrls=https://<cloudfront-domain>/
+   ```
+
+Optionally override the Hosted UI domain prefix with
+`-c cognitoDomainPrefix=<globally-unique-prefix>`. Migrating to a custom domain
+later removes this manual step (a stable URL is known up front).
+
 ### What is deliberately NOT built yet
-- **No frontend wiring to the API.** The SPA does not call the backend yet;
-  that's the next iteration (sign-in UI + a sync module that pushes/pulls
-  `LearnerState` and resolves conflicts by `updatedAt`).
+
 - **No custom domain / ACM certificate** — add a `DomainName` + Route 53 records
-  once a domain is chosen.
+  once a domain is chosen; this also removes the manual callback-URL step above.
 - **No conflict resolution beyond last-write-wins** — fine for a single learner
   on a couple of devices; revisit if that assumption changes.
 - **CORS is `*`** while there's no fixed domain; tighten `allowOrigins` to the
-  CloudFront URL (or custom domain) as soon as the frontend is wired up.
+  CloudFront URL (or custom domain) once a stable origin exists.
 
 ## Prerequisites
 
@@ -83,29 +112,73 @@ of) users today but doesn't need rearchitecting if that grows.
 npx cdk bootstrap
 ```
 
+## What `dist/` is, and why the frontend deploy needs it
+
+`dist/` is the app **compiled into browser-runnable files** — it _is_ the app
+that actually runs. The `src/` folder is developer source (TypeScript, JSX,
+Tailwind, ~60 modules); browsers can't run any of that directly. `npm run build`
+(Vite) translates `src/` into `dist/`: a plain `index.html`, one bundled+minified
+`.js`, and one processed `.css`.
+
+S3 + CloudFront is **dumb static hosting** — it serves files exactly as-is and
+knows nothing about TypeScript or React. So it can only host the already-compiled
+`dist/`, never `src/`. That is why the deploy must produce `dist/` first.
+
+`dist/` is **generated output** (gitignored, reproducible), so it does not exist
+on a fresh checkout and is stale after any source change — always rebuild before
+deploying.
+
+> **Gotcha — empty bucket.** The frontend stack's `BucketDeployment` (which
+> uploads the SPA _and_ writes `config.json`) is guarded by
+> `fs.existsSync(distDir)`. If `dist/` is absent at deploy time, the bucket +
+> CloudFront are still created but **nothing is uploaded** — no SPA, no
+> `config.json`, empty bucket. If you deployed and the bucket is empty, you
+> almost certainly skipped `npm run build`. Fix: build, then redeploy the
+> frontend.
+
 ## Deploy
 
+Use the project-local CDK CLI (`./node_modules/.bin/cdk` or `npx cdk`); a stale
+global `cdk` can be too old for the installed `aws-cdk-lib`.
+
 ```bash
-# 1. Build the SPA (from the app root, one level up)
-npm run build
+# 0. Refresh credentials + confirm target account/region
+aws sso login                    # if using SSO
+aws sts get-caller-identity
+
+# 1. Build the SPA — produces dist/ (REQUIRED before the frontend deploy)
+npm run build                    # from the App/ root
 
 # 2. Install infra deps
 cd infra && npm install
 
-# 3. See what will be created
-npx cdk diff
-
-# 4. Deploy both stacks (backend first — frontend consumes its API URL)
-npx cdk deploy --all
+# 3. Deploy backend first (frontend consumes its outputs), then frontend
+npx cdk deploy YorubaYeMiBackend
+npx cdk deploy YorubaYeMiFrontend
 ```
 
 Outputs after deploy:
-- `YorubaYeMiFrontend.SiteUrl` — the CloudFront URL to open
-- `YorubaYeMiBackend.ApiUrl`, `UserPoolId`, `UserPoolClientId` — needed when the
-  SPA gets wired to the backend
 
-If `dist/` doesn't exist the frontend stack still synthesizes/deploys — it just
-skips the upload step (useful for infra-only iteration).
+- `YorubaYeMiFrontend.SiteUrl` — the CloudFront URL to open
+- `YorubaYeMiBackend.ApiUrl`, `UserPoolId`, `UserPoolClientId`, `UserPoolDomain`
+  — the values the frontend stack folds into `config.json` (see below)
+
+### How `config.json` is created (deploy) vs. consumed (runtime)
+
+`config.json` is **never a source file**. The frontend CDK stack _creates_ it at
+deploy time: `bin/app.ts` passes the backend outputs into the frontend stack,
+`frontend-stack.ts` puts them in `runtimeConfig`, and `cloudfront-site.ts`
+serializes that to `config.json` via the same `BucketDeployment` that uploads
+`dist/` (so no `dist/` also means no `config.json`). At **runtime**, the browser
+_loads_ it: `main.tsx` → `loadConfig()` → `fetch('/config.json')`, and the values
+are injected into the OIDC client (`auth.ts`) and the API client (`api.ts`).
+
+This keeps the build environment-agnostic: the same `dist/` bundle works in any
+environment because config is fetched, not baked in. In local dev there is no
+`config.json` (fetch 404s) so the app falls back to the local FastAPI server with
+auth disabled. Note the backend Lambda does **not** read `config.json` — it gets
+its config from environment variables (`TABLE_NAME`) and the JWT authorizer wired
+at deploy time.
 
 ## Costs
 

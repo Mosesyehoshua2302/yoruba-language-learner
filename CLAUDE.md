@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A local-first web app for learning Yorùbá, built entirely from the open textbook *Yorùbá Yé Mi*
+A local-first web app for learning Yorùbá, built entirely from the open textbook _Yorùbá Yé Mi_
 (Fẹ̀hìntọ́lá Mosádomi, COERLL / UT Austin, 2012, CC-licensed). All content — 12 chapters, 1,008
 vocabulary items, 47 grammar lessons — lives in `App/src/data/content.json`, extracted from the
 PDF in `Documents/`.
@@ -22,27 +22,36 @@ PDF in `Documents/`.
 
 ```bash
 npm install
-npm run dev      # frontend dev server only
-npm run server   # local Express+Postgres state server only
-npm run dev:full # both together (frontend proxies /api to the server)
-npm run db:setup # one-time: create the local `yoruba_learner` DB + table
+npm run dev          # frontend dev server only
+npm run server:setup # one-time: create the server-py venv + install deps
+npm run server       # local FastAPI+SQLite state server (http://localhost:8787)
+npm run server:test  # pytest suite for the local server
 npm run build    # tsc && vite build -> dist/
 npm run preview  # preview a production build
 npm test         # vitest run (SRS + gate unit tests)
 ```
 
-Run a single test file: `npx vitest run src/lib/__tests__/srs.test.ts`. Tests also run
-standalone via `tsx` if needed. Requires Node 18+ and, for the state server, a local Postgres
-instance (credentials in `App/server/.env`, gitignored — see `App/server/.env.example`).
+This is a **single-page app (SPA)**: one `index.html` + a JS bundle that renders
+every view client-side (the tabs in `App.tsx` swap views, no page reloads).
+`npm run build` compiles the developer source in `src/` (TypeScript/JSX/Tailwind)
+into browser-runnable static files in `dist/` — that `dist/` _is_ the deployable
+app. It is gitignored and reproducible, so it does not exist on a fresh checkout;
+rebuild it before deploying the frontend. S3/CloudFront serve `dist/` as-is (they
+can't run `src/`), so a missing `dist/` at deploy time means an empty bucket — see
+`App/infra/README.md`.
+
+Run a single frontend test file: `npx vitest run src/lib/__tests__/srs.test.ts`. Tests also run
+standalone via `tsx` if needed. The local state server is Python (`App/server-py/`), run in a
+venv (see `npm run server:setup` / `npm run server`); it needs no database service (SQLite file).
 
 There is no lint script configured; `tsc` (via `npm run build`) is the type-check gate — note
-its `include` is scoped to `src/`, so it does not type-check `App/server/`.
+its `include` is scoped to `src/`.
 
 The app works fully offline: `src/lib/storage.ts` keeps a `localStorage` cache for instant loads.
-The source of truth for learner state is Postgres via `App/server/` (a small Express API,
+The durable mirror for learner state in development is the local FastAPI server (`App/server-py/`,
 `GET/PUT /api/state`) — the frontend syncs to it in the background (`src/lib/api.ts`, wired into
 `src/state/store.tsx`) and falls back to the localStorage cache when the server is unreachable.
-This is a separate, local-only backend from the AWS one in `App/infra/` (see below).
+This is a dev-only, local backend, separate from the AWS one in `App/infra/` (see below).
 
 ## Architecture: two progression layers, one source of truth
 
@@ -59,8 +68,8 @@ and resurfaces within the session. The daily queue (`src/lib/queue.ts`) mixes du
 unlocked chapters with up to `newPerDay` (default 10) new items/day from the current chapter.
 
 **How they interact.** Chapter assessments draw questions from the chapter's SRS cards, and every
-assessment answer is *also* recorded as an SRS review of that card — there is no separate quiz
-bank. Each card keeps a rolling window of its last 20 results; if a *passed* chapter's rolling
+assessment answer is _also_ recorded as an SRS review of that card — there is no separate quiz
+bank. Each card keeps a rolling window of its last 20 results; if a _passed_ chapter's rolling
 accuracy drops below `DEMOTE_THRESHOLD` (60%, minimum `MIN_SAMPLES` = 10 recent reviews), the
 chapter is demoted: it reopens as active practice, its cards jump to the front of the queue, and
 all forward progress is blocked until it's re-passed. The demotion sweep (`sweepDemotions`) runs
@@ -123,19 +132,20 @@ Typed-answer questions accept tone-markless input (e.g. `e kaaaro` for `Ẹ ká�
 Yorùbá diacritics on a standard keyboard is impractical; multiple-choice still requires full
 orthography.
 
-## Local state server (`App/server/`)
+## Local dev state server (`App/server-py/`)
 
-Express + `pg`, single fixed-row table `learner_state(id, state jsonb, updated_at)` — mirrors
-the whole `LearnerState` blob, matching the single-item design of the DynamoDB backend below.
+FastAPI + SQLite, single fixed-row table `learner_state(id, state, updated_at)` — mirrors the
+whole `LearnerState` blob, matching the single-item design of the DynamoDB backend below.
 `GET/PUT /api/state`, same contract (`{ state, updatedAt }` / `{ state }` → `{ updatedAt }`,
-380KB cap) as `App/infra/lambda/state-handler.ts`, so the two backends stay interchangeable in
-shape even though one is local/Postgres and the other is AWS/DynamoDB. The frontend
-(`src/lib/api.ts`) calls it directly at `http://localhost:8787` — not via a Vite dev-server
-proxy, which turned out to be unreliable in this environment (Vite 5's proxy never opened an
-outbound connection at all, no error, just hung — root cause not pinned down, possibly a
-Vite/Node-version interaction). The server sends permissive CORS headers instead, so the direct
-call works the same in dev, `vite preview`, and prod regardless. `server/setup-db.ts` creates
-the `yoruba_learner` database and applies `server/schema.sql` — run via `npm run db:setup`.
+380KB cap) as the cloud handler `App/infra/lambda/state_handler.py`, so the two backends stay
+interchangeable in shape even though one is local/SQLite/no-auth and the other is
+AWS/DynamoDB/Cognito-JWT. The frontend (`src/lib/api.ts`) calls it directly at
+`http://localhost:8787` — not via a Vite dev-server proxy, which turned out to be unreliable in
+this environment (Vite 5's proxy never opened an outbound connection at all, no error, just hung).
+The server sends permissive CORS headers instead, so the direct call works the same in dev,
+`vite preview`, and prod regardless. It is a **dev-only convenience** (no auth); the SQLite file
+(`state.db`, gitignored) needs no separate database service. Run: `npm run server:setup` once,
+then `npm run server`; tests via `npm run server:test`.
 
 ## Infra (`App/infra/`, optional AWS deployment)
 
