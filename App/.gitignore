@@ -5,6 +5,9 @@ infra/cdk.out/
 infra/cdk.context.json
 server-py/.venv/
 server-py/*.db
+*.env
+.env
+.env.*
 
 # BEGIN AI-DLC:gitignore
 # Logs

@@ -1,6 +1,6 @@
-import * as cdk from 'aws-cdk-lib';
-import * as cognito from 'aws-cdk-lib/aws-cognito';
-import { Construct } from 'constructs';
+import * as cdk from "aws-cdk-lib";
+import * as cognito from "aws-cdk-lib/aws-cognito";
+import { Construct } from "constructs";
 
 /**
  * Props for {@link CognitoUserPool}.
@@ -29,7 +29,9 @@ export interface CognitoUserPoolProps {
  */
 export class CognitoUserPool extends Construct {
   static readonly USER_POOL_DEFAULTS = {
-    selfSignUpEnabled: true,
+    // Invite-only by default: users are created by an admin, not self-service.
+    // A consuming stack can override this via `props.userPool.selfSignUpEnabled`.
+    selfSignUpEnabled: false,
     signInAliases: { email: true },
     autoVerify: { email: true },
     passwordPolicy: {
@@ -57,12 +59,12 @@ export class CognitoUserPool extends Construct {
   constructor(scope: Construct, id: string, props: CognitoUserPoolProps = {}) {
     super(scope, id);
 
-    this.userPool = new cognito.UserPool(this, 'Resource', {
+    this.userPool = new cognito.UserPool(this, "Resource", {
       ...CognitoUserPool.USER_POOL_DEFAULTS,
       ...props.userPool,
     });
 
-    this.userPoolClient = this.userPool.addClient('Client', {
+    this.userPoolClient = this.userPool.addClient("Client", {
       ...CognitoUserPool.CLIENT_DEFAULTS,
       ...props.client,
     });

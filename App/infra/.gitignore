@@ -1,10 +1,9 @@
 # CDK synthesized output
 cdk.out/
 
-# CDK-managed context cache. Also holds this project's manually-set deploy
-# context (authCallbackUrls, authLogoutUrls, cognitoDomainPrefix) — kept local
-# per developer/environment. If you'd rather commit stable values, move them to
-# the `context` block in cdk.json instead.
+# CDK-managed context cache (auto-written lookups only). This project's deploy
+# context — authCallbackUrls, authLogoutUrls, cognitoDomainPrefix — is committed
+# in cdk.json's `context` block, not here.
 cdk.context.json
 
 node_modules/
