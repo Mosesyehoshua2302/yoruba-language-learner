@@ -1,0 +1,7 @@
+{
+  "context": {
+    "cognitoDomainPrefix": "yoruba-ye-mi-beta",
+    "authCallbackUrls": "https://d13g89wfwnzrj8.cloudfront.net/callback",
+    "authLogoutUrls": "https://d13g89wfwnzrj8.cloudfront.net/"
+  }
+}

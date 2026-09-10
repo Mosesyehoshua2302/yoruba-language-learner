@@ -5,9 +5,6 @@
     "exclude": ["node_modules", "cdk.out"]
   },
   "context": {
-    "cognitoDomainPrefix": "yoruba-ye-mi-beta",
-    "authCallbackUrls": "http://localhost:5173/callback",
-    "authLogoutUrls": "http://localhost:5173/",
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/core:checkSecretUsage": true,
     "@aws-cdk/aws-iam:minimizePolicies": true,

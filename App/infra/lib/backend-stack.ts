@@ -42,6 +42,28 @@ export class BackendStack extends cdk.Stack {
       "http://localhost:5173/",
     ]);
 
+    // Google as a federated identity provider. The Google OAuth client id and
+    // secret are read from environment variables first (preferred — keeps the
+    // secret out of any file), falling back to CDK context if provided:
+    //   GOOGLE_CLIENT_ID=<id>.apps.googleusercontent.com \
+    //   GOOGLE_CLIENT_SECRET=<secret> \
+    //     npx cdk deploy YorubaYeMiBackend --context-file dev.json
+    // Omit them and Google sign-in is simply not configured (email still works).
+    const googleClientId =
+      process.env.GOOGLE_CLIENT_ID ??
+      (this.node.tryGetContext("googleClientId") as string | undefined);
+    const googleClientSecret =
+      process.env.GOOGLE_CLIENT_SECRET ??
+      (this.node.tryGetContext("googleClientSecret") as string | undefined);
+    const googleEnabled = Boolean(googleClientId && googleClientSecret);
+
+    const supportedIdps: cognito.UserPoolClientIdentityProvider[] = [
+      cognito.UserPoolClientIdentityProvider.COGNITO,
+    ];
+    if (googleEnabled) {
+      supportedIdps.push(cognito.UserPoolClientIdentityProvider.GOOGLE);
+    }
+
     const auth = new CognitoUserPool(this, "Auth", {
       client: {
         // Hosted UI uses the OAuth authorization-code grant (with PKCE for a
@@ -51,6 +73,7 @@ export class BackendStack extends cdk.Stack {
         accessTokenValidity: cdk.Duration.hours(1),
         idTokenValidity: cdk.Duration.hours(1),
         refreshTokenValidity: cdk.Duration.days(30),
+        supportedIdentityProviders: supportedIdps,
         oAuth: {
           flows: { authorizationCodeGrant: true },
           scopes: [
@@ -63,6 +86,31 @@ export class BackendStack extends cdk.Stack {
         },
       },
     });
+
+    if (googleEnabled) {
+      const google = new cognito.UserPoolIdentityProviderGoogle(
+        this,
+        "GoogleIdp",
+        {
+          userPool: auth.userPool,
+          clientId: googleClientId!,
+          clientSecretValue: cdk.SecretValue.unsafePlainText(
+            googleClientSecret!,
+          ),
+          // Scopes requested from Google.
+          scopes: ["openid", "email", "profile"],
+          // Map Google claims onto Cognito standard attributes.
+          attributeMapping: {
+            email: cognito.ProviderAttribute.GOOGLE_EMAIL,
+            givenName: cognito.ProviderAttribute.GOOGLE_GIVEN_NAME,
+            familyName: cognito.ProviderAttribute.GOOGLE_FAMILY_NAME,
+          },
+        },
+      );
+      // The app client must not be created before the IdP exists, or Cognito
+      // rejects listing GOOGLE as a supported provider.
+      auth.userPoolClient.node.addDependency(google);
+    }
 
     // Hosted UI needs a domain. A Cognito-prefix domain is used for now; the
     // prefix can be overridden via context and must be globally unique.
