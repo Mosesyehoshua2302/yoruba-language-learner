@@ -8,6 +8,9 @@ server-py/*.db
 *.env
 .env
 .env.*
+# Keep example templates committable.
+!.env.example
+!*.env.example
 
 # BEGIN AI-DLC:gitignore
 # Logs
