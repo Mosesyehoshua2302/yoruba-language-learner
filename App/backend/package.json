@@ -1,0 +1,10 @@
+{
+  "name": "yoruba-ye-mi-backend",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "server": "cd server-py && uvicorn app:app --port 8787 --reload",
+    "server:setup": "cd server-py && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt",
+    "server:test": "cd server-py && .venv/bin/python -m pytest"
+  }
+}

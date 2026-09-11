@@ -13,10 +13,12 @@ name: Deploy Infrastructure
 # ---------------------------------------------------------------------------
 # One-time setup required in the GitHub repo before this works:
 #
-# 1. AWS OIDC — create an IAM role that trusts GitHub's OIDC provider and has
-#    permissions to deploy the CDK stacks (CloudFormation, S3, CloudFront,
-#    Lambda, DynamoDB, Cognito, API Gateway, IAM). Put its ARN in the repo
-#    variable AWS_DEPLOY_ROLE_ARN and the region in AWS_REGION.
+# 1. AWS OIDC — an IAM role that trusts GitHub's OIDC provider with permissions
+#    to deploy the CDK stacks (CloudFormation, S3, CloudFront, Lambda, DynamoDB,
+#    Cognito, API Gateway, IAM) is assumed by the deploy jobs. The role ARN is
+#    hardcoded in the `role-to-assume` steps below:
+#      arn:aws:iam::268811324566:role/Yoruba-language-learner-git-actions
+#    Set the region in the repo variable AWS_REGION.
 #      Settings -> Secrets and variables -> Actions -> Variables
 #
 # 2. Bootstrap CDK once per account/region (locally):
@@ -38,8 +40,8 @@ on:
   push:
     branches: [main]
     paths:
-      - 'App/**'
-      - '.github/workflows/deploy.yml'
+      - "App/**"
+      - ".github/workflows/deploy.yml"
 
 # Only one deploy pipeline at a time; don't cancel an in-flight deploy.
 concurrency:
@@ -53,9 +55,9 @@ permissions:
 
 env:
   AWS_REGION: ${{ vars.AWS_REGION }}
-  APP_DIR: App
-  INFRA_DIR: App/infra
-  NODE_VERSION: '20'
+  APP_DIR: App/frontend
+  INFRA_DIR: App/backend/infra
+  NODE_VERSION: "20"
 
 jobs:
   # ---------------------------------------------------------------------------
@@ -103,7 +105,7 @@ jobs:
     name: Deploy Backend
     needs: validate
     runs-on: ubuntu-latest
-    environment: production-backend   # <-- approval window (required reviewers)
+    environment: production-backend # <-- approval window (required reviewers)
     steps:
       - uses: actions/checkout@v4
 
@@ -115,7 +117,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::268811324566:role/Yoruba-language-learner-git-actions
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install infra deps
@@ -135,7 +137,7 @@ jobs:
     name: Deploy Frontend
     needs: deploy-backend
     runs-on: ubuntu-latest
-    environment: production-frontend  # <-- approval window (required reviewers)
+    environment: production-frontend # <-- approval window (required reviewers)
     steps:
       - uses: actions/checkout@v4
 
@@ -147,7 +149,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          role-to-assume: arn:aws:iam::268811324566:role/Yoruba-language-learner-git-actions
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install frontend deps

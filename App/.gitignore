@@ -1,10 +1,13 @@
 node_modules/
 dist/
 *.log
-infra/cdk.out/
-infra/cdk.context.json
-server-py/.venv/
-server-py/*.db
+# Generated dev-fallback copies of content (source of truth: frontend/src/data/).
+frontend/public/content.json
+frontend/public/sentences.json
+backend/infra/cdk.out/
+backend/infra/cdk.context.json
+backend/server-py/.venv/
+backend/server-py/*.db
 *.env
 .env
 .env.*

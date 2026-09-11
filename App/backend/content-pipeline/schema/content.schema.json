@@ -1,0 +1,95 @@
+{
+  "$id": "https://yoruba-ye-mi/schema/content.schema.json",
+  "title": "Content",
+  "description": "Learning content (content.json). Mirrors frontend/src/types.ts Content.",
+  "x-schemaVersion": "1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "intro", "chapters"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "author", "license", "isbn", "extractionNotes"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "author": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
+        "isbn": { "type": "string" },
+        "extractionNotes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "notes"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/chapter" }
+    }
+  },
+  "$defs": {
+    "chapter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "yorubaTitle", "title", "objectives", "items"],
+      "properties": {
+        "id": { "type": "integer", "minimum": 1 },
+        "yorubaTitle": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "objectives": { "type": "array", "items": { "type": "string" } },
+        "items": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "$ref": "#/$defs/vocabItem" },
+              { "$ref": "#/$defs/grammarItem" }
+            ]
+          }
+        }
+      }
+    },
+    "vocabItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "pos", "yo", "en"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "vocab" },
+        "pos": { "type": "string", "minLength": 1 },
+        "yo": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "grammarItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "lesson", "title", "explanation", "examples"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "grammar" },
+        "lesson": { "type": "integer", "minimum": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "explanation": { "type": "string", "minLength": 1 },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["yo", "en"],
+            "properties": {
+              "yo": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

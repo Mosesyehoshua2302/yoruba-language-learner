@@ -1,0 +1,79 @@
+{
+  "$id": "https://yoruba-ye-mi/schema/sentences.schema.json",
+  "title": "SentencesData",
+  "description": "Sentence bank (sentences.json). Mirrors frontend/src/types.ts SentencesData.",
+  "x-schemaVersion": "1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "categories", "vocab"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "note", "confidence", "caveat", "sourceFile"],
+      "properties": {
+        "title": { "type": "string" },
+        "note": { "type": "string" },
+        "confidence": { "type": "string" },
+        "caveat": { "type": "string" },
+        "sourceFile": { "type": "string" }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/category" }
+    },
+    "vocab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numbers", "colors", "opposites"],
+      "properties": {
+        "numbers": { "type": "array", "items": { "$ref": "#/$defs/vocabPair" } },
+        "colors": { "type": "array", "items": { "$ref": "#/$defs/vocabPair" } },
+        "opposites": { "type": "array", "items": { "$ref": "#/$defs/oppositePair" } }
+      }
+    }
+  },
+  "$defs": {
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "items"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/sentenceItem" } }
+      }
+    },
+    "sentenceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "yo", "en", "page"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "yo": { "type": "string" },
+        "en": { "type": "string" },
+        "page": { "type": "integer" }
+      }
+    },
+    "vocabPair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["yo", "en"],
+      "properties": {
+        "yo": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "oppositePair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["yo", "en", "opposite"],
+      "properties": {
+        "yo": { "type": "string" },
+        "en": { "type": "string" },
+        "opposite": { "$ref": "#/$defs/vocabPair" }
+      }
+    }
+  }
+}

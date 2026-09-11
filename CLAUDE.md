@@ -6,29 +6,37 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A local-first web app for learning Yorùbá, built entirely from the open textbook _Yorùbá Yé Mi_
 (Fẹ̀hìntọ́lá Mosádomi, COERLL / UT Austin, 2012, CC-licensed). All content — 12 chapters, 1,008
-vocabulary items, 47 grammar lessons — lives in `App/src/data/content.json`, extracted from the
-PDF in `Documents/`.
+vocabulary items, 47 grammar lessons — lives in `App/frontend/src/data/content.json`, extracted
+from the PDF in `Documents/`.
 
 ## Repo layout
 
-- `App/` — the live app (React 18 + TypeScript + Tailwind + Vite). Work here.
-- `App/infra/` — optional AWS CDK stack for hosting (see below).
-- `solutions/claude-yoruba-ye-mi/` — a frozen reference copy of `App/`, kept only for comparison.
-  It is currently identical to `App/`. Do not edit it as part of normal feature work; it exists
-  as a snapshot, not a second live target.
-- `Documents/yoruba.pdf` — the source textbook that `App/scripts/` extracted content from.
+The app is compartmentalized into a frontend and a backend under `App/`:
 
-## Commands (run from `App/`)
+- `App/frontend/` — the React 18 + TypeScript + Tailwind + Vite SPA. Its own `package.json`.
+- `App/backend/infra/` — AWS CDK stack for hosting (see below).
+- `App/backend/server-py/` — local FastAPI + SQLite dev state server. Its own `package.json`.
+- `App/backend/scripts/` — Python content-extraction tooling.
+- `Documents/yoruba.pdf` — the source textbook that `backend/scripts/` extracted content from.
+
+## Commands
+
+Frontend (run from `App/frontend/`):
 
 ```bash
 npm install
-npm run dev          # frontend dev server only
-npm run server:setup # one-time: create the server-py venv + install deps
-npm run server       # local FastAPI+SQLite state server (http://localhost:8787)
-npm run server:test  # pytest suite for the local server
+npm run dev      # frontend dev server only
 npm run build    # tsc && vite build -> dist/
 npm run preview  # preview a production build
 npm test         # vitest run (SRS + gate unit tests)
+```
+
+Backend dev server (run from `App/backend/`):
+
+```bash
+npm run server:setup # one-time: create the server-py venv + install deps
+npm run server       # local FastAPI+SQLite state server (http://localhost:8787)
+npm run server:test  # pytest suite for the local server
 ```
 
 This is a **single-page app (SPA)**: one `index.html` + a JS bundle that renders
@@ -38,20 +46,22 @@ into browser-runnable static files in `dist/` — that `dist/` _is_ the deployab
 app. It is gitignored and reproducible, so it does not exist on a fresh checkout;
 rebuild it before deploying the frontend. S3/CloudFront serve `dist/` as-is (they
 can't run `src/`), so a missing `dist/` at deploy time means an empty bucket — see
-`App/infra/README.md`.
+`App/backend/infra/README.md`.
 
 Run a single frontend test file: `npx vitest run src/lib/__tests__/srs.test.ts`. Tests also run
-standalone via `tsx` if needed. The local state server is Python (`App/server-py/`), run in a
-venv (see `npm run server:setup` / `npm run server`); it needs no database service (SQLite file).
+standalone via `tsx` if needed. The local state server is Python (`App/backend/server-py/`), run
+in a venv (see `npm run server:setup` / `npm run server` from `App/backend/`); it needs no database
+service (SQLite file).
 
 There is no lint script configured; `tsc` (via `npm run build`) is the type-check gate — note
 its `include` is scoped to `src/`.
 
 The app works fully offline: `src/lib/storage.ts` keeps a `localStorage` cache for instant loads.
-The durable mirror for learner state in development is the local FastAPI server (`App/server-py/`,
-`GET/PUT /api/state`) — the frontend syncs to it in the background (`src/lib/api.ts`, wired into
-`src/state/store.tsx`) and falls back to the localStorage cache when the server is unreachable.
-This is a dev-only, local backend, separate from the AWS one in `App/infra/` (see below).
+The durable mirror for learner state in development is the local FastAPI server
+(`App/backend/server-py/`, `GET/PUT /api/state`) — the frontend syncs to it in the background
+(`src/lib/api.ts`, wired into `src/state/store.tsx`) and falls back to the localStorage cache when
+the server is unreachable. This is a dev-only, local backend, separate from the AWS one in
+`App/backend/infra/` (see below).
 
 ## Architecture: two progression layers, one source of truth
 
@@ -79,7 +89,7 @@ Because both thresholds (`PASS_THRESHOLD`, `DEMOTE_THRESHOLD`, `MIN_SAMPLES`) li
 constants in `gate.ts`, changing progression difficulty means editing that one file — logic and
 UI never hardcode these numbers separately.
 
-## Code layout (`App/src/`)
+## Code layout (`App/frontend/src/`)
 
 ```
 data/content.json    all book content (single source of truth for vocab/grammar)
@@ -113,8 +123,7 @@ triggers.
 ## Editing content
 
 Content is data, not code — fix extraction errors or add items directly in
-`App/src/data/content.json` (and mirror in `App/content.json` / `solutions/.../content.json` if
-those need to stay in sync — check whether they're supposed to before assuming so):
+`App/frontend/src/data/content.json`:
 
 - Vocab: `{"id":"c3-v12","type":"vocab","pos":"noun","yo":"ọjà","en":"market"}` — edit
   `yo`/`en`/`pos` freely; **keep `id` stable** so learner progress (SRS card) stays attached.
@@ -122,8 +131,8 @@ those need to stay in sync — check whether they're supposed to before assuming
 - New items: use a fresh unique `id` (e.g. `c3-v99`) — the app creates an SRS card for it
   automatically on next load without disturbing existing progress.
 
-To re-run extraction from the PDF: `scripts/extract_content.py` (two-column parsing with
-pdfplumber) → `scripts/build_content.py` (assembles `content.json`). `scripts/decode.py` holds
+To re-run extraction from the PDF: `backend/scripts/extract_content.py` (two-column parsing with
+pdfplumber) → `backend/scripts/build_content.py` (assembles `content.json`). `backend/scripts/decode.py` holds
 the legacy "YorubaSans" font's empirically-derived character map (the PDF has no Unicode mapping
 for ọ/ẹ/ṣ/tone marks — see `content.json → meta.extractionNotes` for the full notes and known
 extraction caveats before treating a garbled string as a new bug).
@@ -132,12 +141,12 @@ Typed-answer questions accept tone-markless input (e.g. `e kaaaro` for `Ẹ ká�
 Yorùbá diacritics on a standard keyboard is impractical; multiple-choice still requires full
 orthography.
 
-## Local dev state server (`App/server-py/`)
+## Local dev state server (`App/backend/server-py/`)
 
 FastAPI + SQLite, single fixed-row table `learner_state(id, state, updated_at)` — mirrors the
 whole `LearnerState` blob, matching the single-item design of the DynamoDB backend below.
 `GET/PUT /api/state`, same contract (`{ state, updatedAt }` / `{ state }` → `{ updatedAt }`,
-380KB cap) as the cloud handler `App/infra/lambda/state_handler.py`, so the two backends stay
+380KB cap) as the cloud handler `App/backend/infra/lambda/state_handler.py`, so the two backends stay
 interchangeable in shape even though one is local/SQLite/no-auth and the other is
 AWS/DynamoDB/Cognito-JWT. The frontend (`src/lib/api.ts`) calls it directly at
 `http://localhost:8787` — not via a Vite dev-server proxy, which turned out to be unreliable in
@@ -147,10 +156,10 @@ The server sends permissive CORS headers instead, so the direct call works the s
 (`state.db`, gitignored) needs no separate database service. Run: `npm run server:setup` once,
 then `npm run server`; tests via `npm run server:test`.
 
-## Infra (`App/infra/`, optional AWS deployment)
+## Infra (`App/backend/infra/`, optional AWS deployment)
 
 TypeScript CDK, not deployed/wired by default, and unrelated to the local Postgres server above.
 Two stacks: `YorubaYeMiFrontend` (S3 + CloudFront static hosting) and `YorubaYeMiBackend`
 (Cognito + HTTP API + Lambda + DynamoDB for cross-device state sync — **not yet called by the
 frontend**). Deploy with `cdk deploy --all` from `infra/` after `npm run build` in `App/`.
-Details in `App/infra/README.md`, including the roadmap for wiring the frontend to it.
+Details in `App/backend/infra/README.md`, including the roadmap for wiring the frontend to it.
