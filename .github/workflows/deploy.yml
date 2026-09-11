@@ -38,7 +38,7 @@ on:
   workflow_dispatch:
   # Auto-run on pushes to main that touch the app or infra.
   push:
-    branches: [main]
+    branches: [main, feature/content-management]
     paths:
       - "App/**"
       - ".github/workflows/deploy.yml"
