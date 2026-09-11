@@ -15,11 +15,10 @@ name: Deploy Infrastructure
 #
 # 1. AWS OIDC — an IAM role that trusts GitHub's OIDC provider with permissions
 #    to deploy the CDK stacks (CloudFormation, S3, CloudFront, Lambda, DynamoDB,
-#    Cognito, API Gateway, IAM) is assumed by the deploy jobs. The role ARN is
-#    hardcoded in the `role-to-assume` steps below:
-#      arn:aws:iam::268811324566:role/Yoruba-language-learner-git-actions
-#    Set the region in the repo variable AWS_REGION.
-#      Settings -> Secrets and variables -> Actions -> Variables
+#    Cognito, API Gateway, IAM). Set its ARN in the repo SECRET OIDC_ROLE_ARN,
+#    and the region in the repo VARIABLE AWS_REGION.
+#      Secret:   Settings -> Secrets and variables -> Actions -> Secrets
+#      Variable: Settings -> Secrets and variables -> Actions -> Variables
 #
 # 2. Bootstrap CDK once per account/region (locally):
 #      cd App/infra && npx cdk bootstrap aws://<ACCOUNT_ID>/<REGION>
@@ -117,7 +116,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::268811324566:role/Yoruba-language-learner-git-actions
+          role-to-assume: ${{ secrets.OIDC_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install infra deps
@@ -149,7 +148,7 @@ jobs:
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::268811324566:role/Yoruba-language-learner-git-actions
+          role-to-assume: ${{ secrets.OIDC_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install frontend deps
