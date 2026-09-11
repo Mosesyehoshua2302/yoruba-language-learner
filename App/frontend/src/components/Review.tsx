@@ -1,39 +1,61 @@
-import { useMemo, useState } from 'react';
-import { content, useStore } from '../state/store';
-import { buildQueue } from '../lib/queue';
-import { currentChapterId } from '../lib/gate';
-import { XP_PER_GRADE } from '../lib/gamification';
-import { Icon } from './ui/icons';
-import type { View } from '../App';
-import type { ContentItem, Grade } from '../types';
+import { useMemo, useState } from "react";
+import { content, useStore } from "../state/store";
+import { buildQueue } from "../lib/queue";
+import { currentChapterId } from "../lib/gate";
+import { XP_PER_GRADE } from "../lib/gamification";
+import { Icon } from "./ui/icons";
+import type { View } from "../App";
+import type { ContentItem, Grade } from "../types";
 
-const itemIndex: Record<string, { item: ContentItem; chapterId: number }> = {};
-for (const ch of content.chapters) for (const it of ch.items) itemIndex[it.id] = { item: it, chapterId: ch.id };
+// Built lazily on first use, not at module load: `content` is populated by
+// initContentExports() (after loadContent()), which runs before any render but
+// AFTER this module is imported. Touching content.chapters at import time would
+// throw (content is still undefined then).
+let _itemIndex: Record<
+  string,
+  { item: ContentItem; chapterId: number }
+> | null = null;
+function itemIndexFor(): Record<
+  string,
+  { item: ContentItem; chapterId: number }
+> {
+  if (_itemIndex) return _itemIndex;
+  _itemIndex = {};
+  for (const ch of content.chapters)
+    for (const it of ch.items)
+      _itemIndex[it.id] = { item: it, chapterId: ch.id };
+  return _itemIndex;
+}
 
-const GRADE_BUTTONS: { grade: Grade; label: string; sub: string; cls: string }[] = [
+const GRADE_BUTTONS: {
+  grade: Grade;
+  label: string;
+  sub: string;
+  cls: string;
+}[] = [
   {
-    grade: 'again',
-    label: 'Again',
-    sub: 'wrong',
-    cls: 'border-rose-300/70 bg-rose-50 text-rose-700 hover:bg-rose-100 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-300 dark:hover:bg-rose-500/20',
+    grade: "again",
+    label: "Again",
+    sub: "wrong",
+    cls: "border-rose-300/70 bg-rose-50 text-rose-700 hover:bg-rose-100 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-300 dark:hover:bg-rose-500/20",
   },
   {
-    grade: 'hard',
-    label: 'Hard',
-    sub: 'barely',
-    cls: 'border-gold-300/70 bg-gold-50 text-gold-700 hover:bg-gold-100 dark:border-gold-500/30 dark:bg-gold-500/10 dark:text-gold-300 dark:hover:bg-gold-500/20',
+    grade: "hard",
+    label: "Hard",
+    sub: "barely",
+    cls: "border-gold-300/70 bg-gold-50 text-gold-700 hover:bg-gold-100 dark:border-gold-500/30 dark:bg-gold-500/10 dark:text-gold-300 dark:hover:bg-gold-500/20",
   },
   {
-    grade: 'good',
-    label: 'Good',
-    sub: 'ok',
-    cls: 'border-forest-300/70 bg-forest-50 text-forest-700 hover:bg-forest-100 dark:border-forest-500/30 dark:bg-forest-500/10 dark:text-forest-300 dark:hover:bg-forest-500/20',
+    grade: "good",
+    label: "Good",
+    sub: "ok",
+    cls: "border-forest-300/70 bg-forest-50 text-forest-700 hover:bg-forest-100 dark:border-forest-500/30 dark:bg-forest-500/10 dark:text-forest-300 dark:hover:bg-forest-500/20",
   },
   {
-    grade: 'easy',
-    label: 'Easy',
-    sub: 'instant',
-    cls: 'border-sky-300/70 bg-sky-50 text-sky-700 hover:bg-sky-100 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-300 dark:hover:bg-sky-500/20',
+    grade: "easy",
+    label: "Easy",
+    sub: "instant",
+    cls: "border-sky-300/70 bg-sky-50 text-sky-700 hover:bg-sky-100 dark:border-sky-500/30 dark:bg-sky-500/10 dark:text-sky-300 dark:hover:bg-sky-500/20",
   },
 ];
 
@@ -53,21 +75,29 @@ export function Review({ setView }: { setView: (v: View) => void }) {
         </span>
         <div>
           <p className="font-display text-lg font-semibold">
-            {done > 0 ? 'Session complete' : 'Nothing due right now'}
+            {done > 0 ? "Session complete" : "Nothing due right now"}
           </p>
           <p className="mt-1 text-sm text-ink-500 dark:text-ink-400">
             {done > 0
-              ? `You reviewed ${done} card${done > 1 ? 's' : ''} and earned ${sessionXp} XP.`
-              : 'Learn new words in the current chapter, or come back tomorrow.'}
+              ? `You reviewed ${done} card${done > 1 ? "s" : ""} and earned ${sessionXp} XP.`
+              : "Learn new words in the current chapter, or come back tomorrow."}
           </p>
         </div>
         <div className="flex justify-center gap-2">
-          <button className="btn-secondary" onClick={() => setView({ name: 'dashboard' })}>
+          <button
+            className="btn-secondary"
+            onClick={() => setView({ name: "dashboard" })}
+          >
             Dashboard
           </button>
           <button
             className="btn-primary"
-            onClick={() => setView({ name: 'lesson', chapterId: currentChapterId(state.chapters) })}
+            onClick={() =>
+              setView({
+                name: "lesson",
+                chapterId: currentChapterId(state.chapters),
+              })
+            }
           >
             Learn
           </button>
@@ -77,7 +107,7 @@ export function Review({ setView }: { setView: (v: View) => void }) {
   }
 
   const entry = queue[0];
-  const info = itemIndex[entry.card.itemId];
+  const info = itemIndexFor()[entry.card.itemId];
   if (!info) return null;
   const { item, chapterId } = info;
   const total = done + queue.length;
@@ -86,7 +116,7 @@ export function Review({ setView }: { setView: (v: View) => void }) {
     setRevealed(false);
     setDone((d) => d + 1);
     setSessionXp((xp) => xp + XP_PER_GRADE[g]);
-    dispatch({ type: 'grade-card', itemId: item.id, grade: g });
+    dispatch({ type: "grade-card", itemId: item.id, grade: g });
   };
 
   return (
@@ -102,7 +132,11 @@ export function Review({ setView }: { setView: (v: View) => void }) {
             )}
           </span>
           <span className="flex items-center gap-3 tabular-nums">
-            {sessionXp > 0 && <span className="text-gold-600 dark:text-gold-400">+{sessionXp} XP</span>}
+            {sessionXp > 0 && (
+              <span className="text-gold-600 dark:text-gold-400">
+                +{sessionXp} XP
+              </span>
+            )}
             <span>Chapter {chapterId}</span>
           </span>
         </div>
@@ -115,9 +149,9 @@ export function Review({ setView }: { setView: (v: View) => void }) {
       </div>
 
       <div className="flip-scene" key={`${item.id}:${done}`}>
-        <div className={`flip-card ${revealed ? 'is-flipped' : ''}`}>
+        <div className={`flip-card ${revealed ? "is-flipped" : ""}`}>
           <div className="flip-face card flex min-h-[18rem] flex-col items-center justify-center p-8 text-center">
-            {item.type === 'vocab' ? (
+            {item.type === "vocab" ? (
               <>
                 <p className="font-display text-4xl font-semibold" lang="yo">
                   {item.yo}
@@ -138,7 +172,7 @@ export function Review({ setView }: { setView: (v: View) => void }) {
             )}
           </div>
           <div className="flip-face flip-face-back card min-h-[18rem] overflow-y-auto p-8">
-            {item.type === 'vocab' ? (
+            {item.type === "vocab" ? (
               <div className="flex h-full min-h-[14rem] flex-col items-center justify-center text-center">
                 <p className="text-sm text-ink-400 dark:text-ink-500" lang="yo">
                   {item.yo}
@@ -150,7 +184,10 @@ export function Review({ setView }: { setView: (v: View) => void }) {
                 <p className="font-display text-lg font-semibold" lang="yo">
                   {item.title}
                 </p>
-                <p className="mt-2 text-sm text-ink-700 dark:text-ink-200" lang="yo">
+                <p
+                  className="mt-2 text-sm text-ink-700 dark:text-ink-200"
+                  lang="yo"
+                >
                   {item.explanation}
                 </p>
                 <div className="mt-3 space-y-1.5 border-l-2 border-forest-300/60 pl-3 dark:border-forest-500/40">
@@ -159,7 +196,10 @@ export function Review({ setView }: { setView: (v: View) => void }) {
                       <span lang="yo" className="font-medium">
                         {ex.yo}
                       </span>
-                      <span className="text-ink-500 dark:text-ink-400"> — {ex.en}</span>
+                      <span className="text-ink-500 dark:text-ink-400">
+                        {" "}
+                        — {ex.en}
+                      </span>
                     </p>
                   ))}
                 </div>
@@ -170,7 +210,10 @@ export function Review({ setView }: { setView: (v: View) => void }) {
       </div>
 
       {!revealed ? (
-        <button className="btn-primary w-full py-3" onClick={() => setRevealed(true)}>
+        <button
+          className="btn-primary w-full py-3"
+          onClick={() => setRevealed(true)}
+        >
           Show answer
         </button>
       ) : (
